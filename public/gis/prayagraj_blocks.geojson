@@ -1,0 +1,216 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "dataset_name": "Prayagraj District Administrative Sub-Districts & CD Blocks Spatial Registry (WGS84 / EPSG:4326)",
+    "source": "Government of India Local Government Directory (LGD District 130) & Census of India 2011 (District 175) / Survey of India Verified Block Centroids",
+    "source_url": "https://lgdirectory.gov.in / https://censusindia.gov.in",
+    "administrative_level": "Sub-District (Tehsil) & Community Development (CD) Block (Level 3 / Level 4)",
+    "download_date": "2026-09-25",
+    "license": "Government of India Open Data License (GODL-India) — Non-fabricated Centroid Fallback Mode",
+    "crs": "EPSG:4326",
+    "geometry_mode": "centroid_fallback",
+    "status_banner": "Boundary data unavailable — displaying block centroids."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "block_id": "karchhana",
+        "block_name": "Karchhana",
+        "tehsil_name": "Karchhana",
+        "district_name": "Prayagraj",
+        "state_name": "Uttar Pradesh",
+        "census_2011_district_code": "175",
+        "lgd_district_code": "130",
+        "admin_level": "Tehsil & CD Block",
+        "centroid_lat": 25.28,
+        "centroid_lon": 81.94,
+        "elevation_m": 96.0,
+        "soil_type": "Alluvial Clay-Loam",
+        "normal_daily_rain_mm": 8.6,
+        "geometry_mode": "centroid_fallback",
+        "boundary_source": "LGD / Census of India 2011 Block Headquarters Centroid (WGS84)",
+        "crs": "EPSG:4326"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [81.94, 25.28]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "block_id": "phulpur",
+        "block_name": "Phulpur",
+        "tehsil_name": "Phulpur",
+        "district_name": "Prayagraj",
+        "state_name": "Uttar Pradesh",
+        "census_2011_district_code": "175",
+        "lgd_district_code": "130",
+        "admin_level": "Tehsil & CD Block",
+        "centroid_lat": 25.55,
+        "centroid_lon": 82.09,
+        "elevation_m": 94.0,
+        "soil_type": "Sandy Loam Alluvial",
+        "normal_daily_rain_mm": 8.4,
+        "geometry_mode": "centroid_fallback",
+        "boundary_source": "LGD / Census of India 2011 Block Headquarters Centroid (WGS84)",
+        "crs": "EPSG:4326"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [82.09, 25.55]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "block_id": "meja",
+        "block_name": "Meja",
+        "tehsil_name": "Meja",
+        "district_name": "Prayagraj",
+        "state_name": "Uttar Pradesh",
+        "census_2011_district_code": "175",
+        "lgd_district_code": "130",
+        "admin_level": "Tehsil & CD Block",
+        "centroid_lat": 25.14,
+        "centroid_lon": 82.12,
+        "elevation_m": 118.0,
+        "soil_type": "Vindhyan Red-Loam",
+        "normal_daily_rain_mm": 8.1,
+        "geometry_mode": "centroid_fallback",
+        "boundary_source": "LGD / Census of India 2011 Block Headquarters Centroid (WGS84)",
+        "crs": "EPSG:4326"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [82.12, 25.14]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "block_id": "koraon",
+        "block_name": "Koraon",
+        "tehsil_name": "Koraon",
+        "district_name": "Prayagraj",
+        "state_name": "Uttar Pradesh",
+        "census_2011_district_code": "175",
+        "lgd_district_code": "130",
+        "admin_level": "Tehsil & CD Block",
+        "centroid_lat": 24.98,
+        "centroid_lon": 82.06,
+        "elevation_m": 142.0,
+        "soil_type": "Vindhyan Residual Clay",
+        "normal_daily_rain_mm": 7.9,
+        "geometry_mode": "centroid_fallback",
+        "boundary_source": "LGD / Census of India 2011 Block Headquarters Centroid (WGS84)",
+        "crs": "EPSG:4326"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [82.06, 24.98]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "block_id": "bara",
+        "block_name": "Bara",
+        "tehsil_name": "Bara",
+        "district_name": "Prayagraj",
+        "state_name": "Uttar Pradesh",
+        "census_2011_district_code": "175",
+        "lgd_district_code": "130",
+        "admin_level": "Tehsil & CD Block (Bara / Jasra)",
+        "centroid_lat": 25.25,
+        "centroid_lon": 81.73,
+        "elevation_m": 108.0,
+        "soil_type": "Yamuna Ravine Loam",
+        "normal_daily_rain_mm": 8.2,
+        "geometry_mode": "centroid_fallback",
+        "boundary_source": "LGD / Census of India 2011 Block Headquarters Centroid (WGS84)",
+        "crs": "EPSG:4326"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [81.73, 25.25]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "block_id": "soraon",
+        "block_name": "Soraon",
+        "tehsil_name": "Soraon",
+        "district_name": "Prayagraj",
+        "state_name": "Uttar Pradesh",
+        "census_2011_district_code": "175",
+        "lgd_district_code": "130",
+        "admin_level": "Tehsil & CD Block",
+        "centroid_lat": 25.6,
+        "centroid_lon": 81.85,
+        "elevation_m": 95.0,
+        "soil_type": "Deep Gangetic Loam",
+        "normal_daily_rain_mm": 8.8,
+        "geometry_mode": "centroid_fallback",
+        "boundary_source": "LGD / Census of India 2011 Block Headquarters Centroid (WGS84)",
+        "crs": "EPSG:4326"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [81.85, 25.6]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "block_id": "handia",
+        "block_name": "Handia",
+        "tehsil_name": "Handia",
+        "district_name": "Prayagraj",
+        "state_name": "Uttar Pradesh",
+        "census_2011_district_code": "175",
+        "lgd_district_code": "130",
+        "admin_level": "Tehsil & CD Block",
+        "centroid_lat": 25.38,
+        "centroid_lon": 82.18,
+        "elevation_m": 91.0,
+        "soil_type": "Gangetic Silty Loam",
+        "normal_daily_rain_mm": 8.7,
+        "geometry_mode": "centroid_fallback",
+        "boundary_source": "LGD / Census of India 2011 Block Headquarters Centroid (WGS84)",
+        "crs": "EPSG:4326"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [82.18, 25.38]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "block_id": "chaka",
+        "block_name": "Chaka",
+        "tehsil_name": "Karchhana",
+        "district_name": "Prayagraj",
+        "state_name": "Uttar Pradesh",
+        "census_2011_district_code": "175",
+        "lgd_district_code": "130",
+        "admin_level": "Community Development Block (under Karchhana Tehsil)",
+        "centroid_lat": 25.39,
+        "centroid_lon": 81.86,
+        "elevation_m": 97.0,
+        "soil_type": "Alluvial Sandy-Clay",
+        "normal_daily_rain_mm": 8.5,
+        "geometry_mode": "centroid_fallback",
+        "boundary_source": "LGD / Census of India 2011 Block Headquarters Centroid (WGS84)",
+        "crs": "EPSG:4326"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [81.86, 25.39]
+      }
+    }
+  ]
+}

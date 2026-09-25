@@ -1,0 +1,149 @@
+{
+  "loader_meta": {
+    "source": "Open-Meteo ERA5 Historical Reanalysis Archive + NOAA CPC ONI",
+    "start_date": "2019-01-01",
+    "end_date": "2025-08-31",
+    "total_rows": 19480,
+    "blocks_count": 8,
+    "soil_moisture_available": false,
+    "soil_moisture_note": "Historical in-situ soil moisture unavailable across 2019-2025; marked optional and excluded rather than fabricated."
+  },
+  "leakage_audit_passed": true,
+  "label_definitions": {
+    "onset": {
+      "ONSET_RAIN_THRESHOLD_MM": 2.5,
+      "ONSET_WINDOW_DAYS": 5,
+      "ONSET_CUMULATIVE_RAIN_MM": 22.0,
+      "MAX_ALLOWED_DRY_DAYS": 2,
+      "PERSISTENCE_CHECK_DAYS": 7,
+      "DEFINITION_LABEL": "Prototype operational definition \u2014 requires validation against official/local onset datasets."
+    },
+    "false_onset": {
+      "INITIAL_WET_WINDOW_DAYS": 3,
+      "INITIAL_WET_MIN_RAIN_MM": 12.0,
+      "FALSE_ONSET_MIN_DRY_DAYS": 6,
+      "DRY_DAY_THRESHOLD_MM": 2.5
+    },
+    "dry_spell": {
+      "BREAK_MIN_DRY_DAYS": 7,
+      "DRY_DAY_THRESHOLD_MM": 2.5
+    },
+    "heavy_rain": {
+      "HEAVY_RAIN_THRESHOLD_MM": 64.5,
+      "VERY_HEAVY_RAIN_THRESHOLD_MM": 115.6,
+      "EXTREMELY_HEAVY_RAIN_THRESHOLD_MM": 204.5,
+      "SOURCE": "India Meteorological Department (IMD) Standard Daily Rainfall Categories"
+    }
+  },
+  "sufficiency": {
+    "sufficient_for_xgboost": true,
+    "sufficient_for_lstm": true,
+    "lstm_status_message": "Sufficient historical sequence length for LSTM training.",
+    "total_samples": 9496,
+    "missing_data_pct": 0.0,
+    "historical_start": "2019-05-01",
+    "historical_end": "2025-07-22",
+    "years_covered": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "min_block_sequence_days": 1187,
+    "target_event_counts": {
+      "onset_7d": {
+        "positive_events": 4266,
+        "negative_events": 5230,
+        "sufficient": true
+      },
+      "onset_14d": {
+        "positive_events": 5372,
+        "negative_events": 4124,
+        "sufficient": true
+      },
+      "onset_21d": {
+        "positive_events": 6084,
+        "negative_events": 3412,
+        "sufficient": true
+      },
+      "onset_30d": {
+        "positive_events": 6630,
+        "negative_events": 2866,
+        "sufficient": true
+      },
+      "false_onset_7d": {
+        "positive_events": 1074,
+        "negative_events": 8422,
+        "sufficient": true
+      },
+      "false_onset_14d": {
+        "positive_events": 2109,
+        "negative_events": 7387,
+        "sufficient": true
+      },
+      "false_onset_21d": {
+        "positive_events": 2899,
+        "negative_events": 6597,
+        "sufficient": true
+      },
+      "false_onset_30d": {
+        "positive_events": 3818,
+        "negative_events": 5678,
+        "sufficient": true
+      },
+      "dry_spell_7d": {
+        "positive_events": 3462,
+        "negative_events": 6034,
+        "sufficient": true
+      },
+      "dry_spell_14d": {
+        "positive_events": 4269,
+        "negative_events": 5227,
+        "sufficient": true
+      },
+      "dry_spell_21d": {
+        "positive_events": 4986,
+        "negative_events": 4510,
+        "sufficient": true
+      },
+      "dry_spell_30d": {
+        "positive_events": 5623,
+        "negative_events": 3873,
+        "sufficient": true
+      },
+      "heavy_rain_7d": {
+        "positive_events": 322,
+        "negative_events": 9174,
+        "sufficient": true
+      },
+      "heavy_rain_14d": {
+        "positive_events": 637,
+        "negative_events": 8859,
+        "sufficient": true
+      },
+      "heavy_rain_21d": {
+        "positive_events": 952,
+        "negative_events": 8544,
+        "sufficient": true
+      },
+      "heavy_rain_30d": {
+        "positive_events": 1353,
+        "negative_events": 8143,
+        "sufficient": true
+      }
+    },
+    "prototype_limitation_notice": "Prototype model \u2014 limited historical training data (2019\u20132025 ERA5 & NOAA block-level archive). Ready to ingest multi-decadal station records."
+  },
+  "splits": {
+    "train_period": "2019-05-01 to 2022-10-31",
+    "train_years": "2019\u20132022",
+    "train_samples": 5888,
+    "val_period": "2023-05-01 to 2023-10-31",
+    "val_samples": 1472,
+    "test_period": "2024-05-01 to 2025-07-22",
+    "test_samples": 2136
+  }
+}
