@@ -10,10 +10,11 @@
 # production
 /build
 
-# local env files (never commit credentials)
+# local & example env files (never push to GitHub)
 .env
-.env*.local
+.env.*
 .env.local
+.env.example
 
 # debug
 npm-debug.log*
@@ -30,4 +31,3 @@ __pycache__/
 .pytest_cache/
 .venv/
 venv/
-
