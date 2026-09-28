@@ -45,7 +45,7 @@ export default function RiskMapPage() {
             className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#0B3B24] hover:bg-emerald-900 text-white text-xs font-bold transition"
           >
             <Sprout className="w-4 h-4 text-emerald-400" />
-            Generate Advisory for {selectedBlock.name}
+            Generate Advisory for {allBlocks.length > 0 ? selectedBlock.name : "Selected District"}
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
           <Link
@@ -63,34 +63,40 @@ export default function RiskMapPage() {
         <span className="text-xs font-bold text-slate-500 px-2 shrink-0">
           Quick Select Block:
         </span>
-        {allBlocks.map((b) => {
-          const active = b.id === selectedBlockId;
-          const dotColor =
-            b.riskLevel === "Very High"
-              ? "bg-red-600"
-              : b.riskLevel === "High"
-              ? "bg-orange-500"
-              : b.riskLevel === "Moderate"
-              ? "bg-amber-400"
-              : "bg-emerald-500";
-          return (
-            <button
-              key={b.id}
-              onClick={() => setSelectedBlockId(b.id)}
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition ${
-                active
-                  ? "bg-[#0B3B24] text-white shadow-xs"
-                  : "bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200"
-              }`}
-            >
-              <span className={`w-2 h-2 rounded-full ${dotColor}`} />
-              <span>{b.name}</span>
-              <span className="opacity-75 text-[10px]">
-                ({b.onsetProbability}% Onset)
-              </span>
-            </button>
-          );
-        })}
+        {allBlocks.length === 0 ? (
+          <span className="text-xs text-slate-400 italic px-2">
+            No blocks available for this district
+          </span>
+        ) : (
+          allBlocks.map((b) => {
+            const active = b.id === selectedBlockId;
+            const dotColor =
+              b.riskLevel === "Very High"
+                ? "bg-red-600"
+                : b.riskLevel === "High"
+                ? "bg-orange-500"
+                : b.riskLevel === "Moderate"
+                ? "bg-amber-400"
+                : "bg-emerald-500";
+            return (
+              <button
+                key={b.id}
+                onClick={() => setSelectedBlockId(b.id)}
+                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition ${
+                  active
+                    ? "bg-[#0B3B24] text-white shadow-xs"
+                    : "bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200"
+                }`}
+              >
+                <span className={`w-2 h-2 rounded-full ${dotColor}`} />
+                <span>{b.name}</span>
+                <span className="opacity-75 text-[10px]">
+                  ({b.onsetProbability}% Onset)
+                </span>
+              </button>
+            );
+          })
+        )}
       </div>
 
       {/* FULL INTERACTIVE MAP COMPONENT */}

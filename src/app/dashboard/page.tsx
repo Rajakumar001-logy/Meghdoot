@@ -141,14 +141,25 @@ export default function DashboardPage() {
             <select
               value={selectedBlockId}
               onChange={(e) => setSelectedBlockId(e.target.value)}
+              disabled={allBlocks.length === 0}
               aria-label="Select Dashboard Block"
-              className="font-extrabold text-emerald-900 bg-emerald-50 border border-emerald-300 rounded-lg px-2.5 py-1 cursor-pointer focus:outline-none"
+              className={`font-extrabold rounded-lg px-2.5 py-1 focus:outline-none ${
+                allBlocks.length === 0
+                  ? "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed font-normal"
+                  : "bg-emerald-50 text-emerald-900 border border-emerald-300 cursor-pointer"
+              }`}
             >
-              {allBlocks.map((b) => (
-                <option key={b.id} value={b.id}>
-                  {b.name}
+              {allBlocks.length === 0 ? (
+                <option value="" disabled>
+                  No blocks available for this district
                 </option>
-              ))}
+              ) : (
+                allBlocks.map((b) => (
+                  <option key={b.id} value={b.id}>
+                    {b.name}
+                  </option>
+                ))
+              )}
             </select>
           </div>
         </div>

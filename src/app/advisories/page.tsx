@@ -67,6 +67,9 @@ export default function CropAdvisoryPage() {
     allBlocks,
     allCrops,
     stateDistricts,
+    hasNoBlocksForDistrict,
+    isLoadingDistricts,
+    isLoadingBlocks,
     triggerBriefLoading,
     triggerToast,
   } = useMonsoon();
@@ -122,6 +125,33 @@ export default function CropAdvisoryPage() {
 
   // Compute deterministic block + crop advisory bundle
   const advisoryBundle: AdvisoryEngineResult = useMemo(() => {
+    if (hasNoBlocksForDistrict || !selectedBlockId) {
+      return evaluateCropAdvisories({
+        location_id: "",
+        block_name: `No blocks in ${selectedDistrict}`,
+        district: selectedDistrict,
+        state: selectedState,
+        crop_id: cropIdTyped,
+        forecast_horizon: horizon,
+        horizon_days: horizonDays,
+        crop_stage: null,
+        current_rainfall: null,
+        recent_rainfall: null,
+        rainfall_anomaly: null,
+        temperature: null,
+        humidity: null,
+        soil_moisture: null,
+        onset_probability: null,
+        false_onset_probability: null,
+        dry_spell_probability: null,
+        heavy_rain_probability: null,
+        expected_rainfall: null,
+        model_version: "N/A",
+        observation_cutoff: "N/A",
+        source_mode: advisoryMode,
+      });
+    }
+
     const pred = activeSpatialBlock?.prediction;
     const obs = activeSpatialBlock?.observation;
 
@@ -212,6 +242,7 @@ export default function CropAdvisoryPage() {
       source_mode: advisoryMode,
     });
   }, [
+    hasNoBlocksForDistrict,
     activeSpatialBlock,
     advisoryMode,
     selectedBlockId,
@@ -219,6 +250,7 @@ export default function CropAdvisoryPage() {
     selectedDistrict,
     selectedState,
     cropIdTyped,
+    cropProfile.name,
     horizon,
     horizonDays,
     stageUnspecified,
@@ -251,6 +283,8 @@ export default function CropAdvisoryPage() {
       mode: advisoryMode,
       cropId: cropIdTyped,
       scenario: demoScenario,
+      district: selectedDistrict,
+      state: selectedState,
       aiBlockMap: aiMap,
     });
 
@@ -412,11 +446,7 @@ export default function CropAdvisoryPage() {
             </label>
             <select
               value={selectedState}
-              onChange={(e) => {
-                const st = e.target.value;
-                setSelectedState(st);
-                setSelectedDistrict((stateDistricts[st] || ["Prayagraj"])[0]);
-              }}
+              onChange={(e) => setSelectedState(e.target.value)}
               className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-900"
             >
               {Object.keys(stateDistricts).map((st) => (
@@ -436,11 +466,15 @@ export default function CropAdvisoryPage() {
               onChange={(e) => setSelectedDistrict(e.target.value)}
               className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-900"
             >
-              {(stateDistricts[selectedState] || ["Prayagraj"]).map((d) => (
-                <option key={d} value={d}>
-                  {d}
-                </option>
-              ))}
+              {isLoadingDistricts ? (
+                <option disabled>Loading districts...</option>
+              ) : (
+                (stateDistricts[selectedState] || ["Prayagraj"]).map((d) => (
+                  <option key={d} value={d}>
+                    {d}
+                  </option>
+                ))
+              )}
             </select>
           </div>
 
@@ -451,13 +485,26 @@ export default function CropAdvisoryPage() {
             <select
               value={selectedBlockId}
               onChange={(e) => setSelectedBlockId(e.target.value)}
-              className="w-full rounded-xl border border-emerald-300 bg-emerald-50/70 px-3 py-2 text-xs font-extrabold text-emerald-950"
+              disabled={isLoadingBlocks || hasNoBlocksForDistrict}
+              className={`w-full rounded-xl border px-3 py-2 text-xs font-extrabold ${
+                hasNoBlocksForDistrict
+                  ? "border-slate-200 bg-slate-100 text-slate-400 cursor-not-allowed font-normal"
+                  : "border-emerald-300 bg-emerald-50/70 text-emerald-950"
+              }`}
             >
-              {allBlocks.map((b) => (
-                <option key={b.id} value={b.id}>
-                  {b.name}
+              {isLoadingBlocks ? (
+                <option disabled>Loading blocks...</option>
+              ) : hasNoBlocksForDistrict ? (
+                <option value="" disabled>
+                  No blocks available for this district
                 </option>
-              ))}
+              ) : (
+                allBlocks.map((b) => (
+                  <option key={b.id} value={b.id}>
+                    {b.name}
+                  </option>
+                ))
+              )}
             </select>
           </div>
 
@@ -563,7 +610,23 @@ export default function CropAdvisoryPage() {
       </div>
 
       {/* 4. BLOCK-SPECIFIC ADVISORY & EXPLANATION GRID (Section 18) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      {hasNoBlocksForDistrict ? (
+        <div className="bg-white rounded-2xl border border-slate-200/90 shadow-soft p-12 text-center space-y-3">
+          <div className="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center mx-auto text-amber-600">
+            <AlertTriangle className="w-7 h-7" />
+          </div>
+          <h3 className="text-xl font-bold text-slate-900">
+            No blocks available for this district
+          </h3>
+          <p className="text-sm text-slate-600 max-w-md mx-auto">
+            No administrative block data or GIS telemetry is registered for{" "}
+            <strong>{selectedDistrict}</strong> ({selectedState}). Please
+            select a district with registered blocks (such as{" "}
+            <strong>Prayagraj</strong>) to view crop-specific AI advisories.
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* LEFT 8 COLS: BLOCK + CROP + CURRENT CONDITIONS + AI OUTLOOK + DETERMINISTIC ADVISORIES */}
         <div className="lg:col-span-8 space-y-5">
           {/* Header Banner */}
@@ -950,6 +1013,7 @@ export default function CropAdvisoryPage() {
           </div>
         </div>
       </div>
+      )}
 
       {/* 5. AGRICULTURAL / WEATHER OFFICER DISTRICT TRIAGE VIEW (Section 20) */}
       <div className="bg-white rounded-2xl border border-slate-200/90 shadow-soft p-5 sm:p-6 space-y-4">
@@ -964,7 +1028,7 @@ export default function CropAdvisoryPage() {
               </span>
             </div>
             <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-1">
-              Prayagraj District Block Risk &amp; Crop Exposure Triage (
+              {selectedDistrict} District Block Risk &amp; Crop Exposure Triage (
               {horizon} • {cropProfile.name})
             </h2>
           </div>
@@ -981,7 +1045,9 @@ export default function CropAdvisoryPage() {
                 }
                 className="font-bold text-slate-900 bg-transparent focus:outline-none"
               >
-                <option value="all">All 8 Prayagraj Blocks</option>
+                <option value="all">
+                  All Monitored Blocks ({selectedDistrict})
+                </option>
                 <option value="high_dry_spell">
                   Elevated Dry Spell Risk (&gt;=30%)
                 </option>
@@ -1029,7 +1095,17 @@ export default function CropAdvisoryPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200/70">
-              {officerOverviewRows.map((row) => {
+              {officerOverviewRows.length === 0 ? (
+                <tr>
+                  <td
+                    colSpan={8}
+                    className="py-8 text-center text-slate-500 font-semibold text-xs"
+                  >
+                    No blocks available for {selectedDistrict}
+                  </td>
+                </tr>
+              ) : (
+                officerOverviewRows.map((row) => {
                 const isSelected = row.block_id === selectedBlockId;
                 return (
                   <tr
@@ -1075,7 +1151,8 @@ export default function CropAdvisoryPage() {
                     </td>
                   </tr>
                 );
-              })}
+              })
+            )}
             </tbody>
           </table>
         </div>

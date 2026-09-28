@@ -5,10 +5,12 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 import {
   DEMO_SCENARIOS,
+  MOCK_BLOCKS,
   MOCK_CROPS,
   STATE_DISTRICTS,
   buildForecastForBlock,
@@ -17,7 +19,12 @@ import {
   getClimateIndicesForScenario,
 } from "@/data/mockData";
 import { isSupabaseConfigured } from "@/lib/supabase";
-import { getBlocks } from "@/services/locationService";
+import {
+  getBlocks,
+  getDistrictsForState,
+  getStates,
+  validateLocationHierarchy,
+} from "@/services/locationService";
 import { getForecast } from "@/services/forecastService";
 import {
   getAlerts,
@@ -80,6 +87,56 @@ export interface DataSourceStatusesMap {
 
 export type ForecastEngineMode = "DEMO" | "SIMULATED" | "AI_FORECAST";
 
+const EMPTY_BLOCK: Block = {
+  id: "",
+  name: "No Block Selected",
+  district: "",
+  state: "",
+  coordinates: [25.4358, 81.8463],
+  polygon: [],
+  farmersRegistered: 0,
+  cultivatedAreaHa: 0,
+  soilType: "N/A",
+  irrigationCoverage: 0,
+  onsetProbability: 0,
+  falseOnsetProbability: 0,
+  falseOnsetRisk: 0,
+  drySpellProbability: 0,
+  drySpellRisk: 0,
+  heavyRainProbability: 0,
+  heavyRainfallRisk: 0,
+  rainfallAnomaly: 0,
+  rainfallAnomalyPct: 0,
+  expectedRainfall: 0,
+  expectedRainfallMm: 0,
+  confidence: 0,
+  expectedDrySpellDays: "N/A",
+  onsetWindow: "N/A",
+  soilMoisture: 0,
+  riskLevel: "Low",
+  mainIssue: "No block data available for this district.",
+  recommendedAdvisory: "No advisory available for this district.",
+  panchayats: [],
+};
+
+const EMPTY_FORECAST: Forecast = {
+  ...buildForecastForBlock("karchhana", "14D", "scenario_b"),
+  blockId: "",
+  blockName: "No Block Selected",
+  district: "",
+  state: "",
+  onsetProbability: 0,
+  falseOnsetRisk: 0,
+  falseOnsetWarningProbability: 0,
+  breakMonsoonRisk: 0,
+  heavyRainfallRisk: 0,
+  expectedRainfallMm: 0,
+  rainfallAnomalyPct: 0,
+  confidence: 0,
+  soilMoisturePct: 0,
+  dailySeries: [],
+};
+
 interface MonsoonContextValue {
   selectedState: string;
   setSelectedState: (s: string) => void;
@@ -88,6 +145,13 @@ interface MonsoonContextValue {
   selectedBlockId: string;
   setSelectedBlockId: (id: string) => void;
   selectedBlock: Block;
+  availableStates: string[];
+  availableDistricts: string[];
+  availableBlocks: Block[];
+  allBlocks: Block[];
+  hasNoBlocksForDistrict: boolean;
+  isLoadingDistricts: boolean;
+  isLoadingBlocks: boolean;
   horizon: ForecastHorizon;
   setHorizon: (h: ForecastHorizon) => void;
   selectedRiskType: RiskFilterType;
@@ -123,7 +187,6 @@ interface MonsoonContextValue {
     type?: "success" | "info" | "warning"
   ) => void;
   dismissToast: (id: string) => void;
-  allBlocks: Block[];
   allCrops: Crop[];
   stateDistricts: Record<string, string[]>;
   // Real External Observation & Ingestion Layer
@@ -141,7 +204,7 @@ interface MonsoonContextValue {
     target?: "all" | "weather" | "rainfall" | "climate",
     switchToLiveMode?: boolean
   ) => Promise<void>;
-  // Real AI Prediction Engine Layer (Prompt 5)
+  // Real AI Prediction Engine Layer
   forecastEngineMode: ForecastEngineMode;
   setForecastEngineMode: (mode: ForecastEngineMode) => void;
   aiForecastActive: boolean;
@@ -155,8 +218,10 @@ interface MonsoonContextValue {
 const MonsoonContext = createContext<MonsoonContextValue | undefined>(undefined);
 
 export function MonsoonProvider({ children }: { children: React.ReactNode }) {
-  const [selectedState, setSelectedState] = useState<string>("Uttar Pradesh");
-  const [selectedDistrict, setSelectedDistrict] = useState<string>("Prayagraj");
+  const [selectedState, setSelectedStateState] =
+    useState<string>("Uttar Pradesh");
+  const [selectedDistrict, setSelectedDistrictState] =
+    useState<string>("Prayagraj");
   const [selectedBlockId, setSelectedBlockIdState] =
     useState<string>("karchhana");
   const [horizon, setHorizonState] = useState<ForecastHorizon>("14D");
@@ -173,6 +238,9 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
   const [demoMode, setDemoModeState] = useState<boolean>(false);
   const [forecastEngineMode, setForecastEngineModeState] =
     useState<ForecastEngineMode>("AI_FORECAST");
+
+  const [isLoadingDistricts, setIsLoadingDistricts] = useState<boolean>(false);
+  const [isLoadingBlocks, setIsLoadingBlocks] = useState<boolean>(false);
 
   const [readAlertIds, setReadAlertIds] = useState<Record<string, boolean>>({});
   const [loadingMessage, setLoadingMessage] = useState<string | null>(null);
@@ -224,7 +292,9 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
 
   // Service-backed states
   const [serviceBlocks, setServiceBlocks] = useState<Block[]>(() =>
-    getBlocksForScenarioAndHorizon("scenario_b", "14D")
+    getBlocksForScenarioAndHorizon("scenario_b", "14D").filter(
+      (b) => b.state === "Uttar Pradesh" && b.district === "Prayagraj"
+    )
   );
   const [serviceForecast, setServiceForecast] = useState<Forecast>(() =>
     buildForecastForBlock("karchhana", "14D", "scenario_b")
@@ -248,6 +318,115 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
     []
   );
 
+  const triggerBriefLoading = useCallback(
+    (message: string, durationMs = 240) => {
+      setLoadingMessage(message);
+      setTimeout(() => {
+        setLoadingMessage(null);
+      }, durationMs);
+    },
+    []
+  );
+
+  // Cascading Location Setters
+  const setSelectedState = useCallback(
+    (nextState: string) => {
+      const normState = nextState.trim();
+      setSelectedStateState(normState);
+      setIsLoadingDistricts(true);
+      setIsLoadingBlocks(true);
+
+      const districts = STATE_DISTRICTS[normState] || [];
+      const nextDistrict = districts[0] || "";
+      setSelectedDistrictState(nextDistrict);
+
+      // Check blocks for nextState & nextDistrict
+      const matchingBlocks = MOCK_BLOCKS.filter(
+        (b) =>
+          b.state.toLowerCase() === normState.toLowerCase() &&
+          b.district.toLowerCase() === nextDistrict.toLowerCase()
+      );
+
+      if (matchingBlocks.length > 0) {
+        setSelectedBlockIdState(matchingBlocks[0].id);
+      } else {
+        setSelectedBlockIdState("");
+      }
+
+      // Immediately clear stale predictions & observations
+      setAiPrediction(null);
+      setIngestedWeather(null);
+      setIngestedRainfall(null);
+      setIsLoadingDistricts(false);
+      setIsLoadingBlocks(false);
+      triggerBriefLoading("Updating state and districts...", 240);
+    },
+    [triggerBriefLoading]
+  );
+
+  const setSelectedDistrict = useCallback(
+    (nextDistrict: string) => {
+      const normDistrict = nextDistrict.trim();
+      setSelectedDistrictState(normDistrict);
+      setIsLoadingBlocks(true);
+
+      // Validate hierarchy in dev
+      validateLocationHierarchy(selectedState, normDistrict);
+
+      // Check blocks for selectedState & nextDistrict
+      const matchingBlocks = MOCK_BLOCKS.filter(
+        (b) =>
+          b.state.toLowerCase() === selectedState.toLowerCase() &&
+          b.district.toLowerCase() === normDistrict.toLowerCase()
+      );
+
+      if (matchingBlocks.length > 0) {
+        setSelectedBlockIdState(matchingBlocks[0].id);
+      } else {
+        // Clear block immediately when district has no blocks (e.g. Gorakhpur)
+        setSelectedBlockIdState("");
+      }
+
+      // Clear stale predictions & observations from previous district
+      setAiPrediction(null);
+      setIngestedWeather(null);
+      setIngestedRainfall(null);
+      setIsLoadingBlocks(false);
+      triggerBriefLoading("Syncing district blocks...", 240);
+    },
+    [selectedState, triggerBriefLoading]
+  );
+
+  const setSelectedBlockId = useCallback(
+    (id: string) => {
+      if (!id || id.trim() === "") {
+        setSelectedBlockIdState("");
+        setAiPrediction(null);
+        return;
+      }
+
+      const normId = id.trim().toLowerCase();
+      const validation = validateLocationHierarchy(
+        selectedState,
+        selectedDistrict,
+        normId
+      );
+
+      if (!validation.valid) {
+        console.warn(
+          `Cannot select block "${normId}": does not belong to ${selectedDistrict}, ${selectedState}`
+        );
+        setSelectedBlockIdState("");
+        setAiPrediction(null);
+        return;
+      }
+
+      setSelectedBlockIdState(normId);
+      triggerBriefLoading("Syncing block observations & AI forecast...", 220);
+    },
+    [selectedState, selectedDistrict, triggerBriefLoading]
+  );
+
   // Hydrate persisted read alerts & URL query params on mount
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -255,10 +434,42 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
     setReadAlertIds(persisted);
 
     const params = new URLSearchParams(window.location.search);
+    const qState = params.get("state");
+    const qDistrict = params.get("district");
     const qBlock = params.get("block")?.toLowerCase();
-    if (qBlock) {
-      setSelectedBlockIdState(qBlock);
+
+    let targetState = "Uttar Pradesh";
+    if (qState && STATE_DISTRICTS[qState]) {
+      targetState = qState;
+      setSelectedStateState(targetState);
     }
+
+    const validDistricts = STATE_DISTRICTS[targetState] || [];
+    let targetDistrict = validDistricts[0] || "Prayagraj";
+    if (qDistrict && validDistricts.includes(qDistrict)) {
+      targetDistrict = qDistrict;
+      setSelectedDistrictState(targetDistrict);
+    }
+
+    if (qBlock) {
+      // Validate that qBlock genuinely belongs to targetDistrict and targetState
+      const validation = validateLocationHierarchy(
+        targetState,
+        targetDistrict,
+        qBlock
+      );
+      if (validation.valid) {
+        setSelectedBlockIdState(qBlock);
+      } else {
+        const validBlocks = MOCK_BLOCKS.filter(
+          (b) =>
+            b.state.toLowerCase() === targetState.toLowerCase() &&
+            b.district.toLowerCase() === targetDistrict.toLowerCase()
+        );
+        setSelectedBlockIdState(validBlocks[0]?.id || "");
+      }
+    }
+
     const qHorizon = params.get("horizon")?.toUpperCase();
     if (qHorizon === "7" || qHorizon === "7D") setHorizonState("7D");
     if (qHorizon === "14" || qHorizon === "14D") setHorizonState("14D");
@@ -282,22 +493,33 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  // Synchronize with Supabase Service Layer whenever Block, Horizon, or Demo Scenario changes
+  // Synchronize with Supabase Service Layer whenever District, Block, Horizon, or Scenario changes
   useEffect(() => {
     let active = true;
 
     async function syncFromSupabaseServices() {
-      const [blocksRes, forecastRes, climateRes, alertsRes] = await Promise.all([
-        getBlocks(horizon, demoScenario),
-        getForecast(selectedBlockId, horizon, demoScenario),
-        getClimateIndices(demoScenario),
-        getAlerts(selectedBlockId, horizon, demoScenario),
-      ]);
+      setIsLoadingBlocks(true);
+      const [blocksRes, forecastRes, climateRes, alertsRes] =
+        await Promise.all([
+          getBlocks(horizon, demoScenario, selectedDistrict, selectedState),
+          selectedBlockId
+            ? getForecast(selectedBlockId, horizon, demoScenario)
+            : Promise.resolve({
+                ...EMPTY_FORECAST,
+                district: selectedDistrict,
+                state: selectedState,
+              }),
+          getClimateIndices(demoScenario),
+          selectedBlockId
+            ? getAlerts(selectedBlockId, horizon, demoScenario)
+            : Promise.resolve([]),
+        ]);
 
       if (!active) return;
       setServiceBlocks(blocksRes);
       setServiceForecast(forecastRes);
       setServiceClimate(climateRes);
+      setIsLoadingBlocks(false);
 
       const mergedReads: Record<string, boolean> = {
         ...getPersistedReadAlertMap(),
@@ -313,10 +535,16 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
     return () => {
       active = false;
     };
-  }, [selectedBlockId, horizon, demoScenario]);
+  }, [selectedState, selectedDistrict, selectedBlockId, horizon, demoScenario]);
 
   // Synchronize Real AI Model Health, Readiness Gate, Evaluation Metrics, and Block x Horizon AI Prediction
   const refreshAIPrediction = useCallback(async () => {
+    if (!selectedBlockId) {
+      setAiPrediction(null);
+      setAiUnavailableReason("No block selected for this district.");
+      return;
+    }
+
     const [healthRes, metricsRes, predRes] = await Promise.all([
       getModelHealth(),
       getModelMetrics(),
@@ -393,6 +621,12 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
       target: "all" | "weather" | "rainfall" | "climate" = "all",
       switchToLiveMode = false
     ) => {
+      if (!selectedBlockId) {
+        setIngestedWeather(null);
+        setIngestedRainfall(null);
+        return;
+      }
+
       setIsRefreshingExternalData(true);
       if (switchToLiveMode) {
         setDemoModeState(false);
@@ -416,12 +650,15 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
           setDataSourceStatuses((prev) => ({ ...prev, weather: wRes.status }));
         }
         if (rRes) {
-          if (rRes.latestObservation) setIngestedRainfall(rRes.latestObservation);
-          if (rRes.history.length > 0) setIngestedRainfallHistory(rRes.history);
+          if (rRes.latestObservation)
+            setIngestedRainfall(rRes.latestObservation);
+          if (rRes.history.length > 0)
+            setIngestedRainfallHistory(rRes.history);
           setDataSourceStatuses((prev) => ({ ...prev, rainfall: rRes.status }));
         }
         if (cRes) {
-          if (cRes.observations.length > 0) setIngestedClimate(cRes.observations);
+          if (cRes.observations.length > 0)
+            setIngestedClimate(cRes.observations);
           setDataSourceStatuses((prev) => ({ ...prev, climate: cRes.status }));
         }
 
@@ -484,18 +721,6 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const triggerBriefLoading = (message: string, durationMs = 240) => {
-    setLoadingMessage(message);
-    setTimeout(() => {
-      setLoadingMessage(null);
-    }, durationMs);
-  };
-
-  const setSelectedBlockId = (id: string) => {
-    setSelectedBlockIdState(id);
-    triggerBriefLoading("Syncing block observations & AI forecast...", 220);
-  };
-
   const setHorizon = (h: ForecastHorizon) => {
     setHorizonState(h);
     triggerBriefLoading("Updating forecast horizon...", 220);
@@ -520,7 +745,7 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
     triggerBriefLoading("Loading forecast...", 280);
   };
 
-  // Determine whether AI Forecast Mode is genuinely active (Requirement 27)
+  // Determine whether AI Forecast Mode is genuinely active
   const aiForecastActive = Boolean(
     !demoMode &&
       forecastEngineMode === "AI_FORECAST" &&
@@ -529,127 +754,207 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
       aiPrediction
   );
 
-  const baseAllBlocks =
-    serviceBlocks.length > 0
-      ? serviceBlocks
-      : getBlocksForScenarioAndHorizon(demoScenario, horizon);
+  // BASE BLOCKS: Strictly filtered by selectedState and selectedDistrict
+  // Never returns blocks belonging to District A when District B is selected
+  const districtFilteredBase: Block[] = useMemo(() => {
+    // 1. If serviceBlocks is loaded from locationService with district filter
+    const validServiceBlocks = serviceBlocks.filter(
+      (b) =>
+        b.state.toLowerCase() === selectedState.toLowerCase() &&
+        b.district.toLowerCase() === selectedDistrict.toLowerCase()
+    );
+    if (validServiceBlocks.length > 0) {
+      return validServiceBlocks;
+    }
 
-  // When AI Forecast Mode is active, apply the real calibrated ensemble probabilities to the active block
-  const allBlocks: Block[] = baseAllBlocks.map((b) => {
-    if (aiForecastActive && aiPrediction && b.id === selectedBlockId) {
-      const onsetPct = Math.round(aiPrediction.onset_probability * 100);
-      const falseOnsetPct = Math.round(
-        aiPrediction.false_onset_probability * 100
-      );
-      const drySpellPct = Math.round(aiPrediction.dry_spell_probability * 100);
-      const heavyRainPct = Math.round(
-        aiPrediction.heavy_rain_probability * 100
-      );
-      const expRain = Math.round(aiPrediction.expected_rainfall);
-      const anomPct = Math.round(aiPrediction.rainfall_anomaly);
+    // 2. Fallback scenario blocks filtered strictly by selectedState and selectedDistrict
+    const scenarioBlocks = getBlocksForScenarioAndHorizon(
+      demoScenario,
+      horizon
+    );
+    return scenarioBlocks.filter(
+      (b) =>
+        b.state.toLowerCase() === selectedState.toLowerCase() &&
+        b.district.toLowerCase() === selectedDistrict.toLowerCase()
+    );
+  }, [serviceBlocks, selectedState, selectedDistrict, demoScenario, horizon]);
 
+  // When AI Forecast Mode is active, apply real calibrated ensemble probabilities to the active block
+  const allBlocks: Block[] = useMemo(() => {
+    return districtFilteredBase.map((b) => {
+      if (aiForecastActive && aiPrediction && b.id === selectedBlockId) {
+        const onsetPct = Math.round(aiPrediction.onset_probability * 100);
+        const falseOnsetPct = Math.round(
+          aiPrediction.false_onset_probability * 100
+        );
+        const drySpellPct = Math.round(
+          aiPrediction.dry_spell_probability * 100
+        );
+        const heavyRainPct = Math.round(
+          aiPrediction.heavy_rain_probability * 100
+        );
+        const expRain = Math.round(aiPrediction.expected_rainfall);
+        const anomPct = Math.round(aiPrediction.rainfall_anomaly);
+
+        return {
+          ...b,
+          onsetProbability: onsetPct,
+          falseOnsetProbability: falseOnsetPct,
+          falseOnsetRisk: falseOnsetPct,
+          drySpellProbability: drySpellPct,
+          drySpellRisk: drySpellPct,
+          heavyRainProbability: heavyRainPct,
+          heavyRainfallRisk: heavyRainPct,
+          expectedRainfall: expRain,
+          expectedRainfallMm: expRain,
+          rainfallAnomaly: anomPct,
+          rainfallAnomalyPct: anomPct,
+        };
+      }
+      return b;
+    });
+  }, [districtFilteredBase, aiForecastActive, aiPrediction, selectedBlockId]);
+
+  const hasNoBlocksForDistrict = allBlocks.length === 0;
+
+  const selectedBlock: Block = useMemo(() => {
+    if (hasNoBlocksForDistrict) {
       return {
-        ...b,
-        onsetProbability: onsetPct,
-        falseOnsetProbability: falseOnsetPct,
-        falseOnsetRisk: falseOnsetPct,
-        drySpellProbability: drySpellPct,
-        drySpellRisk: drySpellPct,
-        heavyRainProbability: heavyRainPct,
-        heavyRainfallRisk: heavyRainPct,
-        expectedRainfall: expRain,
-        expectedRainfallMm: expRain,
-        rainfallAnomaly: anomPct,
-        rainfallAnomalyPct: anomPct,
+        ...EMPTY_BLOCK,
+        district: selectedDistrict,
+        state: selectedState,
+        name: `No blocks in ${selectedDistrict}`,
       };
     }
-    return b;
-  });
+    return (
+      allBlocks.find((b) => b.id === selectedBlockId) || allBlocks[0]
+    );
+  }, [allBlocks, hasNoBlocksForDistrict, selectedBlockId, selectedDistrict, selectedState]);
 
-  const selectedBlock =
-    allBlocks.find((b) => b.id === selectedBlockId) || allBlocks[0];
   const selectedCrop =
     MOCK_CROPS.find((c) => c.id === selectedCropId) || MOCK_CROPS[0];
 
-  const baseForecast =
-    serviceForecast &&
-    serviceForecast.blockId === selectedBlock.id &&
-    serviceForecast.horizon === horizon &&
-    serviceForecast.scenario === demoScenario
+  const baseForecast: Forecast = useMemo(() => {
+    if (hasNoBlocksForDistrict || !selectedBlock.id) {
+      return {
+        ...EMPTY_FORECAST,
+        district: selectedDistrict,
+        state: selectedState,
+      };
+    }
+    return serviceForecast &&
+      serviceForecast.blockId === selectedBlock.id &&
+      serviceForecast.horizon === horizon &&
+      serviceForecast.scenario === demoScenario
       ? serviceForecast
       : buildForecastForBlock(selectedBlock.id, horizon, demoScenario);
+  }, [
+    hasNoBlocksForDistrict,
+    selectedBlock.id,
+    selectedDistrict,
+    selectedState,
+    serviceForecast,
+    horizon,
+    demoScenario,
+  ]);
 
-  const currentForecast: Forecast =
-    aiForecastActive && aiPrediction
-      ? {
-          ...baseForecast,
-          onsetProbability: Math.round(aiPrediction.onset_probability * 100),
-          falseOnsetRisk: Math.round(
-            aiPrediction.false_onset_probability * 100
-          ),
-          falseOnsetWarningProbability: Math.round(
-            aiPrediction.false_onset_probability * 100
-          ),
-          breakMonsoonRisk: Math.round(
-            aiPrediction.dry_spell_probability * 100
-          ),
-          heavyRainfallRisk: Math.round(
-            aiPrediction.heavy_rain_probability * 100
-          ),
-          expectedRainfallMm: Math.round(aiPrediction.expected_rainfall),
-          rainfallAnomalyPct: Math.round(aiPrediction.rainfall_anomaly),
-        }
-      : baseForecast;
+  const currentForecast: Forecast = useMemo(() => {
+    if (hasNoBlocksForDistrict || !selectedBlock.id) {
+      return {
+        ...EMPTY_FORECAST,
+        district: selectedDistrict,
+        state: selectedState,
+      };
+    }
+    if (aiForecastActive && aiPrediction) {
+      return {
+        ...baseForecast,
+        onsetProbability: Math.round(aiPrediction.onset_probability * 100),
+        falseOnsetRisk: Math.round(
+          aiPrediction.false_onset_probability * 100
+        ),
+        falseOnsetWarningProbability: Math.round(
+          aiPrediction.false_onset_probability * 100
+        ),
+        breakMonsoonRisk: Math.round(
+          aiPrediction.dry_spell_probability * 100
+        ),
+        heavyRainfallRisk: Math.round(
+          aiPrediction.heavy_rain_probability * 100
+        ),
+        expectedRainfallMm: Math.round(aiPrediction.expected_rainfall),
+        rainfallAnomalyPct: Math.round(aiPrediction.rainfall_anomaly),
+      };
+    }
+    return baseForecast;
+  }, [
+    hasNoBlocksForDistrict,
+    selectedBlock.id,
+    selectedDistrict,
+    selectedState,
+    aiForecastActive,
+    aiPrediction,
+    baseForecast,
+  ]);
 
   const defaultDemoClimateIndices =
     serviceClimate.length > 0
       ? serviceClimate
       : getClimateIndicesForScenario(demoScenario);
 
-  const demoRain = Number((selectedBlock.expectedRainfallMm / 14).toFixed(1));
+  const demoRain = selectedBlock.expectedRainfallMm
+    ? Number((selectedBlock.expectedRainfallMm / 14).toFixed(1))
+    : 0;
   const demoHumidity = Math.min(
     98,
     Math.max(40, selectedBlock.soilMoisture + 18)
   );
+
   const demoWeatherObservation: WeatherObservationRow = {
-    id: `demo-wobs-${selectedBlock.id}`,
-    location_id: selectedBlock.id,
+    id: `demo-wobs-${selectedBlock.id || "none"}`,
+    location_id: selectedBlock.id || "",
     observation_date: new Date().toISOString().slice(0, 10),
-    precipitation_mm: demoRain,
-    rainfall_mm: demoRain,
-    temperature_c: 33.4,
-    humidity: demoHumidity,
-    humidity_pct: demoHumidity,
+    precipitation_mm: hasNoBlocksForDistrict ? 0 : demoRain,
+    rainfall_mm: hasNoBlocksForDistrict ? 0 : demoRain,
+    temperature_c: hasNoBlocksForDistrict ? 0 : 33.4,
+    humidity: hasNoBlocksForDistrict ? 0 : demoHumidity,
+    humidity_pct: hasNoBlocksForDistrict ? 0 : demoHumidity,
     pressure: 1002.4,
     pressure_hpa: 1002.4,
-    wind_speed: 14.2,
-    wind_speed_kmh: 14.2,
-    source: "Simulated Block Telemetry (Demo Mode)",
-    quality_flag: "estimated",
+    wind_speed: hasNoBlocksForDistrict ? 0 : 14.2,
+    wind_speed_kmh: hasNoBlocksForDistrict ? 0 : 14.2,
+    source: hasNoBlocksForDistrict
+      ? "No Observation Data"
+      : "Simulated Block Telemetry (Demo Mode)",
+    quality_flag: hasNoBlocksForDistrict ? "missing" : "estimated",
     created_at: new Date().toISOString(),
   };
 
   const weatherObservation: WeatherObservationRow =
     !demoMode && ingestedWeather && ingestedWeather.location_id === selectedBlock.id
       ? ingestedWeather
-      : !demoMode && ingestedWeather
+      : !demoMode && ingestedWeather && selectedBlock.id
       ? { ...ingestedWeather, location_id: selectedBlock.id }
       : demoWeatherObservation;
 
   const demoRainfallObservation: RainfallObservationRow = {
-    id: `demo-robs-${selectedBlock.id}`,
-    location_id: selectedBlock.id,
+    id: `demo-robs-${selectedBlock.id || "none"}`,
+    location_id: selectedBlock.id || "",
     observation_date: new Date().toISOString().slice(0, 10),
-    rainfall_mm: Number((selectedBlock.expectedRainfallMm / 14).toFixed(1)),
-    normal_rainfall_mm: 8.5,
-    anomaly_percent: selectedBlock.rainfallAnomaly,
-    source: "Simulated IMD Baseline (Demo Mode)",
-    quality_flag: "estimated",
+    rainfall_mm: hasNoBlocksForDistrict
+      ? 0
+      : Number((selectedBlock.expectedRainfallMm / 14).toFixed(1)),
+    normal_rainfall_mm: hasNoBlocksForDistrict ? 0 : 8.5,
+    anomaly_percent: hasNoBlocksForDistrict ? 0 : selectedBlock.rainfallAnomaly,
+    source: hasNoBlocksForDistrict
+      ? "No Observation Data"
+      : "Simulated IMD Baseline (Demo Mode)",
+    quality_flag: hasNoBlocksForDistrict ? "missing" : "estimated",
     created_at: new Date().toISOString(),
   };
 
   const rainfallObservation: RainfallObservationRow =
-    !demoMode && ingestedRainfall
+    !demoMode && ingestedRainfall && selectedBlock.id
       ? ingestedRainfall
       : demoRainfallObservation;
 
@@ -699,11 +1004,11 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
   const currentScenarioMeta =
     DEMO_SCENARIOS.find((s) => s.id === demoScenario) || DEMO_SCENARIOS[1];
 
-  const rawAlerts = generateDynamicAlertsForState(
-    selectedBlock,
-    allBlocks,
-    horizon
-  );
+  const rawAlerts =
+    !hasNoBlocksForDistrict && selectedBlock.id
+      ? generateDynamicAlertsForState(selectedBlock, allBlocks, horizon)
+      : [];
+
   const alerts: Alert[] = rawAlerts.map((a) => ({
     ...a,
     read: Boolean(readAlertIds[a.id]),
@@ -728,6 +1033,12 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
     setToasts((prev) => prev.filter((t) => t.id !== id));
   };
 
+  const availableStates = useMemo(() => Object.keys(STATE_DISTRICTS), []);
+  const availableDistricts = useMemo(
+    () => STATE_DISTRICTS[selectedState] || [],
+    [selectedState]
+  );
+
   return (
     <MonsoonContext.Provider
       value={{
@@ -738,6 +1049,13 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
         selectedBlockId,
         setSelectedBlockId,
         selectedBlock,
+        availableStates,
+        availableDistricts,
+        availableBlocks: allBlocks,
+        allBlocks,
+        hasNoBlocksForDistrict,
+        isLoadingDistricts,
+        isLoadingBlocks,
         horizon,
         setHorizon,
         selectedRiskType,
@@ -769,7 +1087,6 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
         toasts,
         triggerToast,
         dismissToast,
-        allBlocks,
         allCrops: MOCK_CROPS,
         stateDistricts: STATE_DISTRICTS,
         liveDataActive: !demoMode && liveDataActive,

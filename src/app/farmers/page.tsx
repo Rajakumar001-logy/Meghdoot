@@ -514,13 +514,24 @@ export default function FarmerCommunicationPage() {
                 <select
                   value={selectedBlockId}
                   onChange={(e) => setSelectedBlockId(e.target.value)}
-                  className="w-full rounded-xl border border-emerald-300 bg-emerald-50/70 px-3 py-2 text-xs font-extrabold text-emerald-950"
+                  disabled={allBlocks.length === 0}
+                  className={`w-full rounded-xl border px-3 py-2 text-xs font-extrabold ${
+                    allBlocks.length === 0
+                      ? "border-slate-200 bg-slate-100 text-slate-400 cursor-not-allowed font-normal"
+                      : "border-emerald-300 bg-emerald-50/70 text-emerald-950"
+                  }`}
                 >
-                  {allBlocks.map((b) => (
-                    <option key={b.id} value={b.id}>
-                      {b.name} ({b.drySpellProbability}% dry risk)
+                  {allBlocks.length === 0 ? (
+                    <option value="" disabled>
+                      No blocks available for this district
                     </option>
-                  ))}
+                  ) : (
+                    allBlocks.map((b) => (
+                      <option key={b.id} value={b.id}>
+                        {b.name} ({b.drySpellProbability}% dry risk)
+                      </option>
+                    ))
+                  )}
                 </select>
               </div>
 

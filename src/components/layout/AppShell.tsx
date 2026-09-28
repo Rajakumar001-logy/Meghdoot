@@ -101,6 +101,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     setForecastEngineMode,
     aiForecastActive,
     modelHealth,
+    isLoadingDistricts,
+    isLoadingBlocks,
+    hasNoBlocksForDistrict,
   } = useMonsoon();
 
   const unreadAlertsCount = alerts.filter((a) => !a.read).length;
@@ -220,29 +223,39 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </span>
           </div>
           <div>
-            <p className="text-sm font-bold text-white">{selectedBlock.name}</p>
+            <p className="text-sm font-bold text-white">
+              {hasNoBlocksForDistrict
+                ? `No blocks in ${selectedDistrict}`
+                : selectedBlock.name}
+            </p>
             <p className="text-xs text-emerald-200/75">
               {selectedDistrict}, {selectedState}
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-2 pt-1 border-t border-emerald-800/60 text-xs">
-            <div>
-              <span className="text-emerald-300/70 block text-[10px]">
-                Onset Prob.
-              </span>
-              <span className="font-bold text-emerald-300">
-                {selectedBlock.onsetProbability}%
-              </span>
+          {!hasNoBlocksForDistrict && selectedBlock.id ? (
+            <div className="grid grid-cols-2 gap-2 pt-1 border-t border-emerald-800/60 text-xs">
+              <div>
+                <span className="text-emerald-300/70 block text-[10px]">
+                  Onset Prob.
+                </span>
+                <span className="font-bold text-emerald-300">
+                  {selectedBlock.onsetProbability}%
+                </span>
+              </div>
+              <div>
+                <span className="text-emerald-300/70 block text-[10px]">
+                  False Onset Risk
+                </span>
+                <span className="font-bold text-amber-300">
+                  {selectedBlock.falseOnsetProbability}%
+                </span>
+              </div>
             </div>
-            <div>
-              <span className="text-emerald-300/70 block text-[10px]">
-                False Onset Risk
-              </span>
-              <span className="font-bold text-amber-300">
-                {selectedBlock.falseOnsetProbability}%
-              </span>
+          ) : (
+            <div className="pt-1 border-t border-emerald-800/60 text-[11px] text-emerald-300/70">
+              No block telemetry registered
             </div>
-          </div>
+          )}
         </div>
       </aside>
 
@@ -316,14 +329,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 <MapPin className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
                 <select
                   value={selectedState}
-                  onChange={(e) => {
-                    const nextState = e.target.value;
-                    setSelectedState(nextState);
-                    const districts = stateDistricts[nextState] || [
-                      "Prayagraj",
-                    ];
-                    setSelectedDistrict(districts[0]);
-                  }}
+                  onChange={(e) => setSelectedState(e.target.value)}
                   aria-label="Select State"
                   className="bg-transparent font-semibold text-slate-700 focus:outline-none cursor-pointer"
                 >
@@ -342,11 +348,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   aria-label="Select District"
                   className="bg-transparent font-semibold text-slate-700 focus:outline-none cursor-pointer"
                 >
-                  {(stateDistricts[selectedState] || ["Prayagraj"]).map((d) => (
-                    <option key={d} value={d}>
-                      {d}
-                    </option>
-                  ))}
+                  {isLoadingDistricts ? (
+                    <option disabled>Loading districts...</option>
+                  ) : (
+                    (stateDistricts[selectedState] || ["Prayagraj"]).map((d) => (
+                      <option key={d} value={d}>
+                        {d}
+                      </option>
+                    ))
+                  )}
                 </select>
 
                 <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
@@ -354,14 +364,27 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 <select
                   value={selectedBlockId}
                   onChange={(e) => setSelectedBlockId(e.target.value)}
+                  disabled={isLoadingBlocks || hasNoBlocksForDistrict}
                   aria-label="Select Block"
-                  className="bg-emerald-50 text-emerald-900 font-bold px-2 py-0.5 rounded-md border border-emerald-200 focus:outline-none cursor-pointer"
+                  className={`px-2 py-0.5 rounded-md border focus:outline-none cursor-pointer font-bold ${
+                    hasNoBlocksForDistrict
+                      ? "bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed text-xs font-normal"
+                      : "bg-emerald-50 text-emerald-900 border-emerald-200"
+                  }`}
                 >
-                  {allBlocks.map((b) => (
-                    <option key={b.id} value={b.id}>
-                      {b.name}
+                  {isLoadingBlocks ? (
+                    <option disabled>Loading blocks...</option>
+                  ) : hasNoBlocksForDistrict ? (
+                    <option value="" disabled>
+                      No blocks available for this district
                     </option>
-                  ))}
+                  ) : (
+                    allBlocks.map((b) => (
+                      <option key={b.id} value={b.id}>
+                        {b.name}
+                      </option>
+                    ))
+                  )}
                 </select>
               </div>
 

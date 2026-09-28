@@ -231,11 +231,17 @@ export function evaluateCropAdvisories(
     : "paddy";
   const crop = CROP_PROFILES[cropId];
 
-  const locationId = (inputs.location_id || "karchhana").toLowerCase();
+  const locationId = (
+    inputs.location_id !== undefined && inputs.location_id !== null
+      ? inputs.location_id
+      : ""
+  ).toLowerCase();
   const blockName =
     inputs.block_name ||
-    MOCK_BLOCKS.find((b) => b.id === locationId)?.name ||
-    locationId.charAt(0).toUpperCase() + locationId.slice(1);
+    (locationId
+      ? MOCK_BLOCKS.find((b) => b.id === locationId)?.name ||
+        locationId.charAt(0).toUpperCase() + locationId.slice(1)
+      : "No Block Selected");
   const district = inputs.district || "Prayagraj";
   const state = inputs.state || "Uttar Pradesh";
 
@@ -1520,6 +1526,8 @@ export function computeOfficerDistrictOverview(params: {
   mode: AdvisorySourceMode;
   cropId: SupportedCropId;
   scenario?: DemoScenarioId;
+  district?: string;
+  state?: string;
   aiBlockMap?: Record<
     string,
     {
@@ -1538,10 +1546,20 @@ export function computeOfficerDistrictOverview(params: {
     }
   >;
 }): OfficerBlockAdvisorySummary[] {
-  const scenarioBlocks = getBlocksForScenarioAndHorizon(
+  let scenarioBlocks = getBlocksForScenarioAndHorizon(
     params.scenario || "scenario_b",
     params.horizon
   );
+  if (params.state) {
+    scenarioBlocks = scenarioBlocks.filter(
+      (b) => b.state.toLowerCase() === params.state!.toLowerCase()
+    );
+  }
+  if (params.district) {
+    scenarioBlocks = scenarioBlocks.filter(
+      (b) => b.district.toLowerCase() === params.district!.toLowerCase()
+    );
+  }
   const hDays = (parseInt(params.horizon.replace("D", ""), 10) || 14) as
     | 7
     | 14
