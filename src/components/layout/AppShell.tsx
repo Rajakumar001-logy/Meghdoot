@@ -88,6 +88,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     demoMode,
     setDemoMode,
     allBlocks,
+    availableStates,
+    availableDistricts,
+    isLoadingDistricts,
+    isLoadingBlocks,
+    hasNoBlocksForDistrict,
     stateDistricts,
     alerts,
     loadingMessage,
@@ -101,9 +106,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     setForecastEngineMode,
     aiForecastActive,
     modelHealth,
-    isLoadingDistricts,
-    isLoadingBlocks,
-    hasNoBlocksForDistrict,
   } = useMonsoon();
 
   const unreadAlertsCount = alerts.filter((a) => !a.read).length;
@@ -233,24 +235,35 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </p>
           </div>
           {!hasNoBlocksForDistrict && selectedBlock.id ? (
-            <div className="grid grid-cols-2 gap-2 pt-1 border-t border-emerald-800/60 text-xs">
-              <div>
-                <span className="text-emerald-300/70 block text-[10px]">
-                  Onset Prob.
-                </span>
-                <span className="font-bold text-emerald-300">
-                  {selectedBlock.onsetProbability}%
-                </span>
+            selectedDistrict.toLowerCase() === "prayagraj" || selectedBlock.dataCoverage === "FULL" ? (
+              <div className="grid grid-cols-2 gap-2 pt-1 border-t border-emerald-800/60 text-xs">
+                <div>
+                  <span className="text-emerald-300/70 block text-[10px]">
+                    Onset Prob.
+                  </span>
+                  <span className="font-bold text-emerald-300">
+                    {selectedBlock.onsetProbability}%
+                  </span>
+                </div>
+                <div>
+                  <span className="text-emerald-300/70 block text-[10px]">
+                    False Onset Risk
+                  </span>
+                  <span className="font-bold text-amber-300">
+                    {selectedBlock.falseOnsetProbability}%
+                  </span>
+                </div>
               </div>
-              <div>
-                <span className="text-emerald-300/70 block text-[10px]">
-                  False Onset Risk
+            ) : (
+              <div className="pt-1.5 border-t border-emerald-800/60 space-y-1">
+                <span className="inline-block px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 text-[9px] font-bold uppercase tracking-wider">
+                  LOCATION AVAILABLE
                 </span>
-                <span className="font-bold text-amber-300">
-                  {selectedBlock.falseOnsetProbability}%
-                </span>
+                <p className="text-[11px] text-emerald-200/80 leading-tight">
+                  AI forecast unavailable for this location
+                </p>
               </div>
-            </div>
+            )
           ) : (
             <div className="pt-1 border-t border-emerald-800/60 text-[11px] text-emerald-300/70">
               No block telemetry registered
@@ -333,7 +346,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   aria-label="Select State"
                   className="bg-transparent font-semibold text-slate-700 focus:outline-none cursor-pointer"
                 >
-                  {Object.keys(stateDistricts).map((st) => (
+                  {availableStates.map((st) => (
                     <option key={st} value={st}>
                       {st}
                     </option>
@@ -351,7 +364,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   {isLoadingDistricts ? (
                     <option disabled>Loading districts...</option>
                   ) : (
-                    (stateDistricts[selectedState] || ["Prayagraj"]).map((d) => (
+                    availableDistricts.map((d) => (
                       <option key={d} value={d}>
                         {d}
                       </option>

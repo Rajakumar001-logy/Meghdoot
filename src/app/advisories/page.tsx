@@ -65,6 +65,8 @@ export default function CropAdvisoryPage() {
     forecastEngineMode,
     setForecastEngineMode,
     allBlocks,
+    availableStates,
+    availableDistricts,
     allCrops,
     stateDistricts,
     hasNoBlocksForDistrict,
@@ -449,7 +451,7 @@ export default function CropAdvisoryPage() {
               onChange={(e) => setSelectedState(e.target.value)}
               className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-900"
             >
-              {Object.keys(stateDistricts).map((st) => (
+              {availableStates.map((st) => (
                 <option key={st} value={st}>
                   {st}
                 </option>
@@ -469,7 +471,7 @@ export default function CropAdvisoryPage() {
               {isLoadingDistricts ? (
                 <option disabled>Loading districts...</option>
               ) : (
-                (stateDistricts[selectedState] || ["Prayagraj"]).map((d) => (
+                availableDistricts.map((d) => (
                   <option key={d} value={d}>
                     {d}
                   </option>
@@ -626,9 +628,40 @@ export default function CropAdvisoryPage() {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* LEFT 8 COLS: BLOCK + CROP + CURRENT CONDITIONS + AI OUTLOOK + DETERMINISTIC ADVISORIES */}
-        <div className="lg:col-span-8 space-y-5">
+        <div className="space-y-5">
+          {selectedDistrict.toLowerCase() !== "prayagraj" && selectedBlock.dataCoverage !== "FULL" && (
+            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <div className="p-2 rounded-xl bg-sky-100 text-sky-800 shrink-0">
+                  <Info className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold uppercase tracking-wider text-sky-900">
+                      LOCATION AVAILABLE
+                    </span>
+                    <span className="px-2 py-0.5 rounded bg-sky-200 text-sky-900 text-[10px] font-extrabold uppercase">
+                      AI Forecast Unavailable
+                    </span>
+                  </div>
+                  <p className="text-xs text-sky-900/80 mt-1">
+                    <strong>{selectedBlock.name}</strong> ({selectedDistrict}, {selectedState}) is registered in India&apos;s official Local Government Directory (LGD). Sub-seasonal AI predictions and crop advisories are active for the <strong>Prayagraj</strong> demonstration pilot.
+                  </p>
+                </div>
+              </div>
+              <Link
+                href="/advisories?state=Uttar+Pradesh&district=Prayagraj&block=karchhana"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-800 hover:bg-sky-900 text-white text-xs font-bold shrink-0 transition"
+              >
+                Switch to Prayagraj Pilot
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* LEFT 8 COLS: BLOCK + CROP + CURRENT CONDITIONS + AI OUTLOOK + DETERMINISTIC ADVISORIES */}
+          <div className="lg:col-span-8 space-y-5">
           {/* Header Banner */}
           <div className="bg-white rounded-2xl border border-slate-200/90 shadow-soft overflow-hidden">
             <div className="bg-gradient-to-r from-[#0B3B24] to-emerald-900 text-white p-5 sm:p-6 flex flex-wrap items-center justify-between gap-4">
@@ -1013,7 +1046,8 @@ export default function CropAdvisoryPage() {
           </div>
         </div>
       </div>
-      )}
+    </div>
+  )}
 
       {/* 5. AGRICULTURAL / WEATHER OFFICER DISTRICT TRIAGE VIEW (Section 20) */}
       <div className="bg-white rounded-2xl border border-slate-200/90 shadow-soft p-5 sm:p-6 space-y-4">

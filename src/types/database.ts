@@ -16,6 +16,13 @@ export type DataQualityFlag =
 
 export type DataSourceHealthStatus = "healthy" | "degraded" | "offline";
 
+export type LocationDataCoverage =
+  | "FULL"
+  | "WEATHER_ONLY"
+  | "LOCATION_ONLY"
+  | "GIS_ONLY"
+  | "AI_FORECAST_UNAVAILABLE";
+
 export interface LocationRow {
   id: string;
   state: string;
@@ -25,7 +32,18 @@ export interface LocationRow {
   latitude: number;
   longitude: number;
   soil_type: string;
+  state_lgd_code?: number | null;
+  state_name?: string | null;
+  district_lgd_code?: number | null;
+  district_name?: string | null;
+  block_lgd_code?: number | null;
+  block_name?: string | null;
+  is_active?: boolean;
+  data_coverage?: LocationDataCoverage;
+  geometry_source?: string | null;
+  geometry_version?: string | null;
   created_at: string;
+  updated_at?: string;
 }
 
 export interface ClimateIndexRow {

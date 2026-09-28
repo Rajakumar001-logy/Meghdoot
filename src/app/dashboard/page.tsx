@@ -189,6 +189,37 @@ export default function DashboardPage() {
         </div>
       </div>
 
+      {/* SECTION 15 UX: LOCATION AVAILABLE & DATA COVERAGE STATUS */}
+      {selectedDistrict.toLowerCase() !== "prayagraj" && selectedBlock.dataCoverage !== "FULL" && (
+        <div className="bg-white rounded-2xl border border-sky-200 shadow-soft p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
+          <div className="flex items-start gap-3">
+            <div className="p-2 rounded-xl bg-sky-100 text-sky-800 shrink-0">
+              <MapPin className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold uppercase tracking-wider text-sky-950">
+                  LOCATION AVAILABLE (LGD Administrative Directory)
+                </span>
+                <span className="px-2 py-0.5 rounded bg-sky-100 text-sky-900 text-[10px] font-extrabold uppercase">
+                  LGD Code: {selectedBlock.blockLgdCode || "Registered"}
+                </span>
+              </div>
+              <p className="text-slate-600 mt-1">
+                Active Block: <strong>{selectedBlock.name}</strong> ({selectedDistrict}, {selectedState}). AI Forecast: <em>Not available for this location</em> • Weather Observations: <em>Weather data unavailable</em> • GIS Boundaries: <em>GIS boundary unavailable</em>.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/dashboard?state=Uttar+Pradesh&district=Prayagraj&block=karchhana"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0B3B24] hover:bg-emerald-900 text-white font-bold shrink-0 transition"
+          >
+            Switch to Prayagraj Pilot
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      )}
+
       {/* WEATHER OBSERVATION PANEL: "Latest Local Conditions" (Requirement 8) */}
       <div className="bg-white rounded-2xl border border-emerald-200/90 shadow-soft p-5 sm:p-6 space-y-4">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-slate-100 pb-4">

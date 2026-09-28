@@ -96,6 +96,7 @@ const HORIZON_LIST: { id: ForecastHorizon; label: string; window: string }[] = [
 
 export default function ForecastPage() {
   const {
+    selectedDistrict,
     selectedBlock,
     horizon,
     setHorizon,
@@ -136,6 +137,64 @@ export default function ForecastPage() {
           <ArrowRight className="w-3.5 h-3.5" />
         </Link>
       </div>
+
+      {/* SECTION 15 UX: LOCATION AVAILABLE & COVERAGE STATUS */}
+      {selectedDistrict.toLowerCase() !== "prayagraj" && selectedBlock.dataCoverage !== "FULL" && (
+        <div className="bg-white rounded-2xl border border-sky-200 shadow-soft p-6 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-800 text-[10px] font-extrabold uppercase tracking-wider">
+                  Location Status: LOCATION AVAILABLE
+                </span>
+                <span className="px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-800 text-[10px] font-extrabold uppercase tracking-wider">
+                  LGD Code: {selectedBlock.blockLgdCode || "Registered"}
+                </span>
+              </div>
+              <h2 className="text-xl font-extrabold text-slate-900 mt-1">
+                {selectedBlock.name} ({selectedBlock.district}, {selectedBlock.state})
+              </h2>
+            </div>
+            <Link
+              href="/forecast?state=Uttar+Pradesh&district=Prayagraj&block=karchhana"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#0B3B24] hover:bg-emerald-900 text-white text-xs font-bold transition self-start sm:self-auto"
+            >
+              View Active Prayagraj Pilot
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <span className="text-slate-500 font-semibold block text-[11px]">AI Forecast</span>
+              <span className="font-extrabold text-slate-700 text-sm mt-0.5 block">
+                Not available for this location
+              </span>
+              <p className="text-[11px] text-slate-500 mt-1">
+                Model training calibrated on IMD 0.25° gridded Gangetic basin dataset.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <span className="text-slate-500 font-semibold block text-[11px]">Weather Observations</span>
+              <span className="font-extrabold text-slate-700 text-sm mt-0.5 block">
+                Weather data unavailable
+              </span>
+              <p className="text-[11px] text-slate-500 mt-1">
+                Automatic weather station (AWS) telemetry is pending block sensor binding.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <span className="text-slate-500 font-semibold block text-[11px]">GIS Spatial Boundary</span>
+              <span className="font-extrabold text-slate-700 text-sm mt-0.5 block">
+                GIS boundary unavailable
+              </span>
+              <p className="text-[11px] text-slate-500 mt-1">
+                Official WGS84 GeoJSON polygons are active for Prayagraj pilot.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 4 DYNAMIC HORIZON SELECTOR CARDS (7D / 14D / 21D / 30D) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

@@ -7,11 +7,37 @@ import { HyperlocalRiskMap } from "@/components/map/HyperlocalRiskMap";
 import { useMonsoon } from "@/context/MonsoonContext";
 
 export default function RiskMapPage() {
-  const { allBlocks, selectedBlockId, setSelectedBlockId, selectedBlock } =
-    useMonsoon();
+  const {
+    allBlocks,
+    selectedBlockId,
+    setSelectedBlockId,
+    selectedBlock,
+    selectedDistrict,
+    selectedState,
+  } = useMonsoon();
 
   return (
     <div className="space-y-6">
+      {/* GIS BOUNDARY STATUS BANNER FOR NON-PRAYAGRAJ LOCATIONS */}
+      {selectedDistrict.toLowerCase() !== "prayagraj" && (
+        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+            <span className="px-2 py-0.5 rounded bg-amber-200 text-amber-950 font-bold shrink-0">
+              GIS boundary unavailable
+            </span>
+            <span className="text-amber-900">
+              Official GeoJSON block polygon boundaries are active for the <strong>Prayagraj pilot</strong>. For <strong>{selectedDistrict}</strong> ({selectedState}), administrative blocks are available in the directory without fabricated boundaries.
+            </span>
+          </div>
+          <Link
+            href="/map?state=Uttar+Pradesh&district=Prayagraj&block=karchhana"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-800 hover:bg-amber-900 text-white font-bold shrink-0 transition"
+          >
+            Switch to Prayagraj GIS Map
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      )}
       {/* PAGE HEADER */}
       <div className="bg-white rounded-2xl border border-slate-200/90 shadow-soft p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>

@@ -61,6 +61,13 @@ export interface Panchayat {
   drySpellRisk: number;
 }
 
+export type LocationDataCoverage =
+  | "FULL"
+  | "WEATHER_ONLY"
+  | "LOCATION_ONLY"
+  | "GIS_ONLY"
+  | "AI_FORECAST_UNAVAILABLE";
+
 export interface Block {
   id: string;
   name: string;
@@ -73,6 +80,11 @@ export interface Block {
   cultivatedAreaHa: number;
   soilType: string;
   irrigationCoverage: number; // %
+  // Official LGD and Coverage Metadata
+  dataCoverage?: LocationDataCoverage;
+  stateLgdCode?: number;
+  districtLgdCode?: number;
+  blockLgdCode?: number;
   // Standardized centralized block fields
   onsetProbability: number;
   falseOnsetProbability: number;
