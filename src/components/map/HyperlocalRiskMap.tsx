@@ -319,11 +319,11 @@ export function HyperlocalRiskMap({ compact = false }: { compact?: boolean }) {
         });
 
         L.tileLayer(
-          "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+          "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
           {
             attribution:
-              "&copy; OpenStreetMap &copy; CARTO • LGD / Census 2011 WGS84 (EPSG:4326)",
-            maxZoom: 16,
+              '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors',
+            maxZoom: 19,
           }
         ).addTo(map);
 
