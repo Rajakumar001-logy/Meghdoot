@@ -97,147 +97,79 @@ export default function LandingPage() {
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3B24] via-[#0F4C2E] to-[#0B3B24] text-white py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            {/* Left 7 Cols: Hero Copy */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-900/80 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-                <span>AI-Powered Hyperlocal Monsoon Intelligence</span>
-              </div>
-
-              <div className="space-y-3">
-                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-emerald-300">
-                  MEGHDOOT AI
-                </p>
-                <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.1]">
-                  “Predict the Monsoon.{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-sky-300">
-                    Protect the Harvest.”
-                  </span>
-                </h1>
-              </div>
-
-              <p className="text-base sm:text-lg text-emerald-100/90 max-w-2xl leading-relaxed">
-                Block-level probabilistic monsoon intelligence that converts
-                climate and weather signals into crop-specific agricultural
-                decision support.
-              </p>
-
-              {/* Primary CTAs */}
-              <div className="flex flex-wrap items-center gap-3.5 pt-2">
-                <Link
-                  href="/dashboard"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-[#0B3B24] font-extrabold text-sm shadow-lg transition"
-                >
-                  Open Dashboard
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/forecast"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/25 font-bold text-sm transition"
-                >
-                  Explore Forecast
-                </Link>
-                <Link
-                  href="/map"
-                  className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl text-emerald-200 hover:text-white font-semibold text-xs transition"
-                >
-                  <MapIcon className="w-4 h-4" />
-                  Live Block Risk Map
-                </Link>
-              </div>
-
-              {/* Quick Telemetry Pills */}
-              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-emerald-800/70 max-w-xl">
-                <div>
-                  <span className="text-2xl font-extrabold text-white block">
-                    128
-                  </span>
-                  <span className="text-xs text-emerald-200/80">
-                    Blocks Monitored
-                  </span>
-                </div>
-                <div>
-                  <span className="text-2xl font-extrabold text-amber-300 block">
-                    7D–30D
-                  </span>
-                  <span className="text-xs text-emerald-200/80">
-                    Sub-Seasonal Horizons
-                  </span>
-                </div>
-                <div>
-                  <span className="text-2xl font-extrabold text-sky-300 block">
-                    12,540+
-                  </span>
-                  <span className="text-xs text-emerald-200/80">
-                    Farmers Reached (UP)
-                  </span>
-                </div>
-              </div>
+          <div className="max-w-3xl space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-900/80 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+              <span>AI-Powered Hyperlocal Monsoon Intelligence</span>
             </div>
 
-            {/* Right 5 Cols: Probability -> Risk -> Action Live Card Preview */}
-            <div className="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-2xl border border-emerald-400/30 p-6 space-y-4 shadow-2xl">
-              <div className="flex items-center justify-between border-b border-white/15 pb-3">
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-300 block">
-                    Live Decision Translation Engine
-                  </span>
-                  <h3 className="text-base font-bold text-white">
-                    Prayagraj • Karchhana &amp; Phulpur Cluster
-                  </h3>
-                </div>
-                <span className="px-2.5 py-1 rounded-md bg-amber-400 text-slate-950 text-[10px] font-extrabold uppercase">
-                  14D Horizon
+            <div className="space-y-3">
+              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-emerald-300">
+                MEGHDOOT AI
+              </p>
+              <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.1]">
+                “Predict the Monsoon.{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-sky-300">
+                  Protect the Harvest.”
+                </span>
+              </h1>
+            </div>
+
+            <p className="text-base sm:text-lg text-emerald-100/90 max-w-2xl leading-relaxed">
+              Block-level probabilistic monsoon intelligence that converts
+              climate and weather signals into crop-specific agricultural
+              decision support.
+            </p>
+
+            {/* Primary CTAs */}
+            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+              <Link
+                href="/dashboard"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-[#0B3B24] font-extrabold text-sm shadow-lg transition"
+              >
+                Open Dashboard
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/forecast"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/25 font-bold text-sm transition"
+              >
+                Explore Forecast
+              </Link>
+              <Link
+                href="/map"
+                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl text-emerald-200 hover:text-white font-semibold text-xs transition"
+              >
+                <MapIcon className="w-4 h-4" />
+                Live Block Risk Map
+              </Link>
+            </div>
+
+            {/* Quick Telemetry Pills */}
+            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-emerald-800/70 max-w-xl">
+              <div>
+                <span className="text-2xl font-extrabold text-white block">
+                  128
+                </span>
+                <span className="text-xs text-emerald-200/80">
+                  Blocks Monitored
                 </span>
               </div>
-
-              {/* Example 1: Onset Probability -> Risk -> Action */}
-              <div className="p-3.5 rounded-xl bg-emerald-950/80 border border-emerald-600/40 space-y-2">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-emerald-300">
-                    78% Onset Probability (15–19 June)
-                  </span>
-                  <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-200 text-[10px] font-bold">
-                    Favorable
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-white font-semibold">
-                  <span>Favorable sowing window</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-300">
-                    Prepare nursery &amp; canal storage
-                  </span>
-                </div>
+              <div>
+                <span className="text-2xl font-extrabold text-amber-300 block">
+                  7D–30D
+                </span>
+                <span className="text-xs text-emerald-200/80">
+                  Sub-Seasonal Horizons
+                </span>
               </div>
-
-              {/* Example 2: False Onset / Dry Spell Probability -> Risk -> Action */}
-              <div className="p-3.5 rounded-xl bg-red-950/60 border border-amber-400/50 space-y-2">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-amber-300">
-                    62% Break-Monsoon / 68% False Onset
-                  </span>
-                  <span className="px-2 py-0.5 rounded bg-amber-400 text-slate-950 text-[10px] font-extrabold">
-                    Elevated Risk
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-white font-semibold">
-                  <span>High moisture-stress risk (8–11d)</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-amber-300" />
-                  <span className="text-amber-200">
-                    Delay sowing 5–7d / prep irrigation
-                  </span>
-                </div>
-              </div>
-
-              <div className="pt-2 flex items-center justify-between text-xs text-emerald-200/80">
-                <span>Models: XGBoost + LSTM + Calibration</span>
-                <Link
-                  href="/dashboard"
-                  className="font-bold text-emerald-300 hover:underline flex items-center gap-1"
-                >
-                  Open Officer Console <ArrowRight className="w-3 h-3" />
-                </Link>
+              <div>
+                <span className="text-2xl font-extrabold text-sky-300 block">
+                  12,540+
+                </span>
+                <span className="text-xs text-emerald-200/80">
+                  Farmers Reached (UP)
+                </span>
               </div>
             </div>
           </div>
