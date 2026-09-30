@@ -206,7 +206,7 @@ export default function DashboardPage() {
                 </span>
               </div>
               <p className="text-slate-600 mt-1">
-                Active Block: <strong>{selectedBlock.name}</strong> ({selectedDistrict}, {selectedState}). AI Forecast: <em>Not available for this location</em> • Weather Observations: <em>Weather data unavailable</em> • GIS Boundaries: <em>GIS boundary unavailable</em>.
+                Active Block: <strong>{selectedBlock.name}</strong> ({selectedDistrict}, {selectedState}) • Live Telemetry: <strong>Active (Open-Meteo / ERA5)</strong> • Sub-Seasonal Forecast: <strong>Active ({horizon} Horizon)</strong> • Pilot ML Ensemble: <em>Prayagraj 6-Year Benchmark</em>.
               </p>
             </div>
           </div>

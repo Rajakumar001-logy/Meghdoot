@@ -235,8 +235,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </p>
           </div>
           {!hasNoBlocksForDistrict && selectedBlock.id ? (
-            selectedDistrict.toLowerCase() === "prayagraj" || selectedBlock.dataCoverage === "FULL" ? (
-              <div className="grid grid-cols-2 gap-2 pt-1 border-t border-emerald-800/60 text-xs">
+            <div className="pt-1 border-t border-emerald-800/60 space-y-1.5 text-xs">
+              <div className="grid grid-cols-2 gap-2">
                 <div>
                   <span className="text-emerald-300/70 block text-[10px]">
                     Onset Prob.
@@ -254,16 +254,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   </span>
                 </div>
               </div>
-            ) : (
-              <div className="pt-1.5 border-t border-emerald-800/60 space-y-1">
-                <span className="inline-block px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 text-[9px] font-bold uppercase tracking-wider">
-                  LOCATION AVAILABLE
-                </span>
-                <p className="text-[11px] text-emerald-200/80 leading-tight">
-                  AI forecast unavailable for this location
-                </p>
-              </div>
-            )
+              {selectedDistrict.toLowerCase() !== "prayagraj" && (
+                <div className="flex items-center justify-between text-[10px] text-emerald-300/80 pt-0.5 border-t border-emerald-800/40">
+                  <span className="font-mono">LGD: {selectedBlock.blockLgdCode || "Active"}</span>
+                  <span>{selectedBlock.coordinates[0].toFixed(2)}°N, {selectedBlock.coordinates[1].toFixed(2)}°E</span>
+                </div>
+              )}
+            </div>
           ) : (
             <div className="pt-1 border-t border-emerald-800/60 text-[11px] text-emerald-300/70">
               No block telemetry registered

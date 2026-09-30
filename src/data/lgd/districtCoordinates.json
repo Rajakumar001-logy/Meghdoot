@@ -1,0 +1,6086 @@
+{
+  "andaman and nicobar islands:nicobars": [
+    8.0,
+    93.5
+  ],
+  "nicobars": [
+    8.0,
+    93.5
+  ],
+  "andaman and nicobar islands:north and middle andaman": [
+    12.841,
+    92.8692
+  ],
+  "north and middle andaman": [
+    12.841,
+    92.8692
+  ],
+  "andaman and nicobar islands:south andamans": [
+    11.7851,
+    92.8886
+  ],
+  "south andamans": [
+    11.7851,
+    92.8886
+  ],
+  "andhra pradesh:alluri sitharama raju": [
+    15.9679,
+    79.6
+  ],
+  "alluri sitharama raju": [
+    15.9679,
+    79.6
+  ],
+  "andhra pradesh:anakapalli": [
+    16.1229,
+    79.5
+  ],
+  "anakapalli": [
+    16.1229,
+    79.5
+  ],
+  "andhra pradesh:anantapur": [
+    14.6835,
+    77.582
+  ],
+  "anantapur": [
+    14.6835,
+    77.582
+  ],
+  "andhra pradesh:annamayya": [
+    15.8379,
+    79.795
+  ],
+  "annamayya": [
+    15.8379,
+    79.795
+  ],
+  "andhra pradesh:bapatla": [
+    16.1179,
+    79.775
+  ],
+  "bapatla": [
+    16.1179,
+    79.775
+  ],
+  "andhra pradesh:chittoor": [
+    13.206,
+    79.0883
+  ],
+  "chittoor": [
+    13.206,
+    79.0883
+  ],
+  "andhra pradesh:east godavari": [
+    16.9604,
+    82.2381
+  ],
+  "east godavari": [
+    16.9604,
+    82.2381
+  ],
+  "andhra pradesh:eluru": [
+    15.8129,
+    79.945
+  ],
+  "eluru": [
+    15.8129,
+    79.945
+  ],
+  "andhra pradesh:guntur": [
+    16.2997,
+    80.4573
+  ],
+  "guntur": [
+    16.2997,
+    80.4573
+  ],
+  "andhra pradesh:kakinada": [
+    16.0179,
+    79.725
+  ],
+  "kakinada": [
+    16.0179,
+    79.725
+  ],
+  "andhra pradesh:konaseema": [
+    16.1329,
+    79.75
+  ],
+  "konaseema": [
+    16.1329,
+    79.75
+  ],
+  "andhra pradesh:krishna": [
+    16.1875,
+    81.1389
+  ],
+  "krishna": [
+    16.1875,
+    81.1389
+  ],
+  "andhra pradesh:kurnool": [
+    15.8255,
+    78.0301
+  ],
+  "kurnool": [
+    15.8255,
+    78.0301
+  ],
+  "andhra pradesh:nandyal": [
+    15.7179,
+    79.595
+  ],
+  "nandyal": [
+    15.7179,
+    79.595
+  ],
+  "andhra pradesh:ntr": [
+    16.1129,
+    79.745
+  ],
+  "ntr": [
+    16.1129,
+    79.745
+  ],
+  "andhra pradesh:palnadu": [
+    15.9679,
+    79.895
+  ],
+  "palnadu": [
+    15.9679,
+    79.895
+  ],
+  "andhra pradesh:parvathipuram manyam": [
+    16.0729,
+    79.54
+  ],
+  "parvathipuram manyam": [
+    16.0729,
+    79.54
+  ],
+  "andhra pradesh:prakasam": [
+    15.5176,
+    80.0599
+  ],
+  "prakasam": [
+    15.5176,
+    80.0599
+  ],
+  "andhra pradesh:spsr nellore": [
+    14.0833,
+    79.5833
+  ],
+  "spsr nellore": [
+    14.0833,
+    79.5833
+  ],
+  "andhra pradesh:sri sathya sai": [
+    15.9879,
+    79.925
+  ],
+  "sri sathya sai": [
+    15.9879,
+    79.925
+  ],
+  "andhra pradesh:srikakulam": [
+    18.2989,
+    83.8975
+  ],
+  "srikakulam": [
+    18.2989,
+    83.8975
+  ],
+  "andhra pradesh:tirupati": [
+    15.9029,
+    79.81
+  ],
+  "tirupati": [
+    15.9029,
+    79.81
+  ],
+  "andhra pradesh:visakhapatanam": [
+    15.9329,
+    79.675
+  ],
+  "visakhapatanam": [
+    15.9329,
+    79.675
+  ],
+  "andhra pradesh:vizianagaram": [
+    18.1182,
+    83.418
+  ],
+  "vizianagaram": [
+    18.1182,
+    83.418
+  ],
+  "andhra pradesh:west godavari": [
+    16.7131,
+    81.1044
+  ],
+  "west godavari": [
+    16.7131,
+    81.1044
+  ],
+  "andhra pradesh:y.s.r.": [
+    13.8746,
+    79.5388
+  ],
+  "y.s.r.": [
+    13.8746,
+    79.5388
+  ],
+  "arunachal pradesh:anjaw": [
+    28.0414,
+    96.8348
+  ],
+  "anjaw": [
+    28.0414,
+    96.8348
+  ],
+  "arunachal pradesh:changlang": [
+    27.3742,
+    96.3545
+  ],
+  "changlang": [
+    27.3742,
+    96.3545
+  ],
+  "arunachal pradesh:dibang valley": [
+    28.8576,
+    95.9118
+  ],
+  "dibang valley": [
+    28.8576,
+    95.9118
+  ],
+  "arunachal pradesh:east kameng": [
+    27.5998,
+    92.9221
+  ],
+  "east kameng": [
+    27.5998,
+    92.9221
+  ],
+  "arunachal pradesh:east siang": [
+    28.0493,
+    95.3444
+  ],
+  "east siang": [
+    28.0493,
+    95.3444
+  ],
+  "arunachal pradesh:kamle": [
+    27.7779,
+    94.123
+  ],
+  "kamle": [
+    27.7779,
+    94.123
+  ],
+  "arunachal pradesh:kra daadi": [
+    27.9977,
+    93.7019
+  ],
+  "kra daadi": [
+    27.9977,
+    93.7019
+  ],
+  "arunachal pradesh:kurung kumey": [
+    28.0072,
+    93.2072
+  ],
+  "kurung kumey": [
+    28.0072,
+    93.2072
+  ],
+  "arunachal pradesh:leparada": [
+    27.9355,
+    94.7115
+  ],
+  "leparada": [
+    27.9355,
+    94.7115
+  ],
+  "arunachal pradesh:lohit": [
+    27.8883,
+    96.3434
+  ],
+  "lohit": [
+    27.8883,
+    96.3434
+  ],
+  "arunachal pradesh:longding": [
+    26.8623,
+    95.3269
+  ],
+  "longding": [
+    26.8623,
+    95.3269
+  ],
+  "arunachal pradesh:lower dibang valley": [
+    28.2543,
+    95.8734
+  ],
+  "lower dibang valley": [
+    28.2543,
+    95.8734
+  ],
+  "arunachal pradesh:lower siang": [
+    27.7778,
+    94.6868
+  ],
+  "lower siang": [
+    27.7778,
+    94.6868
+  ],
+  "arunachal pradesh:lower subansiri": [
+    27.5602,
+    93.7834
+  ],
+  "lower subansiri": [
+    27.5602,
+    93.7834
+  ],
+  "arunachal pradesh:namsai": [
+    27.6654,
+    95.8773
+  ],
+  "namsai": [
+    27.6654,
+    95.8773
+  ],
+  "arunachal pradesh:pakke kessang": [
+    27.1152,
+    93.061
+  ],
+  "pakke kessang": [
+    27.1152,
+    93.061
+  ],
+  "arunachal pradesh:papum pare": [
+    27.3098,
+    93.6048
+  ],
+  "papum pare": [
+    27.3098,
+    93.6048
+  ],
+  "arunachal pradesh:shi yomi": [
+    29.2039,
+    94.2924
+  ],
+  "shi yomi": [
+    29.2039,
+    94.2924
+  ],
+  "arunachal pradesh:siang": [
+    28.4209,
+    94.8166
+  ],
+  "siang": [
+    28.4209,
+    94.8166
+  ],
+  "arunachal pradesh:tawang": [
+    28.453,
+    94.4778
+  ],
+  "tawang": [
+    28.453,
+    94.4778
+  ],
+  "arunachal pradesh:tirap": [
+    27.0302,
+    95.5389
+  ],
+  "tirap": [
+    27.0302,
+    95.5389
+  ],
+  "arunachal pradesh:upper siang": [
+    28.8209,
+    94.9256
+  ],
+  "upper siang": [
+    28.8209,
+    94.9256
+  ],
+  "arunachal pradesh:upper subansiri": [
+    28.3257,
+    93.9014
+  ],
+  "upper subansiri": [
+    28.3257,
+    93.9014
+  ],
+  "arunachal pradesh:west kameng": [
+    27.2953,
+    92.3864
+  ],
+  "west kameng": [
+    27.2953,
+    92.3864
+  ],
+  "arunachal pradesh:west siang": [
+    28.1835,
+    94.6213
+  ],
+  "west siang": [
+    28.1835,
+    94.6213
+  ],
+  "assam:bajali": [
+    26.4406,
+    93.1326
+  ],
+  "bajali": [
+    26.4406,
+    93.1326
+  ],
+  "assam:baksa": [
+    26.6471,
+    91.2866
+  ],
+  "baksa": [
+    26.6471,
+    91.2866
+  ],
+  "assam:barpeta": [
+    26.3128,
+    91.0025
+  ],
+  "barpeta": [
+    26.3128,
+    91.0025
+  ],
+  "assam:biswanath": [
+    26.7438,
+    93.1624
+  ],
+  "biswanath": [
+    26.7438,
+    93.1624
+  ],
+  "assam:bongaigaon": [
+    26.4694,
+    90.5608
+  ],
+  "bongaigaon": [
+    26.4694,
+    90.5608
+  ],
+  "assam:cachar": [
+    24.8114,
+    92.8541
+  ],
+  "cachar": [
+    24.8114,
+    92.8541
+  ],
+  "assam:charaideo": [
+    27.0588,
+    95.0461
+  ],
+  "charaideo": [
+    27.0588,
+    95.0461
+  ],
+  "assam:chirang": [
+    26.6519,
+    90.6269
+  ],
+  "chirang": [
+    26.6519,
+    90.6269
+  ],
+  "assam:darrang": [
+    26.473,
+    92.0297
+  ],
+  "darrang": [
+    26.473,
+    92.0297
+  ],
+  "assam:dhemaji": [
+    27.4751,
+    94.5616
+  ],
+  "dhemaji": [
+    27.4751,
+    94.5616
+  ],
+  "assam:dhubri": [
+    26.0257,
+    89.9721
+  ],
+  "dhubri": [
+    26.0257,
+    89.9721
+  ],
+  "assam:dibrugarh": [
+    27.4844,
+    94.9231
+  ],
+  "dibrugarh": [
+    27.4844,
+    94.9231
+  ],
+  "assam:dima hasao": [
+    25.3773,
+    93.0329
+  ],
+  "dima hasao": [
+    25.3773,
+    93.0329
+  ],
+  "assam:goalpara": [
+    26.1621,
+    90.6229
+  ],
+  "goalpara": [
+    26.1621,
+    90.6229
+  ],
+  "assam:golaghat": [
+    26.5072,
+    93.9736
+  ],
+  "golaghat": [
+    26.5072,
+    93.9736
+  ],
+  "assam:hailakandi": [
+    24.6788,
+    92.5654
+  ],
+  "hailakandi": [
+    24.6788,
+    92.5654
+  ],
+  "assam:hojai": [
+    26.0032,
+    92.8538
+  ],
+  "hojai": [
+    26.0032,
+    92.8538
+  ],
+  "assam:jorhat": [
+    26.7676,
+    94.2065
+  ],
+  "jorhat": [
+    26.7676,
+    94.2065
+  ],
+  "assam:kamrup": [
+    26.1052,
+    91.4013
+  ],
+  "kamrup": [
+    26.1052,
+    91.4013
+  ],
+  "assam:kamrup metro": [
+    26.2956,
+    93.0826
+  ],
+  "kamrup metro": [
+    26.2956,
+    93.0826
+  ],
+  "assam:karbi anglong": [
+    26.0,
+    93.5
+  ],
+  "karbi anglong": [
+    26.0,
+    93.5
+  ],
+  "assam:karimganj": [
+    24.8601,
+    92.3765
+  ],
+  "karimganj": [
+    24.8601,
+    92.3765
+  ],
+  "assam:kokrajhar": [
+    26.404,
+    90.2698
+  ],
+  "kokrajhar": [
+    26.404,
+    90.2698
+  ],
+  "assam:lakhimpur": [
+    27.9482,
+    80.7793
+  ],
+  "lakhimpur": [
+    27.9482,
+    80.7793
+  ],
+  "assam:majuli": [
+    26.9627,
+    94.162
+  ],
+  "majuli": [
+    26.9627,
+    94.162
+  ],
+  "assam:marigaon": [
+    26.2521,
+    92.3416
+  ],
+  "marigaon": [
+    26.2521,
+    92.3416
+  ],
+  "assam:nagaon": [
+    26.3495,
+    92.6846
+  ],
+  "nagaon": [
+    26.3495,
+    92.6846
+  ],
+  "assam:nalbari": [
+    26.4446,
+    91.4382
+  ],
+  "nalbari": [
+    26.4446,
+    91.4382
+  ],
+  "assam:sivasagar": [
+    26.9899,
+    94.6401
+  ],
+  "sivasagar": [
+    26.9899,
+    94.6401
+  ],
+  "assam:sonitpur": [
+    26.784,
+    92.7061
+  ],
+  "sonitpur": [
+    26.784,
+    92.7061
+  ],
+  "assam:south salmara mancachar": [
+    25.7089,
+    89.8887
+  ],
+  "south salmara mancachar": [
+    25.7089,
+    89.8887
+  ],
+  "assam:tamulpur": [
+    26.1006,
+    93.1476
+  ],
+  "tamulpur": [
+    26.1006,
+    93.1476
+  ],
+  "assam:tinsukia": [
+    27.4877,
+    95.3568
+  ],
+  "tinsukia": [
+    27.4877,
+    95.3568
+  ],
+  "assam:udalguri": [
+    26.7447,
+    92.0944
+  ],
+  "udalguri": [
+    26.7447,
+    92.0944
+  ],
+  "assam:west karbi anglong": [
+    25.8529,
+    92.5338
+  ],
+  "west karbi anglong": [
+    25.8529,
+    92.5338
+  ],
+  "bihar:araria": [
+    26.1329,
+    87.457
+  ],
+  "araria": [
+    26.1329,
+    87.457
+  ],
+  "bihar:arwal": [
+    25.2455,
+    84.6638
+  ],
+  "arwal": [
+    25.2455,
+    84.6638
+  ],
+  "bihar:aurangabad": [
+    19.8702,
+    75.346
+  ],
+  "aurangabad": [
+    19.8702,
+    75.346
+  ],
+  "bihar:banka": [
+    24.8854,
+    86.924
+  ],
+  "banka": [
+    24.8854,
+    86.924
+  ],
+  "bihar:begusarai": [
+    25.4244,
+    86.1337
+  ],
+  "begusarai": [
+    25.4244,
+    86.1337
+  ],
+  "bihar:bhagalpur": [
+    25.2445,
+    86.9718
+  ],
+  "bhagalpur": [
+    25.2445,
+    86.9718
+  ],
+  "bihar:bhojpur": [
+    25.474,
+    84.5365
+  ],
+  "bhojpur": [
+    25.474,
+    84.5365
+  ],
+  "bihar:buxar": [
+    25.5723,
+    83.9721
+  ],
+  "buxar": [
+    25.5723,
+    83.9721
+  ],
+  "bihar:darbhanga": [
+    26.1552,
+    85.8904
+  ],
+  "darbhanga": [
+    26.1552,
+    85.8904
+  ],
+  "bihar:gaya": [
+    24.785,
+    84.9927
+  ],
+  "gaya": [
+    24.785,
+    84.9927
+  ],
+  "bihar:gopalganj": [
+    26.4664,
+    84.4428
+  ],
+  "gopalganj": [
+    26.4664,
+    84.4428
+  ],
+  "bihar:jamui": [
+    24.9214,
+    86.2254
+  ],
+  "jamui": [
+    24.9214,
+    86.2254
+  ],
+  "bihar:jehanabad": [
+    25.2134,
+    84.9853
+  ],
+  "jehanabad": [
+    25.2134,
+    84.9853
+  ],
+  "bihar:kaimur (bhabua)": [
+    25.047,
+    83.6055
+  ],
+  "kaimur (bhabua)": [
+    25.047,
+    83.6055
+  ],
+  "bihar:katihar": [
+    25.5385,
+    87.5704
+  ],
+  "katihar": [
+    25.5385,
+    87.5704
+  ],
+  "bihar:khagaria": [
+    25.511,
+    86.4725
+  ],
+  "khagaria": [
+    25.511,
+    86.4725
+  ],
+  "bihar:kishanganj": [
+    26.1026,
+    87.9431
+  ],
+  "kishanganj": [
+    26.1026,
+    87.9431
+  ],
+  "bihar:lakhisarai": [
+    25.1677,
+    86.0956
+  ],
+  "lakhisarai": [
+    25.1677,
+    86.0956
+  ],
+  "bihar:madhepura": [
+    25.9164,
+    86.7934
+  ],
+  "madhepura": [
+    25.9164,
+    86.7934
+  ],
+  "bihar:madhubani": [
+    26.9638,
+    84.1334
+  ],
+  "madhubani": [
+    26.9638,
+    84.1334
+  ],
+  "bihar:munger": [
+    25.3656,
+    86.4877
+  ],
+  "munger": [
+    25.3656,
+    86.4877
+  ],
+  "bihar:muzaffarpur": [
+    26.1575,
+    85.3188
+  ],
+  "muzaffarpur": [
+    26.1575,
+    85.3188
+  ],
+  "bihar:nalanda": [
+    25.1259,
+    85.4537
+  ],
+  "nalanda": [
+    25.1259,
+    85.4537
+  ],
+  "bihar:nawada": [
+    24.8867,
+    85.5439
+  ],
+  "nawada": [
+    24.8867,
+    85.5439
+  ],
+  "bihar:pashchim champaran": [
+    27.0794,
+    84.3421
+  ],
+  "pashchim champaran": [
+    27.0794,
+    84.3421
+  ],
+  "bihar:patna": [
+    25.6013,
+    85.1375
+  ],
+  "patna": [
+    25.6013,
+    85.1375
+  ],
+  "bihar:purbi champaran": [
+    26.5833,
+    84.8333
+  ],
+  "purbi champaran": [
+    26.5833,
+    84.8333
+  ],
+  "bihar:purnia": [
+    25.7769,
+    87.4744
+  ],
+  "purnia": [
+    25.7769,
+    87.4744
+  ],
+  "bihar:rohtas": [
+    24.6932,
+    84.0027
+  ],
+  "rohtas": [
+    24.6932,
+    84.0027
+  ],
+  "bihar:saharsa": [
+    25.8772,
+    86.5928
+  ],
+  "saharsa": [
+    25.8772,
+    86.5928
+  ],
+  "bihar:samastipur": [
+    25.8636,
+    85.7787
+  ],
+  "samastipur": [
+    25.8636,
+    85.7787
+  ],
+  "bihar:saran": [
+    25.9204,
+    84.811
+  ],
+  "saran": [
+    25.9204,
+    84.811
+  ],
+  "bihar:sheikhpura": [
+    25.1419,
+    85.8628
+  ],
+  "sheikhpura": [
+    25.1419,
+    85.8628
+  ],
+  "bihar:sheohar": [
+    26.5137,
+    85.2945
+  ],
+  "sheohar": [
+    26.5137,
+    85.2945
+  ],
+  "bihar:sitamarhi": [
+    26.5797,
+    85.5093
+  ],
+  "sitamarhi": [
+    26.5797,
+    85.5093
+  ],
+  "bihar:siwan": [
+    26.221,
+    84.3561
+  ],
+  "siwan": [
+    26.221,
+    84.3561
+  ],
+  "bihar:supaul": [
+    26.1153,
+    86.5954
+  ],
+  "supaul": [
+    26.1153,
+    86.5954
+  ],
+  "bihar:vaishali": [
+    26.0046,
+    85.0791
+  ],
+  "vaishali": [
+    26.0046,
+    85.0791
+  ],
+  "chandigarh:chandigarh": [
+    30.7036,
+    76.7897
+  ],
+  "chandigarh": [
+    30.7036,
+    76.7897
+  ],
+  "chhattisgarh:balod": [
+    20.7269,
+    81.2054
+  ],
+  "balod": [
+    20.7269,
+    81.2054
+  ],
+  "chhattisgarh:baloda bazar": [
+    21.6571,
+    82.1597
+  ],
+  "baloda bazar": [
+    21.6571,
+    82.1597
+  ],
+  "chhattisgarh:balrampur": [
+    21.3087,
+    81.7211
+  ],
+  "balrampur": [
+    26.8767,
+    80.8012
+  ],
+  "chhattisgarh:bastar": [
+    19.2076,
+    81.9341
+  ],
+  "bastar": [
+    19.2076,
+    81.9341
+  ],
+  "chhattisgarh:bemetara": [
+    21.7192,
+    81.5334
+  ],
+  "bemetara": [
+    21.7192,
+    81.5334
+  ],
+  "chhattisgarh:bijapur": [
+    16.8282,
+    75.7135
+  ],
+  "bijapur": [
+    16.8282,
+    75.7135
+  ],
+  "chhattisgarh:bilaspur": [
+    22.0785,
+    82.1402
+  ],
+  "bilaspur": [
+    22.0785,
+    82.1402
+  ],
+  "chhattisgarh:dantewada": [
+    18.9,
+    81.3482
+  ],
+  "dantewada": [
+    18.9,
+    81.3482
+  ],
+  "chhattisgarh:dhamtari": [
+    20.7065,
+    81.5494
+  ],
+  "dhamtari": [
+    20.7065,
+    81.5494
+  ],
+  "chhattisgarh:durg": [
+    21.1992,
+    81.2897
+  ],
+  "durg": [
+    21.1992,
+    81.2897
+  ],
+  "chhattisgarh:gariyaband": [
+    20.6342,
+    82.0613
+  ],
+  "gariyaband": [
+    20.6342,
+    82.0613
+  ],
+  "chhattisgarh:gaurella pendra marwahi": [
+    21.0387,
+    81.9911
+  ],
+  "gaurella pendra marwahi": [
+    21.0387,
+    81.9911
+  ],
+  "chhattisgarh:janjgir-champa": [
+    21.9206,
+    82.5568
+  ],
+  "janjgir-champa": [
+    21.9206,
+    82.5568
+  ],
+  "chhattisgarh:jashpur": [
+    22.8876,
+    84.1384
+  ],
+  "jashpur": [
+    22.8876,
+    84.1384
+  ],
+  "chhattisgarh:kabirdham": [
+    22.0909,
+    81.2248
+  ],
+  "kabirdham": [
+    22.0909,
+    81.2248
+  ],
+  "chhattisgarh:kanker": [
+    20.2734,
+    81.4929
+  ],
+  "kanker": [
+    20.2734,
+    81.4929
+  ],
+  "chhattisgarh:khairgarh chhuikhadan gandai": [
+    21.3687,
+    81.9361
+  ],
+  "khairgarh chhuikhadan gandai": [
+    21.3687,
+    81.9361
+  ],
+  "chhattisgarh:kondagaon": [
+    19.5874,
+    81.6616
+  ],
+  "kondagaon": [
+    19.5874,
+    81.6616
+  ],
+  "chhattisgarh:korba": [
+    22.3458,
+    82.6963
+  ],
+  "korba": [
+    22.3458,
+    82.6963
+  ],
+  "chhattisgarh:korea": [
+    21.2537,
+    81.7911
+  ],
+  "korea": [
+    21.2537,
+    81.7911
+  ],
+  "chhattisgarh:mahasamund": [
+    21.1111,
+    82.0956
+  ],
+  "mahasamund": [
+    21.1111,
+    82.0956
+  ],
+  "chhattisgarh:manendragarh chirimiri bharatpur": [
+    21.0587,
+    81.9861
+  ],
+  "manendragarh chirimiri bharatpur": [
+    21.0587,
+    81.9861
+  ],
+  "chhattisgarh:mohla manpur ambagarh chouki": [
+    21.1487,
+    81.6261
+  ],
+  "mohla manpur ambagarh chouki": [
+    21.1487,
+    81.6261
+  ],
+  "chhattisgarh:mungeli": [
+    22.0662,
+    81.6862
+  ],
+  "mungeli": [
+    22.0662,
+    81.6862
+  ],
+  "chhattisgarh:narayanpur": [
+    26.9509,
+    93.8563
+  ],
+  "narayanpur": [
+    26.9509,
+    93.8563
+  ],
+  "chhattisgarh:raigarh": [
+    21.8962,
+    83.3941
+  ],
+  "raigarh": [
+    21.8962,
+    83.3941
+  ],
+  "chhattisgarh:raipur": [
+    21.244,
+    81.6348
+  ],
+  "raipur": [
+    21.244,
+    81.6348
+  ],
+  "chhattisgarh:rajnandgaon": [
+    21.0975,
+    81.0344
+  ],
+  "rajnandgaon": [
+    21.0975,
+    81.0344
+  ],
+  "chhattisgarh:sakti": [
+    21.4987,
+    81.8761
+  ],
+  "sakti": [
+    21.4987,
+    81.8761
+  ],
+  "chhattisgarh:sarangarh bilaigarh": [
+    21.0587,
+    82.0861
+  ],
+  "sarangarh bilaigarh": [
+    21.0587,
+    82.0861
+  ],
+  "chhattisgarh:sukma": [
+    18.3924,
+    81.6588
+  ],
+  "sukma": [
+    18.3924,
+    81.6588
+  ],
+  "chhattisgarh:surajpur": [
+    23.2139,
+    82.8682
+  ],
+  "surajpur": [
+    23.2139,
+    82.8682
+  ],
+  "chhattisgarh:surguja": [
+    22.9406,
+    83.1235
+  ],
+  "surguja": [
+    22.9406,
+    83.1235
+  ],
+  "dadra and nagar haveli and daman and diu:dadra and nagar haveli": [
+    20.281,
+    73.0495
+  ],
+  "dadra and nagar haveli": [
+    20.281,
+    73.0495
+  ],
+  "dadra and nagar haveli and daman and diu:daman": [
+    20.4252,
+    72.8538
+  ],
+  "daman": [
+    20.4252,
+    72.8538
+  ],
+  "dadra and nagar haveli and daman and diu:diu": [
+    20.7157,
+    70.9476
+  ],
+  "diu": [
+    20.7157,
+    70.9476
+  ],
+  "delhi:central": [
+    28.5791,
+    77.1325
+  ],
+  "central": [
+    28.5791,
+    77.1325
+  ],
+  "delhi:east": [
+    28.8241,
+    77.1475
+  ],
+  "east": [
+    28.8241,
+    77.1475
+  ],
+  "delhi:new delhi": [
+    28.631,
+    77.2172
+  ],
+  "new delhi": [
+    28.631,
+    77.2172
+  ],
+  "delhi:north": [
+    28.5941,
+    77.1975
+  ],
+  "north": [
+    28.5941,
+    77.1975
+  ],
+  "delhi:north east": [
+    28.5491,
+    77.1725
+  ],
+  "north east": [
+    28.5491,
+    77.1725
+  ],
+  "delhi:north west": [
+    28.9191,
+    77.1675
+  ],
+  "north west": [
+    28.9191,
+    77.1675
+  ],
+  "delhi:shahdara": [
+    28.6801,
+    77.2951
+  ],
+  "shahdara": [
+    28.6801,
+    77.2951
+  ],
+  "delhi:south": [
+    28.4891,
+    77.1575
+  ],
+  "south": [
+    28.4891,
+    77.1575
+  ],
+  "delhi:south east": [
+    28.5991,
+    76.8975
+  ],
+  "south east": [
+    28.5991,
+    76.8975
+  ],
+  "delhi:south west": [
+    28.4541,
+    77.1925
+  ],
+  "south west": [
+    28.4541,
+    77.1925
+  ],
+  "delhi:west": [
+    28.7491,
+    77.1575
+  ],
+  "west": [
+    28.7491,
+    77.1575
+  ],
+  "goa:north goa": [
+    15.5501,
+    73.9821
+  ],
+  "north goa": [
+    15.5501,
+    73.9821
+  ],
+  "goa:south goa": [
+    15.1951,
+    74.1186
+  ],
+  "south goa": [
+    15.1951,
+    74.1186
+  ],
+  "gujarat:ahmadabad": [
+    23.0278,
+    72.6003
+  ],
+  "ahmadabad": [
+    23.0278,
+    72.6003
+  ],
+  "gujarat:amreli": [
+    21.6052,
+    71.2163
+  ],
+  "amreli": [
+    21.6052,
+    71.2163
+  ],
+  "gujarat:anand": [
+    22.5525,
+    72.9552
+  ],
+  "anand": [
+    22.5525,
+    72.9552
+  ],
+  "gujarat:arvalli": [
+    22.2637,
+    71.1974
+  ],
+  "arvalli": [
+    22.2637,
+    71.1974
+  ],
+  "gujarat:banas kantha": [
+    24.2839,
+    72.0332
+  ],
+  "banas kantha": [
+    24.2839,
+    72.0332
+  ],
+  "gujarat:bharuch": [
+    21.6948,
+    72.9805
+  ],
+  "bharuch": [
+    21.6948,
+    72.9805
+  ],
+  "gujarat:bhavnagar": [
+    21.7752,
+    72.1492
+  ],
+  "bhavnagar": [
+    21.7752,
+    72.1492
+  ],
+  "gujarat:botad": [
+    22.1692,
+    71.6667
+  ],
+  "botad": [
+    22.1692,
+    71.6667
+  ],
+  "gujarat:chhotaudepur": [
+    22.3133,
+    74.0152
+  ],
+  "chhotaudepur": [
+    22.3133,
+    74.0152
+  ],
+  "gujarat:dang": [
+    22.3637,
+    71.3874
+  ],
+  "dang": [
+    22.3637,
+    71.3874
+  ],
+  "gujarat:devbhumi dwarka": [
+    22.1285,
+    69.4555
+  ],
+  "devbhumi dwarka": [
+    22.1285,
+    69.4555
+  ],
+  "gujarat:dohad": [
+    22.8556,
+    74.2574
+  ],
+  "dohad": [
+    22.8556,
+    74.2574
+  ],
+  "gujarat:gandhinagar": [
+    23.2408,
+    72.6373
+  ],
+  "gandhinagar": [
+    23.2408,
+    72.6373
+  ],
+  "gujarat:gir somnath": [
+    20.9641,
+    70.7771
+  ],
+  "gir somnath": [
+    20.9641,
+    70.7771
+  ],
+  "gujarat:jamnagar": [
+    22.4696,
+    70.0736
+  ],
+  "jamnagar": [
+    22.4696,
+    70.0736
+  ],
+  "gujarat:junagadh": [
+    21.5197,
+    70.4598
+  ],
+  "junagadh": [
+    21.5197,
+    70.4598
+  ],
+  "gujarat:kachchh": [
+    23.624,
+    69.9588
+  ],
+  "kachchh": [
+    23.624,
+    69.9588
+  ],
+  "gujarat:kheda": [
+    22.7526,
+    72.6865
+  ],
+  "kheda": [
+    22.7526,
+    72.6865
+  ],
+  "gujarat:mahesana": [
+    23.606,
+    72.3756
+  ],
+  "mahesana": [
+    23.606,
+    72.3756
+  ],
+  "gujarat:mahisagar": [
+    23.1884,
+    73.6471
+  ],
+  "mahisagar": [
+    23.1884,
+    73.6471
+  ],
+  "gujarat:morbi": [
+    22.8078,
+    70.8235
+  ],
+  "morbi": [
+    22.8078,
+    70.8235
+  ],
+  "gujarat:narmada": [
+    22.1137,
+    71.2824
+  ],
+  "narmada": [
+    22.1137,
+    71.2824
+  ],
+  "gujarat:navsari": [
+    20.9402,
+    72.9389
+  ],
+  "navsari": [
+    20.9402,
+    72.9389
+  ],
+  "gujarat:panch mahals": [
+    22.7205,
+    73.6293
+  ],
+  "panch mahals": [
+    22.7205,
+    73.6293
+  ],
+  "gujarat:patan": [
+    23.8507,
+    72.1296
+  ],
+  "patan": [
+    23.8507,
+    72.1296
+  ],
+  "gujarat:porbandar": [
+    21.6448,
+    69.621
+  ],
+  "porbandar": [
+    21.6448,
+    69.621
+  ],
+  "gujarat:rajkot": [
+    22.2916,
+    70.7932
+  ],
+  "rajkot": [
+    22.2916,
+    70.7932
+  ],
+  "gujarat:sabar kantha": [
+    23.8073,
+    73.0353
+  ],
+  "sabar kantha": [
+    23.8073,
+    73.0353
+  ],
+  "gujarat:surat": [
+    21.1858,
+    72.8367
+  ],
+  "surat": [
+    21.1858,
+    72.8367
+  ],
+  "gujarat:surendranagar": [
+    22.7271,
+    71.6486
+  ],
+  "surendranagar": [
+    22.7271,
+    71.6486
+  ],
+  "gujarat:tapi": [
+    21.1764,
+    73.6194
+  ],
+  "tapi": [
+    21.1764,
+    73.6194
+  ],
+  "gujarat:vadodara": [
+    22.3095,
+    73.1799
+  ],
+  "vadodara": [
+    22.3095,
+    73.1799
+  ],
+  "gujarat:valsad": [
+    20.6065,
+    72.9314
+  ],
+  "valsad": [
+    20.6065,
+    72.9314
+  ],
+  "haryana:ambala": [
+    30.361,
+    76.7978
+  ],
+  "ambala": [
+    30.361,
+    76.7978
+  ],
+  "haryana:bhiwani": [
+    28.793,
+    76.1397
+  ],
+  "bhiwani": [
+    28.793,
+    76.1397
+  ],
+  "haryana:charki dadri": [
+    29.0838,
+    76.1106
+  ],
+  "charki dadri": [
+    29.0838,
+    76.1106
+  ],
+  "haryana:faridabad": [
+    28.3926,
+    77.3127
+  ],
+  "faridabad": [
+    28.3926,
+    77.3127
+  ],
+  "haryana:fatehabad": [
+    27.0272,
+    78.3007
+  ],
+  "fatehabad": [
+    27.0272,
+    78.3007
+  ],
+  "haryana:gurugram": [
+    28.4772,
+    77.0685
+  ],
+  "gurugram": [
+    28.4772,
+    77.0685
+  ],
+  "haryana:hisar": [
+    29.1539,
+    75.7229
+  ],
+  "hisar": [
+    29.1539,
+    75.7229
+  ],
+  "haryana:jhajjar": [
+    28.6077,
+    76.6525
+  ],
+  "jhajjar": [
+    28.6077,
+    76.6525
+  ],
+  "haryana:jind": [
+    29.3158,
+    76.315
+  ],
+  "jind": [
+    29.3158,
+    76.315
+  ],
+  "haryana:kaithal": [
+    29.7974,
+    76.3776
+  ],
+  "kaithal": [
+    29.7974,
+    76.3776
+  ],
+  "haryana:karnal": [
+    29.692,
+    76.9845
+  ],
+  "karnal": [
+    29.692,
+    76.9845
+  ],
+  "haryana:kurukshetra": [
+    29.9732,
+    76.8321
+  ],
+  "kurukshetra": [
+    29.9732,
+    76.8321
+  ],
+  "haryana:mahendragarh": [
+    23.2133,
+    82.1936
+  ],
+  "mahendragarh": [
+    23.2133,
+    82.1936
+  ],
+  "haryana:nuh": [
+    28.9538,
+    75.8706
+  ],
+  "nuh": [
+    28.9538,
+    75.8706
+  ],
+  "haryana:palwal": [
+    28.1426,
+    77.3344
+  ],
+  "palwal": [
+    28.1426,
+    77.3344
+  ],
+  "haryana:panchkula": [
+    30.7046,
+    76.8639
+  ],
+  "panchkula": [
+    30.7046,
+    76.8639
+  ],
+  "haryana:panipat": [
+    29.3875,
+    76.9682
+  ],
+  "panipat": [
+    29.3875,
+    76.9682
+  ],
+  "haryana:rewari": [
+    28.199,
+    76.6183
+  ],
+  "rewari": [
+    28.199,
+    76.6183
+  ],
+  "haryana:rohtak": [
+    28.8976,
+    76.5745
+  ],
+  "rohtak": [
+    28.8976,
+    76.5745
+  ],
+  "haryana:sirsa": [
+    29.5396,
+    75.031
+  ],
+  "sirsa": [
+    29.5396,
+    75.031
+  ],
+  "haryana:sonipat": [
+    28.9953,
+    77.0221
+  ],
+  "sonipat": [
+    28.9953,
+    77.0221
+  ],
+  "haryana:yamunanagar": [
+    30.128,
+    77.2837
+  ],
+  "yamunanagar": [
+    30.128,
+    77.2837
+  ],
+  "himachal pradesh:bilaspur": [
+    22.0785,
+    82.1402
+  ],
+  "himachal pradesh:chamba": [
+    32.5553,
+    76.1249
+  ],
+  "chamba": [
+    32.5553,
+    76.1249
+  ],
+  "himachal pradesh:hamirpur": [
+    25.9609,
+    80.1453
+  ],
+  "hamirpur": [
+    25.9609,
+    80.1453
+  ],
+  "himachal pradesh:kangra": [
+    32.1014,
+    76.2731
+  ],
+  "kangra": [
+    32.1014,
+    76.2731
+  ],
+  "himachal pradesh:kinnaur": [
+    31.5952,
+    78.4136
+  ],
+  "kinnaur": [
+    31.5952,
+    78.4136
+  ],
+  "himachal pradesh:kullu": [
+    31.9041,
+    77.4009
+  ],
+  "kullu": [
+    31.9041,
+    77.4009
+  ],
+  "himachal pradesh:lahul and spiti": [
+    32.4801,
+    77.6168
+  ],
+  "lahul and spiti": [
+    32.4801,
+    77.6168
+  ],
+  "himachal pradesh:mandi": [
+    30.8998,
+    76.9884
+  ],
+  "mandi": [
+    30.8998,
+    76.9884
+  ],
+  "himachal pradesh:shimla": [
+    31.1033,
+    77.1584
+  ],
+  "shimla": [
+    31.1033,
+    77.1584
+  ],
+  "himachal pradesh:sirmaur": [
+    30.6667,
+    77.4311
+  ],
+  "sirmaur": [
+    30.6667,
+    77.4311
+  ],
+  "himachal pradesh:solan": [
+    30.9189,
+    77.0976
+  ],
+  "solan": [
+    30.9189,
+    77.0976
+  ],
+  "himachal pradesh:una": [
+    31.1298,
+    77.0134
+  ],
+  "una": [
+    31.1298,
+    77.0134
+  ],
+  "jammu and kashmir:anantnag": [
+    33.7299,
+    75.1508
+  ],
+  "anantnag": [
+    33.7299,
+    75.1508
+  ],
+  "jammu and kashmir:bandipora": [
+    33.8882,
+    76.5162
+  ],
+  "bandipora": [
+    33.8882,
+    76.5162
+  ],
+  "jammu and kashmir:baramulla": [
+    34.1929,
+    74.3692
+  ],
+  "baramulla": [
+    34.1929,
+    74.3692
+  ],
+  "jammu and kashmir:budgam": [
+    34.0413,
+    74.7262
+  ],
+  "budgam": [
+    34.0413,
+    74.7262
+  ],
+  "jammu and kashmir:doda": [
+    33.1446,
+    75.5447
+  ],
+  "doda": [
+    33.1446,
+    75.5447
+  ],
+  "jammu and kashmir:ganderbal": [
+    34.2165,
+    74.7704
+  ],
+  "ganderbal": [
+    34.2165,
+    74.7704
+  ],
+  "jammu and kashmir:jammu": [
+    32.7027,
+    74.8784
+  ],
+  "jammu": [
+    32.7027,
+    74.8784
+  ],
+  "jammu and kashmir:kathua": [
+    32.3859,
+    75.5176
+  ],
+  "kathua": [
+    32.3859,
+    75.5176
+  ],
+  "jammu and kashmir:kishtwar": [
+    33.3162,
+    75.7651
+  ],
+  "kishtwar": [
+    33.3162,
+    75.7651
+  ],
+  "jammu and kashmir:kulgam": [
+    33.6451,
+    75.0177
+  ],
+  "kulgam": [
+    33.6451,
+    75.0177
+  ],
+  "jammu and kashmir:kupwara": [
+    34.5269,
+    74.2574
+  ],
+  "kupwara": [
+    34.5269,
+    74.2574
+  ],
+  "jammu and kashmir:poonch": [
+    33.7697,
+    74.0973
+  ],
+  "poonch": [
+    33.7697,
+    74.0973
+  ],
+  "jammu and kashmir:pulwama": [
+    33.8735,
+    74.8994
+  ],
+  "pulwama": [
+    33.8735,
+    74.8994
+  ],
+  "jammu and kashmir:rajouri": [
+    33.2439,
+    74.392
+  ],
+  "rajouri": [
+    33.2439,
+    74.392
+  ],
+  "jammu and kashmir:ramban": [
+    33.2415,
+    75.237
+  ],
+  "ramban": [
+    33.2415,
+    75.237
+  ],
+  "jammu and kashmir:reasi": [
+    33.082,
+    74.833
+  ],
+  "reasi": [
+    33.082,
+    74.833
+  ],
+  "jammu and kashmir:samba": [
+    32.6099,
+    75.0575
+  ],
+  "samba": [
+    32.6099,
+    75.0575
+  ],
+  "jammu and kashmir:shopian": [
+    33.7194,
+    74.8313
+  ],
+  "shopian": [
+    33.7194,
+    74.8313
+  ],
+  "jammu and kashmir:srinagar": [
+    34.0844,
+    74.7991
+  ],
+  "srinagar": [
+    34.0844,
+    74.7991
+  ],
+  "jammu and kashmir:udhampur": [
+    32.9198,
+    75.1284
+  ],
+  "udhampur": [
+    32.9198,
+    75.1284
+  ],
+  "jharkhand:bokaro": [
+    23.6693,
+    86.1516
+  ],
+  "bokaro": [
+    23.6693,
+    86.1516
+  ],
+  "jharkhand:chatra": [
+    24.2042,
+    84.8719
+  ],
+  "chatra": [
+    24.2042,
+    84.8719
+  ],
+  "jharkhand:deoghar": [
+    24.4891,
+    86.6995
+  ],
+  "deoghar": [
+    24.4891,
+    86.6995
+  ],
+  "jharkhand:dhanbad": [
+    23.796,
+    86.4306
+  ],
+  "dhanbad": [
+    23.796,
+    86.4306
+  ],
+  "jharkhand:dumka": [
+    24.2684,
+    87.2489
+  ],
+  "dumka": [
+    24.2684,
+    87.2489
+  ],
+  "jharkhand:east singhbum": [
+    23.8352,
+    85.2299
+  ],
+  "east singhbum": [
+    23.8352,
+    85.2299
+  ],
+  "jharkhand:garhwa": [
+    24.1589,
+    83.8008
+  ],
+  "garhwa": [
+    24.1589,
+    83.8008
+  ],
+  "jharkhand:giridih": [
+    24.1871,
+    86.3046
+  ],
+  "giridih": [
+    24.1871,
+    86.3046
+  ],
+  "jharkhand:godda": [
+    24.8321,
+    87.2073
+  ],
+  "godda": [
+    24.8321,
+    87.2073
+  ],
+  "jharkhand:gumla": [
+    23.0415,
+    84.543
+  ],
+  "gumla": [
+    23.0415,
+    84.543
+  ],
+  "jharkhand:hazaribagh": [
+    23.9989,
+    85.3674
+  ],
+  "hazaribagh": [
+    23.9989,
+    85.3674
+  ],
+  "jharkhand:jamtara": [
+    23.9606,
+    86.8022
+  ],
+  "jamtara": [
+    23.9606,
+    86.8022
+  ],
+  "jharkhand:khunti": [
+    22.985,
+    85.2535
+  ],
+  "khunti": [
+    22.985,
+    85.2535
+  ],
+  "jharkhand:koderma": [
+    24.4839,
+    85.427
+  ],
+  "koderma": [
+    24.4839,
+    85.427
+  ],
+  "jharkhand:latehar": [
+    23.7444,
+    84.5081
+  ],
+  "latehar": [
+    23.7444,
+    84.5081
+  ],
+  "jharkhand:lohardaga": [
+    23.4689,
+    84.6533
+  ],
+  "lohardaga": [
+    23.4689,
+    84.6533
+  ],
+  "jharkhand:pakur": [
+    24.6368,
+    87.8472
+  ],
+  "pakur": [
+    24.6368,
+    87.8472
+  ],
+  "jharkhand:palamu": [
+    24.2031,
+    84.1693
+  ],
+  "palamu": [
+    24.2031,
+    84.1693
+  ],
+  "jharkhand:ramgarh": [
+    25.2906,
+    83.6503
+  ],
+  "ramgarh": [
+    25.2906,
+    83.6503
+  ],
+  "jharkhand:ranchi": [
+    23.3507,
+    85.3138
+  ],
+  "ranchi": [
+    23.3507,
+    85.3138
+  ],
+  "jharkhand:sahebganj": [
+    26.2975,
+    84.927
+  ],
+  "sahebganj": [
+    26.2975,
+    84.927
+  ],
+  "jharkhand:saraikela kharsawan": [
+    22.8453,
+    85.9511
+  ],
+  "saraikela kharsawan": [
+    22.8453,
+    85.9511
+  ],
+  "jharkhand:simdega": [
+    22.6105,
+    84.5016
+  ],
+  "simdega": [
+    22.6105,
+    84.5016
+  ],
+  "jharkhand:west singhbhum": [
+    22.5,
+    85.5
+  ],
+  "west singhbhum": [
+    22.5,
+    85.5
+  ],
+  "karnataka:bagalkote": [
+    16.1867,
+    75.6961
+  ],
+  "bagalkote": [
+    16.1867,
+    75.6961
+  ],
+  "karnataka:ballari": [
+    15.1447,
+    76.9289
+  ],
+  "ballari": [
+    15.1447,
+    76.9289
+  ],
+  "karnataka:belagavi": [
+    15.867,
+    74.5116
+  ],
+  "belagavi": [
+    15.867,
+    74.5116
+  ],
+  "karnataka:bengaluru rural": [
+    13.2232,
+    77.574
+  ],
+  "bengaluru rural": [
+    13.2232,
+    77.574
+  ],
+  "karnataka:bengaluru urban": [
+    12.9713,
+    77.6277
+  ],
+  "bengaluru urban": [
+    12.9713,
+    77.6277
+  ],
+  "karnataka:bidar": [
+    17.908,
+    77.5152
+  ],
+  "bidar": [
+    17.908,
+    77.5152
+  ],
+  "karnataka:chamarajanagara": [
+    11.918,
+    76.951
+  ],
+  "chamarajanagara": [
+    11.918,
+    76.951
+  ],
+  "karnataka:chikkaballapura": [
+    13.5806,
+    77.8371
+  ],
+  "chikkaballapura": [
+    13.5806,
+    77.8371
+  ],
+  "karnataka:chikkamagaluru": [
+    13.3233,
+    75.7736
+  ],
+  "chikkamagaluru": [
+    13.3233,
+    75.7736
+  ],
+  "karnataka:chitradurga": [
+    14.2205,
+    76.3996
+  ],
+  "chitradurga": [
+    14.2205,
+    76.3996
+  ],
+  "karnataka:dakshina kannada": [
+    12.8677,
+    75.2515
+  ],
+  "dakshina kannada": [
+    12.8677,
+    75.2515
+  ],
+  "karnataka:davangere": [
+    15.3623,
+    75.8489
+  ],
+  "davangere": [
+    15.3623,
+    75.8489
+  ],
+  "karnataka:dharwad": [
+    15.4511,
+    75.0052
+  ],
+  "dharwad": [
+    15.4511,
+    75.0052
+  ],
+  "karnataka:gadag": [
+    15.4331,
+    75.6355
+  ],
+  "gadag": [
+    15.4331,
+    75.6355
+  ],
+  "karnataka:hassan": [
+    13.0034,
+    76.1032
+  ],
+  "hassan": [
+    13.0034,
+    76.1032
+  ],
+  "karnataka:haveri": [
+    14.7928,
+    75.3963
+  ],
+  "haveri": [
+    14.7928,
+    75.3963
+  ],
+  "karnataka:kalaburagi": [
+    17.3328,
+    76.8403
+  ],
+  "kalaburagi": [
+    17.3328,
+    76.8403
+  ],
+  "karnataka:kodagu": [
+    12.3249,
+    75.8053
+  ],
+  "kodagu": [
+    12.3249,
+    75.8053
+  ],
+  "karnataka:kolar": [
+    13.1377,
+    78.13
+  ],
+  "kolar": [
+    13.1377,
+    78.13
+  ],
+  "karnataka:koppal": [
+    15.3296,
+    76.1527
+  ],
+  "koppal": [
+    15.3296,
+    76.1527
+  ],
+  "karnataka:mandya": [
+    12.5274,
+    76.8947
+  ],
+  "mandya": [
+    12.5274,
+    76.8947
+  ],
+  "karnataka:mysuru": [
+    12.309,
+    76.6531
+  ],
+  "mysuru": [
+    12.309,
+    76.6531
+  ],
+  "karnataka:raichur": [
+    16.2055,
+    77.3557
+  ],
+  "raichur": [
+    16.2055,
+    77.3557
+  ],
+  "karnataka:ramanagara": [
+    12.7153,
+    77.274
+  ],
+  "ramanagara": [
+    12.7153,
+    77.274
+  ],
+  "karnataka:shivamogga": [
+    13.9448,
+    75.5667
+  ],
+  "shivamogga": [
+    13.9448,
+    75.5667
+  ],
+  "karnataka:tumakuru": [
+    13.3405,
+    77.1016
+  ],
+  "tumakuru": [
+    13.3405,
+    77.1016
+  ],
+  "karnataka:udupi": [
+    13.3369,
+    74.7447
+  ],
+  "udupi": [
+    13.3369,
+    74.7447
+  ],
+  "karnataka:uttara kannada": [
+    14.7886,
+    74.6238
+  ],
+  "uttara kannada": [
+    14.7886,
+    74.6238
+  ],
+  "karnataka:vijayanagar": [
+    15.1473,
+    75.6739
+  ],
+  "vijayanagar": [
+    15.1473,
+    75.6739
+  ],
+  "karnataka:vijayapura": [
+    16.8282,
+    75.7135
+  ],
+  "vijayapura": [
+    16.8282,
+    75.7135
+  ],
+  "karnataka:yadgir": [
+    16.7609,
+    77.1367
+  ],
+  "yadgir": [
+    16.7609,
+    77.1367
+  ],
+  "kerala:alappuzha": [
+    9.5013,
+    76.3323
+  ],
+  "alappuzha": [
+    9.5013,
+    76.3323
+  ],
+  "kerala:ernakulam": [
+    10.0841,
+    76.5463
+  ],
+  "ernakulam": [
+    10.0841,
+    76.5463
+  ],
+  "kerala:idukki": [
+    9.8388,
+    77.0588
+  ],
+  "idukki": [
+    9.8388,
+    77.0588
+  ],
+  "kerala:kannur": [
+    11.8748,
+    75.3763
+  ],
+  "kannur": [
+    11.8748,
+    75.3763
+  ],
+  "kerala:kasaragod": [
+    12.5114,
+    74.9836
+  ],
+  "kasaragod": [
+    12.5114,
+    74.9836
+  ],
+  "kerala:kollam": [
+    8.8869,
+    76.5923
+  ],
+  "kollam": [
+    8.8869,
+    76.5923
+  ],
+  "kerala:kottayam": [
+    9.5948,
+    76.533
+  ],
+  "kottayam": [
+    9.5948,
+    76.533
+  ],
+  "kerala:kozhikode": [
+    11.2588,
+    75.7809
+  ],
+  "kozhikode": [
+    11.2588,
+    75.7809
+  ],
+  "kerala:malappuram": [
+    11.0429,
+    76.0804
+  ],
+  "malappuram": [
+    11.0429,
+    76.0804
+  ],
+  "kerala:palakkad": [
+    10.7758,
+    76.6581
+  ],
+  "palakkad": [
+    10.7758,
+    76.6581
+  ],
+  "kerala:pathanamthitta": [
+    9.2646,
+    76.7867
+  ],
+  "pathanamthitta": [
+    9.2646,
+    76.7867
+  ],
+  "kerala:thiruvananthapuram": [
+    8.5053,
+    76.9514
+  ],
+  "thiruvananthapuram": [
+    8.5053,
+    76.9514
+  ],
+  "kerala:thrissur": [
+    10.5108,
+    76.2112
+  ],
+  "thrissur": [
+    10.5108,
+    76.2112
+  ],
+  "kerala:wayanad": [
+    11.7109,
+    76.0874
+  ],
+  "wayanad": [
+    11.7109,
+    76.0874
+  ],
+  "ladakh:kargil": [
+    34.5516,
+    76.1306
+  ],
+  "kargil": [
+    34.5516,
+    76.1306
+  ],
+  "ladakh:leh ladakh": [
+    34.1447,
+    77.5561
+  ],
+  "leh ladakh": [
+    34.1447,
+    77.5561
+  ],
+  "lakshadweep:lakshadweep district": [
+    10.3317,
+    72.7417
+  ],
+  "lakshadweep district": [
+    10.3317,
+    72.7417
+  ],
+  "madhya pradesh:agar malwa": [
+    23.825,
+    76.073
+  ],
+  "agar malwa": [
+    23.825,
+    76.073
+  ],
+  "madhya pradesh:alirajpur": [
+    22.3059,
+    74.3555
+  ],
+  "alirajpur": [
+    22.3059,
+    74.3555
+  ],
+  "madhya pradesh:anuppur": [
+    23.1157,
+    81.6961
+  ],
+  "anuppur": [
+    23.1157,
+    81.6961
+  ],
+  "madhya pradesh:ashoknagar": [
+    24.5761,
+    77.7307
+  ],
+  "ashoknagar": [
+    24.5761,
+    77.7307
+  ],
+  "madhya pradesh:balaghat": [
+    21.8166,
+    80.1847
+  ],
+  "balaghat": [
+    21.8166,
+    80.1847
+  ],
+  "madhya pradesh:barwani": [
+    22.0319,
+    74.9041
+  ],
+  "barwani": [
+    22.0319,
+    74.9041
+  ],
+  "madhya pradesh:betul": [
+    21.9032,
+    77.9
+  ],
+  "betul": [
+    21.9032,
+    77.9
+  ],
+  "madhya pradesh:bhind": [
+    26.5671,
+    78.7854
+  ],
+  "bhind": [
+    26.5671,
+    78.7854
+  ],
+  "madhya pradesh:bhopal": [
+    23.2647,
+    77.4052
+  ],
+  "bhopal": [
+    23.2647,
+    77.4052
+  ],
+  "madhya pradesh:burhanpur": [
+    21.3087,
+    76.2303
+  ],
+  "burhanpur": [
+    21.3087,
+    76.2303
+  ],
+  "madhya pradesh:chhatarpur": [
+    24.9086,
+    79.5963
+  ],
+  "chhatarpur": [
+    24.9086,
+    79.5963
+  ],
+  "madhya pradesh:chhindwara": [
+    22.057,
+    78.9396
+  ],
+  "chhindwara": [
+    22.057,
+    78.9396
+  ],
+  "madhya pradesh:damoh": [
+    23.8357,
+    79.4436
+  ],
+  "damoh": [
+    23.8357,
+    79.4436
+  ],
+  "madhya pradesh:datia": [
+    25.6651,
+    78.4609
+  ],
+  "datia": [
+    25.6651,
+    78.4609
+  ],
+  "madhya pradesh:dewas": [
+    22.9658,
+    76.0553
+  ],
+  "dewas": [
+    22.9658,
+    76.0553
+  ],
+  "madhya pradesh:dhar": [
+    22.5953,
+    75.3006
+  ],
+  "dhar": [
+    22.5953,
+    75.3006
+  ],
+  "madhya pradesh:dindori": [
+    22.947,
+    81.0751
+  ],
+  "dindori": [
+    22.947,
+    81.0751
+  ],
+  "madhya pradesh:east nimar": [
+    21.8994,
+    76.5584
+  ],
+  "east nimar": [
+    21.8994,
+    76.5584
+  ],
+  "madhya pradesh:guna": [
+    24.6464,
+    77.3109
+  ],
+  "guna": [
+    24.6464,
+    77.3109
+  ],
+  "madhya pradesh:gwalior": [
+    26.2201,
+    78.1762
+  ],
+  "gwalior": [
+    26.2201,
+    78.1762
+  ],
+  "madhya pradesh:harda": [
+    22.3438,
+    77.0897
+  ],
+  "harda": [
+    22.3438,
+    77.0897
+  ],
+  "madhya pradesh:indore": [
+    22.7162,
+    75.8651
+  ],
+  "indore": [
+    22.7162,
+    75.8651
+  ],
+  "madhya pradesh:jabalpur": [
+    23.1742,
+    79.9313
+  ],
+  "jabalpur": [
+    23.1742,
+    79.9313
+  ],
+  "madhya pradesh:jhabua": [
+    22.7699,
+    74.5975
+  ],
+  "jhabua": [
+    22.7699,
+    74.5975
+  ],
+  "madhya pradesh:katni": [
+    23.7513,
+    80.4083
+  ],
+  "katni": [
+    23.7513,
+    80.4083
+  ],
+  "madhya pradesh:khargone": [
+    21.8257,
+    75.6213
+  ],
+  "khargone": [
+    21.8257,
+    75.6213
+  ],
+  "madhya pradesh:mandla": [
+    22.6096,
+    80.3701
+  ],
+  "mandla": [
+    22.6096,
+    80.3701
+  ],
+  "madhya pradesh:mandsaur": [
+    24.0726,
+    75.066
+  ],
+  "mandsaur": [
+    24.0726,
+    75.066
+  ],
+  "madhya pradesh:morena": [
+    26.4905,
+    77.9857
+  ],
+  "morena": [
+    26.4905,
+    77.9857
+  ],
+  "madhya pradesh:narmadapuram": [
+    23.1334,
+    78.6519
+  ],
+  "narmadapuram": [
+    23.1334,
+    78.6519
+  ],
+  "madhya pradesh:narsinghpur": [
+    22.9458,
+    79.1963
+  ],
+  "narsinghpur": [
+    22.9458,
+    79.1963
+  ],
+  "madhya pradesh:neemuch": [
+    24.4585,
+    74.8625
+  ],
+  "neemuch": [
+    24.4585,
+    74.8625
+  ],
+  "madhya pradesh:niwari": [
+    25.3498,
+    78.8045
+  ],
+  "niwari": [
+    25.3498,
+    78.8045
+  ],
+  "madhya pradesh:panna": [
+    24.7079,
+    80.1765
+  ],
+  "panna": [
+    24.7079,
+    80.1765
+  ],
+  "madhya pradesh:raisen": [
+    23.3301,
+    77.7845
+  ],
+  "raisen": [
+    23.3301,
+    77.7845
+  ],
+  "madhya pradesh:rajgarh": [
+    24.0057,
+    76.7272
+  ],
+  "rajgarh": [
+    24.0057,
+    76.7272
+  ],
+  "madhya pradesh:ratlam": [
+    23.3303,
+    75.0403
+  ],
+  "ratlam": [
+    23.3303,
+    75.0403
+  ],
+  "madhya pradesh:rewa": [
+    24.5261,
+    81.3024
+  ],
+  "rewa": [
+    24.5261,
+    81.3024
+  ],
+  "madhya pradesh:sagar": [
+    23.8432,
+    78.7427
+  ],
+  "sagar": [
+    23.8432,
+    78.7427
+  ],
+  "madhya pradesh:satna": [
+    24.5761,
+    80.8007
+  ],
+  "satna": [
+    24.5761,
+    80.8007
+  ],
+  "madhya pradesh:sehore": [
+    23.2011,
+    77.0771
+  ],
+  "sehore": [
+    23.2011,
+    77.0771
+  ],
+  "madhya pradesh:seoni": [
+    22.085,
+    79.5504
+  ],
+  "seoni": [
+    22.085,
+    79.5504
+  ],
+  "madhya pradesh:shahdol": [
+    23.2927,
+    81.3586
+  ],
+  "shahdol": [
+    23.2927,
+    81.3586
+  ],
+  "madhya pradesh:shajapur": [
+    23.42,
+    76.2809
+  ],
+  "shajapur": [
+    23.42,
+    76.2809
+  ],
+  "madhya pradesh:sheopur": [
+    25.6733,
+    76.6966
+  ],
+  "sheopur": [
+    25.6733,
+    76.6966
+  ],
+  "madhya pradesh:shivpuri": [
+    25.4238,
+    77.6622
+  ],
+  "shivpuri": [
+    25.4238,
+    77.6622
+  ],
+  "madhya pradesh:sidhi": [
+    24.4074,
+    81.8826
+  ],
+  "sidhi": [
+    24.4074,
+    81.8826
+  ],
+  "madhya pradesh:singrauli": [
+    24.1947,
+    82.6656
+  ],
+  "singrauli": [
+    24.1947,
+    82.6656
+  ],
+  "madhya pradesh:tikamgarh": [
+    24.7443,
+    78.833
+  ],
+  "tikamgarh": [
+    24.7443,
+    78.833
+  ],
+  "madhya pradesh:ujjain": [
+    23.1809,
+    75.7881
+  ],
+  "ujjain": [
+    23.1809,
+    75.7881
+  ],
+  "madhya pradesh:umaria": [
+    23.5307,
+    80.8279
+  ],
+  "umaria": [
+    23.5307,
+    80.8279
+  ],
+  "madhya pradesh:vidisha": [
+    23.5214,
+    77.8064
+  ],
+  "vidisha": [
+    23.5214,
+    77.8064
+  ],
+  "maharashtra:ahmednagar": [
+    19.0921,
+    74.7384
+  ],
+  "ahmednagar": [
+    19.0921,
+    74.7384
+  ],
+  "maharashtra:akola": [
+    20.7053,
+    77.0022
+  ],
+  "akola": [
+    20.7053,
+    77.0022
+  ],
+  "maharashtra:amravati": [
+    20.9333,
+    77.75
+  ],
+  "amravati": [
+    20.9333,
+    77.75
+  ],
+  "maharashtra:aurangabad": [
+    19.8702,
+    75.346
+  ],
+  "maharashtra:beed": [
+    18.9896,
+    75.7559
+  ],
+  "beed": [
+    18.9896,
+    75.7559
+  ],
+  "maharashtra:bhandara": [
+    21.1712,
+    79.6563
+  ],
+  "bhandara": [
+    21.1712,
+    79.6563
+  ],
+  "maharashtra:buldhana": [
+    20.5833,
+    76.4167
+  ],
+  "buldhana": [
+    20.5833,
+    76.4167
+  ],
+  "maharashtra:chandrapur": [
+    19.9665,
+    79.2966
+  ],
+  "chandrapur": [
+    19.9665,
+    79.2966
+  ],
+  "maharashtra:dhule": [
+    20.9029,
+    74.7725
+  ],
+  "dhule": [
+    20.9029,
+    74.7725
+  ],
+  "maharashtra:gadchiroli": [
+    20.1826,
+    80.0062
+  ],
+  "gadchiroli": [
+    20.1826,
+    80.0062
+  ],
+  "maharashtra:gondia": [
+    21.4588,
+    80.1963
+  ],
+  "gondia": [
+    21.4588,
+    80.1963
+  ],
+  "maharashtra:hingoli": [
+    19.7217,
+    77.1518
+  ],
+  "hingoli": [
+    19.7217,
+    77.1518
+  ],
+  "maharashtra:jalgaon": [
+    21.0029,
+    75.566
+  ],
+  "jalgaon": [
+    21.0029,
+    75.566
+  ],
+  "maharashtra:jalna": [
+    19.841,
+    75.8864
+  ],
+  "jalna": [
+    19.841,
+    75.8864
+  ],
+  "maharashtra:kolhapur": [
+    16.7045,
+    74.2414
+  ],
+  "kolhapur": [
+    16.7045,
+    74.2414
+  ],
+  "maharashtra:latur": [
+    18.3972,
+    76.5678
+  ],
+  "latur": [
+    18.3972,
+    76.5678
+  ],
+  "maharashtra:mumbai": [
+    18.9402,
+    72.8348
+  ],
+  "mumbai": [
+    18.9402,
+    72.8348
+  ],
+  "maharashtra:mumbai suburban": [
+    19.1431,
+    72.8811
+  ],
+  "mumbai suburban": [
+    19.1431,
+    72.8811
+  ],
+  "maharashtra:nagpur": [
+    21.1571,
+    79.0821
+  ],
+  "nagpur": [
+    21.1571,
+    79.0821
+  ],
+  "maharashtra:nanded": [
+    19.1557,
+    77.311
+  ],
+  "nanded": [
+    19.1557,
+    77.311
+  ],
+  "maharashtra:nandurbar": [
+    21.3667,
+    74.2405
+  ],
+  "nandurbar": [
+    21.3667,
+    74.2405
+  ],
+  "maharashtra:nashik": [
+    19.9973,
+    73.791
+  ],
+  "nashik": [
+    19.9973,
+    73.791
+  ],
+  "maharashtra:osmanabad": [
+    18.1853,
+    76.0407
+  ],
+  "osmanabad": [
+    18.1853,
+    76.0407
+  ],
+  "maharashtra:palghar": [
+    19.7002,
+    72.771
+  ],
+  "palghar": [
+    19.7002,
+    72.771
+  ],
+  "maharashtra:parbhani": [
+    19.2608,
+    76.7769
+  ],
+  "parbhani": [
+    19.2608,
+    76.7769
+  ],
+  "maharashtra:pune": [
+    18.5042,
+    73.8529
+  ],
+  "pune": [
+    18.5042,
+    73.8529
+  ],
+  "maharashtra:raigad": [
+    18.5122,
+    73.2234
+  ],
+  "raigad": [
+    18.5122,
+    73.2234
+  ],
+  "maharashtra:ratnagiri": [
+    16.9921,
+    73.2919
+  ],
+  "ratnagiri": [
+    16.9921,
+    73.2919
+  ],
+  "maharashtra:sangli": [
+    16.8544,
+    74.5642
+  ],
+  "sangli": [
+    16.8544,
+    74.5642
+  ],
+  "maharashtra:satara": [
+    17.6859,
+    73.9933
+  ],
+  "satara": [
+    17.6859,
+    73.9933
+  ],
+  "maharashtra:sindhudurg": [
+    16.1331,
+    73.7398
+  ],
+  "sindhudurg": [
+    16.1331,
+    73.7398
+  ],
+  "maharashtra:solapur": [
+    17.6581,
+    75.9068
+  ],
+  "solapur": [
+    17.6581,
+    75.9068
+  ],
+  "maharashtra:thane": [
+    19.197,
+    72.9635
+  ],
+  "thane": [
+    19.197,
+    72.9635
+  ],
+  "maharashtra:wardha": [
+    20.7354,
+    78.5949
+  ],
+  "wardha": [
+    20.7354,
+    78.5949
+  ],
+  "maharashtra:washim": [
+    20.1082,
+    77.1409
+  ],
+  "washim": [
+    20.1082,
+    77.1409
+  ],
+  "maharashtra:yavatmal": [
+    20.3932,
+    78.132
+  ],
+  "yavatmal": [
+    20.3932,
+    78.132
+  ],
+  "manipur:bishnupur": [
+    23.0643,
+    87.3105
+  ],
+  "bishnupur": [
+    23.0643,
+    87.3105
+  ],
+  "manipur:chandel": [
+    24.3394,
+    94.0062
+  ],
+  "chandel": [
+    24.3394,
+    94.0062
+  ],
+  "manipur:churachandpur": [
+    24.3481,
+    93.701
+  ],
+  "churachandpur": [
+    24.3481,
+    93.701
+  ],
+  "manipur:imphal east": [
+    24.7086,
+    94.0803
+  ],
+  "imphal east": [
+    24.7086,
+    94.0803
+  ],
+  "manipur:imphal west": [
+    24.7711,
+    93.8655
+  ],
+  "imphal west": [
+    24.7711,
+    93.8655
+  ],
+  "manipur:jiribam": [
+    24.8044,
+    93.1185
+  ],
+  "jiribam": [
+    24.8044,
+    93.1185
+  ],
+  "manipur:kakching": [
+    24.4992,
+    93.9795
+  ],
+  "kakching": [
+    24.4992,
+    93.9795
+  ],
+  "manipur:kamjong": [
+    24.8175,
+    94.433
+  ],
+  "kamjong": [
+    24.8175,
+    94.433
+  ],
+  "manipur:kangpokpi": [
+    25.0022,
+    93.9432
+  ],
+  "kangpokpi": [
+    25.0022,
+    93.9432
+  ],
+  "manipur:noney": [
+    24.678,
+    93.46
+  ],
+  "noney": [
+    24.678,
+    93.46
+  ],
+  "manipur:pherzawl": [
+    24.3194,
+    93.2138
+  ],
+  "pherzawl": [
+    24.3194,
+    93.2138
+  ],
+  "manipur:senapati": [
+    25.2687,
+    94.0222
+  ],
+  "senapati": [
+    25.2687,
+    94.0222
+  ],
+  "manipur:tamenglong": [
+    24.9654,
+    93.4951
+  ],
+  "tamenglong": [
+    24.9654,
+    93.4951
+  ],
+  "manipur:tengnoupal": [
+    24.3857,
+    94.1476
+  ],
+  "tengnoupal": [
+    24.3857,
+    94.1476
+  ],
+  "manipur:thoubal": [
+    24.6433,
+    93.9972
+  ],
+  "thoubal": [
+    24.6433,
+    93.9972
+  ],
+  "manipur:ukhrul": [
+    25.0984,
+    94.3611
+  ],
+  "ukhrul": [
+    25.0984,
+    94.3611
+  ],
+  "meghalaya:east garo hills": [
+    25.6419,
+    90.6353
+  ],
+  "east garo hills": [
+    25.6419,
+    90.6353
+  ],
+  "meghalaya:east jaintia hills": [
+    25.2729,
+    92.4652
+  ],
+  "east jaintia hills": [
+    25.2729,
+    92.4652
+  ],
+  "meghalaya:east khasi hills": [
+    25.386,
+    91.8117
+  ],
+  "east khasi hills": [
+    25.386,
+    91.8117
+  ],
+  "meghalaya:eastern west khasi hills": [
+    25.677,
+    91.4562
+  ],
+  "eastern west khasi hills": [
+    25.677,
+    91.4562
+  ],
+  "meghalaya:north garo hills": [
+    25.8708,
+    90.6991
+  ],
+  "north garo hills": [
+    25.8708,
+    90.6991
+  ],
+  "meghalaya:ri bhoi": [
+    25.87,
+    91.8822
+  ],
+  "ri bhoi": [
+    25.87,
+    91.8822
+  ],
+  "meghalaya:south garo hills": [
+    25.3093,
+    90.5774
+  ],
+  "south garo hills": [
+    25.3093,
+    90.5774
+  ],
+  "meghalaya:south west garo hills": [
+    25.4456,
+    89.9502
+  ],
+  "south west garo hills": [
+    25.4456,
+    89.9502
+  ],
+  "meghalaya:south west khasi hills": [
+    25.3175,
+    91.2643
+  ],
+  "south west khasi hills": [
+    25.3175,
+    91.2643
+  ],
+  "meghalaya:west garo hills": [
+    25.6291,
+    90.1913
+  ],
+  "west garo hills": [
+    25.6291,
+    90.1913
+  ],
+  "meghalaya:west jaintia hills": [
+    25.4838,
+    92.2751
+  ],
+  "west jaintia hills": [
+    25.4838,
+    92.2751
+  ],
+  "meghalaya:west khasi hills": [
+    25.5742,
+    91.1136
+  ],
+  "west khasi hills": [
+    25.5742,
+    91.1136
+  ],
+  "mizoram:aizawl": [
+    23.7289,
+    92.7179
+  ],
+  "aizawl": [
+    23.7289,
+    92.7179
+  ],
+  "mizoram:champhai": [
+    23.4781,
+    93.3261
+  ],
+  "champhai": [
+    23.4781,
+    93.3261
+  ],
+  "mizoram:hnahthial": [
+    23.1845,
+    92.8776
+  ],
+  "hnahthial": [
+    23.1845,
+    92.8776
+  ],
+  "mizoram:khawzawl": [
+    23.0445,
+    92.8426
+  ],
+  "khawzawl": [
+    23.0445,
+    92.8426
+  ],
+  "mizoram:kolasib": [
+    24.2265,
+    92.6794
+  ],
+  "kolasib": [
+    24.2265,
+    92.6794
+  ],
+  "mizoram:lawngtlai": [
+    22.5319,
+    92.8991
+  ],
+  "lawngtlai": [
+    22.5319,
+    92.8991
+  ],
+  "mizoram:lunglei": [
+    22.8765,
+    92.7518
+  ],
+  "lunglei": [
+    22.8765,
+    92.7518
+  ],
+  "mizoram:mamit": [
+    23.7517,
+    92.4542
+  ],
+  "mamit": [
+    23.7517,
+    92.4542
+  ],
+  "mizoram:saiha": [
+    22.4901,
+    92.9803
+  ],
+  "saiha": [
+    22.4901,
+    92.9803
+  ],
+  "mizoram:saitual": [
+    23.0895,
+    93.0976
+  ],
+  "saitual": [
+    23.0895,
+    93.0976
+  ],
+  "mizoram:serchhip": [
+    23.3258,
+    92.8544
+  ],
+  "serchhip": [
+    23.3258,
+    92.8544
+  ],
+  "nagaland:chumoukedima": [
+    26.0234,
+    94.6024
+  ],
+  "chumoukedima": [
+    26.0234,
+    94.6024
+  ],
+  "nagaland:dimapur": [
+    25.9117,
+    93.7217
+  ],
+  "dimapur": [
+    25.9117,
+    93.7217
+  ],
+  "nagaland:kiphire": [
+    25.8344,
+    94.8351
+  ],
+  "kiphire": [
+    25.8344,
+    94.8351
+  ],
+  "nagaland:kohima": [
+    25.6629,
+    94.0931
+  ],
+  "kohima": [
+    25.6629,
+    94.0931
+  ],
+  "nagaland:longleng": [
+    26.4946,
+    94.824
+  ],
+  "longleng": [
+    26.4946,
+    94.824
+  ],
+  "nagaland:mokokchung": [
+    26.3233,
+    94.5137
+  ],
+  "mokokchung": [
+    26.3233,
+    94.5137
+  ],
+  "nagaland:mon": [
+    26.2734,
+    94.3674
+  ],
+  "mon": [
+    26.2734,
+    94.3674
+  ],
+  "nagaland:noklak": [
+    25.9484,
+    94.3874
+  ],
+  "noklak": [
+    25.9484,
+    94.3874
+  ],
+  "nagaland:peren": [
+    25.4987,
+    93.6214
+  ],
+  "peren": [
+    25.4987,
+    93.6214
+  ],
+  "nagaland:phek": [
+    25.6491,
+    94.545
+  ],
+  "phek": [
+    25.6491,
+    94.545
+  ],
+  "nagaland:tseminyu": [
+    26.3084,
+    94.3874
+  ],
+  "tseminyu": [
+    26.3084,
+    94.3874
+  ],
+  "nagaland:tuensang": [
+    26.2335,
+    94.8115
+  ],
+  "tuensang": [
+    26.2335,
+    94.8115
+  ],
+  "nagaland:wokha": [
+    26.0927,
+    94.2562
+  ],
+  "wokha": [
+    26.0927,
+    94.2562
+  ],
+  "nagaland:zunheboto": [
+    26.016,
+    94.5276
+  ],
+  "zunheboto": [
+    26.016,
+    94.5276
+  ],
+  "odisha:anugul": [
+    20.8392,
+    85.1005
+  ],
+  "anugul": [
+    20.8392,
+    85.1005
+  ],
+  "odisha:balangir": [
+    20.7064,
+    83.4897
+  ],
+  "balangir": [
+    20.7064,
+    83.4897
+  ],
+  "odisha:baleshwar": [
+    21.501,
+    86.9181
+  ],
+  "baleshwar": [
+    21.501,
+    86.9181
+  ],
+  "odisha:bargarh": [
+    21.3377,
+    83.6212
+  ],
+  "bargarh": [
+    21.3377,
+    83.6212
+  ],
+  "odisha:bhadrak": [
+    21.0633,
+    86.4995
+  ],
+  "bhadrak": [
+    21.0633,
+    86.4995
+  ],
+  "odisha:boudh": [
+    20.8386,
+    84.3224
+  ],
+  "boudh": [
+    20.8386,
+    84.3224
+  ],
+  "odisha:cuttack": [
+    20.4665,
+    85.8962
+  ],
+  "cuttack": [
+    20.4665,
+    85.8962
+  ],
+  "odisha:deogarh": [
+    25.5292,
+    73.9081
+  ],
+  "deogarh": [
+    25.5292,
+    73.9081
+  ],
+  "odisha:dhenkanal": [
+    20.653,
+    85.5991
+  ],
+  "dhenkanal": [
+    20.653,
+    85.5991
+  ],
+  "odisha:gajapati": [
+    19.1748,
+    84.1612
+  ],
+  "gajapati": [
+    19.1748,
+    84.1612
+  ],
+  "odisha:ganjam": [
+    19.3877,
+    85.0501
+  ],
+  "ganjam": [
+    19.3877,
+    85.0501
+  ],
+  "odisha:jagatsinghapur": [
+    20.2624,
+    86.1638
+  ],
+  "jagatsinghapur": [
+    20.2624,
+    86.1638
+  ],
+  "odisha:jajapur": [
+    20.8177,
+    86.3429
+  ],
+  "jajapur": [
+    20.8177,
+    86.3429
+  ],
+  "odisha:jharsuguda": [
+    21.8653,
+    84.0245
+  ],
+  "jharsuguda": [
+    21.8653,
+    84.0245
+  ],
+  "odisha:kalahandi": [
+    19.8683,
+    83.109
+  ],
+  "kalahandi": [
+    19.8683,
+    83.109
+  ],
+  "odisha:kandhamal": [
+    20.1275,
+    84.0478
+  ],
+  "kandhamal": [
+    20.1275,
+    84.0478
+  ],
+  "odisha:kendrapara": [
+    20.5061,
+    86.4211
+  ],
+  "kendrapara": [
+    20.5061,
+    86.4211
+  ],
+  "odisha:kendujhar": [
+    21.6319,
+    85.5851
+  ],
+  "kendujhar": [
+    21.6319,
+    85.5851
+  ],
+  "odisha:khordha": [
+    20.1742,
+    85.6139
+  ],
+  "khordha": [
+    20.1742,
+    85.6139
+  ],
+  "odisha:koraput": [
+    18.8113,
+    82.7125
+  ],
+  "koraput": [
+    18.8113,
+    82.7125
+  ],
+  "odisha:malkangiri": [
+    18.3591,
+    81.887
+  ],
+  "malkangiri": [
+    18.3591,
+    81.887
+  ],
+  "odisha:mayurbhanj": [
+    21.8949,
+    86.412
+  ],
+  "mayurbhanj": [
+    21.8949,
+    86.412
+  ],
+  "odisha:nabarangpur": [
+    19.2311,
+    82.5483
+  ],
+  "nabarangpur": [
+    19.2311,
+    82.5483
+  ],
+  "odisha:nayagarh": [
+    20.1313,
+    85.1283
+  ],
+  "nayagarh": [
+    20.1313,
+    85.1283
+  ],
+  "odisha:nuapada": [
+    20.7765,
+    82.5462
+  ],
+  "nuapada": [
+    20.7765,
+    82.5462
+  ],
+  "odisha:puri": [
+    19.7982,
+    85.8249
+  ],
+  "puri": [
+    19.7982,
+    85.8249
+  ],
+  "odisha:rayagada": [
+    19.1732,
+    83.4122
+  ],
+  "rayagada": [
+    19.1732,
+    83.4122
+  ],
+  "odisha:sambalpur": [
+    21.4653,
+    83.9757
+  ],
+  "sambalpur": [
+    21.4653,
+    83.9757
+  ],
+  "odisha:sonepur": [
+    25.706,
+    85.1492
+  ],
+  "sonepur": [
+    25.706,
+    85.1492
+  ],
+  "odisha:sundargarh": [
+    22.1196,
+    84.0416
+  ],
+  "sundargarh": [
+    22.1196,
+    84.0416
+  ],
+  "puducherry:karaikal": [
+    10.9255,
+    79.8323
+  ],
+  "karaikal": [
+    10.9255,
+    79.8323
+  ],
+  "puducherry:mahe": [
+    11.6994,
+    75.5345
+  ],
+  "mahe": [
+    11.6994,
+    75.5345
+  ],
+  "puducherry:pondicherry": [
+    12.0916,
+    79.5683
+  ],
+  "pondicherry": [
+    12.0916,
+    79.5683
+  ],
+  "puducherry:yanam": [
+    16.7304,
+    82.2237
+  ],
+  "yanam": [
+    16.7304,
+    82.2237
+  ],
+  "punjab:amritsar": [
+    31.6335,
+    74.8751
+  ],
+  "amritsar": [
+    31.6335,
+    74.8751
+  ],
+  "punjab:barnala": [
+    30.3745,
+    75.5487
+  ],
+  "barnala": [
+    30.3745,
+    75.5487
+  ],
+  "punjab:bathinda": [
+    30.2075,
+    74.9389
+  ],
+  "bathinda": [
+    30.2075,
+    74.9389
+  ],
+  "punjab:faridkot": [
+    30.6555,
+    74.7695
+  ],
+  "faridkot": [
+    30.6555,
+    74.7695
+  ],
+  "punjab:fatehgarh sahib": [
+    30.6422,
+    76.3767
+  ],
+  "fatehgarh sahib": [
+    30.6422,
+    76.3767
+  ],
+  "punjab:fazilka": [
+    30.409,
+    74.0348
+  ],
+  "fazilka": [
+    30.409,
+    74.0348
+  ],
+  "punjab:ferozepur": [
+    30.9921,
+    75.2462
+  ],
+  "ferozepur": [
+    30.9921,
+    75.2462
+  ],
+  "punjab:gurdaspur": [
+    32.0409,
+    75.4014
+  ],
+  "gurdaspur": [
+    32.0409,
+    75.4014
+  ],
+  "punjab:hoshiarpur": [
+    31.5372,
+    75.9127
+  ],
+  "hoshiarpur": [
+    31.5372,
+    75.9127
+  ],
+  "punjab:jalandhar": [
+    31.3308,
+    75.5902
+  ],
+  "jalandhar": [
+    31.3308,
+    75.5902
+  ],
+  "punjab:kapurthala": [
+    31.3777,
+    75.391
+  ],
+  "kapurthala": [
+    31.3777,
+    75.391
+  ],
+  "punjab:ludhiana": [
+    30.9073,
+    75.8492
+  ],
+  "ludhiana": [
+    30.9073,
+    75.8492
+  ],
+  "punjab:malerkotla": [
+    31.2871,
+    75.5062
+  ],
+  "malerkotla": [
+    31.2871,
+    75.5062
+  ],
+  "punjab:mansa": [
+    31.2421,
+    75.5262
+  ],
+  "mansa": [
+    31.2421,
+    75.5262
+  ],
+  "punjab:moga": [
+    30.8189,
+    75.1777
+  ],
+  "moga": [
+    30.8189,
+    75.1777
+  ],
+  "punjab:pathankot": [
+    32.2705,
+    75.649
+  ],
+  "pathankot": [
+    32.2705,
+    75.649
+  ],
+  "punjab:patiala": [
+    30.3362,
+    76.3922
+  ],
+  "patiala": [
+    30.3362,
+    76.3922
+  ],
+  "punjab:rupnagar": [
+    30.973,
+    76.5327
+  ],
+  "rupnagar": [
+    30.973,
+    76.5327
+  ],
+  "punjab:s.a.s nagar": [
+    30.7035,
+    76.6916
+  ],
+  "s.a.s nagar": [
+    30.7035,
+    76.6916
+  ],
+  "punjab:sangrur": [
+    30.2511,
+    75.8344
+  ],
+  "sangrur": [
+    30.2511,
+    75.8344
+  ],
+  "punjab:shahid bhagat singh nagar": [
+    31.1105,
+    76.1548
+  ],
+  "shahid bhagat singh nagar": [
+    31.1105,
+    76.1548
+  ],
+  "punjab:sri muktsar sahib": [
+    30.4678,
+    74.5182
+  ],
+  "sri muktsar sahib": [
+    30.4678,
+    74.5182
+  ],
+  "punjab:tarn taran": [
+    31.4596,
+    74.9221
+  ],
+  "tarn taran": [
+    31.4596,
+    74.9221
+  ],
+  "rajasthan:ajmer": [
+    26.4655,
+    74.6317
+  ],
+  "ajmer": [
+    26.4655,
+    74.6317
+  ],
+  "rajasthan:alwar": [
+    27.5562,
+    76.6124
+  ],
+  "alwar": [
+    27.5562,
+    76.6124
+  ],
+  "rajasthan:banswara": [
+    23.5517,
+    74.4443
+  ],
+  "banswara": [
+    23.5517,
+    74.4443
+  ],
+  "rajasthan:baran": [
+    25.0961,
+    76.5089
+  ],
+  "baran": [
+    25.0961,
+    76.5089
+  ],
+  "rajasthan:barmer": [
+    25.752,
+    71.4138
+  ],
+  "barmer": [
+    25.752,
+    71.4138
+  ],
+  "rajasthan:bharatpur": [
+    27.2109,
+    77.4815
+  ],
+  "bharatpur": [
+    27.2109,
+    77.4815
+  ],
+  "rajasthan:bhilwara": [
+    25.3471,
+    74.6408
+  ],
+  "bhilwara": [
+    25.3471,
+    74.6408
+  ],
+  "rajasthan:bikaner": [
+    28.0165,
+    73.3118
+  ],
+  "bikaner": [
+    28.0165,
+    73.3118
+  ],
+  "rajasthan:bundi": [
+    25.4342,
+    75.6366
+  ],
+  "bundi": [
+    25.4342,
+    75.6366
+  ],
+  "rajasthan:chittorgarh": [
+    24.8896,
+    74.624
+  ],
+  "chittorgarh": [
+    24.8896,
+    74.624
+  ],
+  "rajasthan:churu": [
+    28.3041,
+    74.9672
+  ],
+  "churu": [
+    28.3041,
+    74.9672
+  ],
+  "rajasthan:dausa": [
+    26.8997,
+    76.3304
+  ],
+  "dausa": [
+    26.8997,
+    76.3304
+  ],
+  "rajasthan:dholpur": [
+    26.6929,
+    77.8797
+  ],
+  "dholpur": [
+    26.6929,
+    77.8797
+  ],
+  "rajasthan:dungarpur": [
+    23.8416,
+    73.7144
+  ],
+  "dungarpur": [
+    23.8416,
+    73.7144
+  ],
+  "rajasthan:ganganagar": [
+    29.9201,
+    73.875
+  ],
+  "ganganagar": [
+    29.9201,
+    73.875
+  ],
+  "rajasthan:hanumangarh": [
+    26.9938,
+    73.9879
+  ],
+  "hanumangarh": [
+    26.9938,
+    73.9879
+  ],
+  "rajasthan:jaipur": [
+    26.9259,
+    75.8067
+  ],
+  "jaipur": [
+    26.9259,
+    75.8067
+  ],
+  "rajasthan:jaisalmer": [
+    26.9195,
+    70.9143
+  ],
+  "jaisalmer": [
+    26.9195,
+    70.9143
+  ],
+  "rajasthan:jalore": [
+    26.7738,
+    74.3529
+  ],
+  "jalore": [
+    26.7738,
+    74.3529
+  ],
+  "rajasthan:jhalawar": [
+    24.5898,
+    76.16
+  ],
+  "jhalawar": [
+    24.5898,
+    76.16
+  ],
+  "rajasthan:jhunjhunu": [
+    28.1256,
+    75.4004
+  ],
+  "jhunjhunu": [
+    28.1256,
+    75.4004
+  ],
+  "rajasthan:jodhpur": [
+    26.2669,
+    73.0305
+  ],
+  "jodhpur": [
+    26.2669,
+    73.0305
+  ],
+  "rajasthan:karauli": [
+    26.4842,
+    77.0189
+  ],
+  "karauli": [
+    26.4842,
+    77.0189
+  ],
+  "rajasthan:kota": [
+    25.1653,
+    75.8513
+  ],
+  "kota": [
+    25.1653,
+    75.8513
+  ],
+  "rajasthan:nagaur": [
+    27.2017,
+    73.732
+  ],
+  "nagaur": [
+    27.2017,
+    73.732
+  ],
+  "rajasthan:pali": [
+    25.7728,
+    73.3234
+  ],
+  "pali": [
+    25.7728,
+    73.3234
+  ],
+  "rajasthan:pratapgarh": [
+    26.9838,
+    74.3179
+  ],
+  "pratapgarh": [
+    26.8067,
+    81.0462
+  ],
+  "rajasthan:rajsamand": [
+    25.0595,
+    73.8832
+  ],
+  "rajsamand": [
+    25.0595,
+    73.8832
+  ],
+  "rajasthan:sawai madhopur": [
+    26.023,
+    76.3441
+  ],
+  "sawai madhopur": [
+    26.023,
+    76.3441
+  ],
+  "rajasthan:sikar": [
+    27.6121,
+    75.14
+  ],
+  "sikar": [
+    27.6121,
+    75.14
+  ],
+  "rajasthan:sirohi": [
+    24.8903,
+    72.8564
+  ],
+  "sirohi": [
+    24.8903,
+    72.8564
+  ],
+  "rajasthan:tonk": [
+    26.1611,
+    75.7862
+  ],
+  "tonk": [
+    26.1611,
+    75.7862
+  ],
+  "rajasthan:udaipur": [
+    24.587,
+    73.6984
+  ],
+  "udaipur": [
+    24.587,
+    73.6984
+  ],
+  "sikkim:gangtok": [
+    27.343,
+    88.4672
+  ],
+  "gangtok": [
+    27.343,
+    88.4672
+  ],
+  "sikkim:gyalshing": [
+    27.498,
+    88.3522
+  ],
+  "gyalshing": [
+    27.498,
+    88.3522
+  ],
+  "sikkim:mangan": [
+    27.608,
+    88.2972
+  ],
+  "mangan": [
+    27.608,
+    88.2972
+  ],
+  "sikkim:namchi": [
+    27.348,
+    88.2672
+  ],
+  "namchi": [
+    27.348,
+    88.2672
+  ],
+  "sikkim:pakyong": [
+    27.348,
+    88.3372
+  ],
+  "pakyong": [
+    27.348,
+    88.3372
+  ],
+  "sikkim:soreng": [
+    27.588,
+    88.3022
+  ],
+  "soreng": [
+    27.588,
+    88.3022
+  ],
+  "tamil nadu:ariyalur": [
+    11.1394,
+    79.0843
+  ],
+  "ariyalur": [
+    11.1394,
+    79.0843
+  ],
+  "tamil nadu:chengalpattu": [
+    12.6822,
+    79.9806
+  ],
+  "chengalpattu": [
+    12.6822,
+    79.9806
+  ],
+  "tamil nadu:chennai": [
+    13.0838,
+    80.2826
+  ],
+  "chennai": [
+    13.0838,
+    80.2826
+  ],
+  "tamil nadu:coimbatore": [
+    10.9941,
+    76.9663
+  ],
+  "coimbatore": [
+    10.9941,
+    76.9663
+  ],
+  "tamil nadu:cuddalore": [
+    11.7452,
+    79.759
+  ],
+  "cuddalore": [
+    11.7452,
+    79.759
+  ],
+  "tamil nadu:dharmapuri": [
+    18.9437,
+    79.0949
+  ],
+  "dharmapuri": [
+    18.9437,
+    79.0949
+  ],
+  "tamil nadu:dindigul": [
+    10.3621,
+    77.9695
+  ],
+  "dindigul": [
+    10.3621,
+    77.9695
+  ],
+  "tamil nadu:erode": [
+    11.3407,
+    77.7172
+  ],
+  "erode": [
+    11.3407,
+    77.7172
+  ],
+  "tamil nadu:kallakurichi": [
+    11.2271,
+    78.6869
+  ],
+  "kallakurichi": [
+    11.2271,
+    78.6869
+  ],
+  "tamil nadu:kanchipuram": [
+    11.1971,
+    78.4719
+  ],
+  "kanchipuram": [
+    11.1971,
+    78.4719
+  ],
+  "tamil nadu:kanniyakumari": [
+    8.0995,
+    77.5196
+  ],
+  "kanniyakumari": [
+    8.0995,
+    77.5196
+  ],
+  "tamil nadu:karur": [
+    10.9592,
+    78.0772
+  ],
+  "karur": [
+    10.9592,
+    78.0772
+  ],
+  "tamil nadu:krishnagiri": [
+    12.5265,
+    78.2141
+  ],
+  "krishnagiri": [
+    12.5265,
+    78.2141
+  ],
+  "tamil nadu:madurai": [
+    9.9242,
+    78.1242
+  ],
+  "madurai": [
+    9.9242,
+    78.1242
+  ],
+  "tamil nadu:mayiladuthurai": [
+    11.0671,
+    78.6219
+  ],
+  "mayiladuthurai": [
+    11.0671,
+    78.6219
+  ],
+  "tamil nadu:nagapattinam": [
+    10.7769,
+    79.8406
+  ],
+  "nagapattinam": [
+    10.7769,
+    79.8406
+  ],
+  "tamil nadu:namakkal": [
+    11.2194,
+    78.1677
+  ],
+  "namakkal": [
+    11.2194,
+    78.1677
+  ],
+  "tamil nadu:perambalur": [
+    11.2341,
+    78.8802
+  ],
+  "perambalur": [
+    11.2341,
+    78.8802
+  ],
+  "tamil nadu:pudukkottai": [
+    10.3852,
+    78.7923
+  ],
+  "pudukkottai": [
+    10.3852,
+    78.7923
+  ],
+  "tamil nadu:ramanathapuram": [
+    9.3603,
+    78.8372
+  ],
+  "ramanathapuram": [
+    9.3603,
+    78.8372
+  ],
+  "tamil nadu:ranipet": [
+    12.9515,
+    79.4728
+  ],
+  "ranipet": [
+    12.9515,
+    79.4728
+  ],
+  "tamil nadu:salem": [
+    11.6655,
+    78.1516
+  ],
+  "salem": [
+    11.6655,
+    78.1516
+  ],
+  "tamil nadu:sivaganga": [
+    9.8502,
+    78.4856
+  ],
+  "sivaganga": [
+    9.8502,
+    78.4856
+  ],
+  "tamil nadu:tenkasi": [
+    8.9635,
+    77.3082
+  ],
+  "tenkasi": [
+    8.9635,
+    77.3082
+  ],
+  "tamil nadu:thanjavur": [
+    10.7686,
+    79.129
+  ],
+  "thanjavur": [
+    10.7686,
+    79.129
+  ],
+  "tamil nadu:the nilgiris": [
+    11.4571,
+    76.6415
+  ],
+  "the nilgiris": [
+    11.4571,
+    76.6415
+  ],
+  "tamil nadu:theni": [
+    10.0102,
+    77.4771
+  ],
+  "theni": [
+    10.0102,
+    77.4771
+  ],
+  "tamil nadu:thiruvallur": [
+    13.1247,
+    79.9184
+  ],
+  "thiruvallur": [
+    13.1247,
+    79.9184
+  ],
+  "tamil nadu:thiruvarur": [
+    10.7734,
+    79.6366
+  ],
+  "thiruvarur": [
+    10.7734,
+    79.6366
+  ],
+  "tamil nadu:tiruchirappalli": [
+    10.8061,
+    78.6948
+  ],
+  "tiruchirappalli": [
+    10.8061,
+    78.6948
+  ],
+  "tamil nadu:tirunelveli": [
+    8.7264,
+    77.7335
+  ],
+  "tirunelveli": [
+    8.7264,
+    77.7335
+  ],
+  "tamil nadu:tirupathur": [
+    10.1111,
+    78.6002
+  ],
+  "tirupathur": [
+    10.1111,
+    78.6002
+  ],
+  "tamil nadu:tiruppur": [
+    11.0894,
+    77.3626
+  ],
+  "tiruppur": [
+    11.0894,
+    77.3626
+  ],
+  "tamil nadu:tiruvannamalai": [
+    12.2353,
+    79.0748
+  ],
+  "tiruvannamalai": [
+    12.2353,
+    79.0748
+  ],
+  "tamil nadu:tuticorin": [
+    11.0221,
+    78.6769
+  ],
+  "tuticorin": [
+    11.0221,
+    78.6769
+  ],
+  "tamil nadu:vellore": [
+    12.9135,
+    79.1325
+  ],
+  "vellore": [
+    12.9135,
+    79.1325
+  ],
+  "tamil nadu:villupuram": [
+    11.2271,
+    78.6669
+  ],
+  "villupuram": [
+    11.2271,
+    78.6669
+  ],
+  "tamil nadu:virudhunagar": [
+    9.5892,
+    77.9537
+  ],
+  "virudhunagar": [
+    9.5892,
+    77.9537
+  ],
+  "telangana:adilabad": [
+    19.672,
+    78.5359
+  ],
+  "adilabad": [
+    19.672,
+    78.5359
+  ],
+  "telangana:bhadradri kothagudem": [
+    17.6707,
+    80.7064
+  ],
+  "bhadradri kothagudem": [
+    17.6707,
+    80.7064
+  ],
+  "telangana:hanumakonda": [
+    18.1224,
+    79.0443
+  ],
+  "hanumakonda": [
+    18.1224,
+    79.0443
+  ],
+  "telangana:hyderabad": [
+    17.3949,
+    78.4707
+  ],
+  "hyderabad": [
+    17.3949,
+    78.4707
+  ],
+  "telangana:jagitial": [
+    17.9774,
+    79.1693
+  ],
+  "jagitial": [
+    17.9774,
+    79.1693
+  ],
+  "telangana:jangoan": [
+    18.0124,
+    79.0693
+  ],
+  "jangoan": [
+    18.0124,
+    79.0693
+  ],
+  "telangana:jayashankar bhupalapally": [
+    18.1174,
+    79.2343
+  ],
+  "jayashankar bhupalapally": [
+    18.1174,
+    79.2343
+  ],
+  "telangana:jogulamba gadwal": [
+    16.0737,
+    77.7744
+  ],
+  "jogulamba gadwal": [
+    16.0737,
+    77.7744
+  ],
+  "telangana:kamareddy": [
+    18.3327,
+    78.3437
+  ],
+  "kamareddy": [
+    18.3327,
+    78.3437
+  ],
+  "telangana:karimnagar": [
+    18.4392,
+    79.1286
+  ],
+  "karimnagar": [
+    18.4392,
+    79.1286
+  ],
+  "telangana:khammam": [
+    17.2516,
+    80.1573
+  ],
+  "khammam": [
+    17.2516,
+    80.1573
+  ],
+  "telangana:kumuram bheem asifabad": [
+    19.3565,
+    79.2868
+  ],
+  "kumuram bheem asifabad": [
+    19.3565,
+    79.2868
+  ],
+  "telangana:mahabubabad": [
+    17.5961,
+    80.0008
+  ],
+  "mahabubabad": [
+    17.5961,
+    80.0008
+  ],
+  "telangana:mahabubnagar": [
+    17.9774,
+    78.9243
+  ],
+  "mahabubnagar": [
+    17.9774,
+    78.9243
+  ],
+  "telangana:mancherial": [
+    18.9974,
+    79.5193
+  ],
+  "mancherial": [
+    18.9974,
+    79.5193
+  ],
+  "telangana:medak": [
+    18.0477,
+    78.2668
+  ],
+  "medak": [
+    18.0477,
+    78.2668
+  ],
+  "telangana:medchal malkajgiri": [
+    17.5507,
+    78.5617
+  ],
+  "medchal malkajgiri": [
+    17.5507,
+    78.5617
+  ],
+  "telangana:mulugu": [
+    18.2852,
+    80.3362
+  ],
+  "mulugu": [
+    18.2852,
+    80.3362
+  ],
+  "telangana:nagarkurnool": [
+    16.4869,
+    78.3128
+  ],
+  "nagarkurnool": [
+    16.4869,
+    78.3128
+  ],
+  "telangana:nalgonda": [
+    17.0571,
+    79.2685
+  ],
+  "nalgonda": [
+    17.0571,
+    79.2685
+  ],
+  "telangana:narayanpet": [
+    16.7475,
+    77.4959
+  ],
+  "narayanpet": [
+    16.7475,
+    77.4959
+  ],
+  "telangana:nirmal": [
+    19.0868,
+    78.3397
+  ],
+  "nirmal": [
+    19.0868,
+    78.3397
+  ],
+  "telangana:nizamabad": [
+    18.6715,
+    78.0988
+  ],
+  "nizamabad": [
+    18.6715,
+    78.0988
+  ],
+  "telangana:peddapalli": [
+    18.3274,
+    78.7993
+  ],
+  "peddapalli": [
+    18.3274,
+    78.7993
+  ],
+  "telangana:rajanna sircilla": [
+    18.4183,
+    78.7706
+  ],
+  "rajanna sircilla": [
+    18.4183,
+    78.7706
+  ],
+  "telangana:ranga reddy": [
+    17.1362,
+    78.4133
+  ],
+  "ranga reddy": [
+    17.1362,
+    78.4133
+  ],
+  "telangana:sangareddy": [
+    17.6252,
+    78.0824
+  ],
+  "sangareddy": [
+    17.6252,
+    78.0824
+  ],
+  "telangana:siddipet": [
+    18.0192,
+    78.8636
+  ],
+  "siddipet": [
+    18.0192,
+    78.8636
+  ],
+  "telangana:suryapet": [
+    17.1535,
+    79.6201
+  ],
+  "suryapet": [
+    17.1535,
+    79.6201
+  ],
+  "telangana:vikarabad": [
+    17.2521,
+    77.7465
+  ],
+  "vikarabad": [
+    17.2521,
+    77.7465
+  ],
+  "telangana:wanaparthy": [
+    16.3614,
+    78.0653
+  ],
+  "wanaparthy": [
+    16.3614,
+    78.0653
+  ],
+  "telangana:warangal": [
+    17.9574,
+    79.2043
+  ],
+  "warangal": [
+    17.9574,
+    79.2043
+  ],
+  "telangana:yadadri bhuvanagiri": [
+    17.5082,
+    78.8781
+  ],
+  "yadadri bhuvanagiri": [
+    17.5082,
+    78.8781
+  ],
+  "tripura:dhalai": [
+    23.845,
+    91.9269
+  ],
+  "dhalai": [
+    23.845,
+    91.9269
+  ],
+  "tripura:gomati": [
+    23.5207,
+    91.6339
+  ],
+  "gomati": [
+    23.5207,
+    91.6339
+  ],
+  "tripura:khowai": [
+    24.071,
+    91.6023
+  ],
+  "khowai": [
+    24.071,
+    91.6023
+  ],
+  "tripura:north tripura": [
+    24.1039,
+    92.208
+  ],
+  "north tripura": [
+    24.1039,
+    92.208
+  ],
+  "tripura:sepahijala": [
+    23.6063,
+    91.3433
+  ],
+  "sepahijala": [
+    23.6063,
+    91.3433
+  ],
+  "tripura:south tripura": [
+    23.2013,
+    91.5826
+  ],
+  "south tripura": [
+    23.2013,
+    91.5826
+  ],
+  "tripura:unakoti": [
+    24.1971,
+    92.0362
+  ],
+  "unakoti": [
+    24.1971,
+    92.0362
+  ],
+  "tripura:west tripura": [
+    23.8903,
+    91.4025
+  ],
+  "west tripura": [
+    23.8903,
+    91.4025
+  ],
+  "uttar pradesh:agra": [
+    27.1922,
+    78.0001
+  ],
+  "agra": [
+    27.1922,
+    78.0001
+  ],
+  "uttar pradesh:aligarh": [
+    27.8864,
+    78.0738
+  ],
+  "aligarh": [
+    27.8864,
+    78.0738
+  ],
+  "uttar pradesh:ambedkar nagar": [
+    26.4202,
+    82.6709
+  ],
+  "ambedkar nagar": [
+    26.4202,
+    82.6709
+  ],
+  "uttar pradesh:amethi": [
+    26.1569,
+    81.8053
+  ],
+  "amethi": [
+    26.1569,
+    81.8053
+  ],
+  "uttar pradesh:amroha": [
+    28.877,
+    78.4685
+  ],
+  "amroha": [
+    28.877,
+    78.4685
+  ],
+  "uttar pradesh:auraiya": [
+    26.4603,
+    79.511
+  ],
+  "auraiya": [
+    26.4603,
+    79.511
+  ],
+  "uttar pradesh:ayodhya": [
+    26.7925,
+    82.2002
+  ],
+  "ayodhya": [
+    26.7925,
+    82.2002
+  ],
+  "uttar pradesh:azamgarh": [
+    26.0683,
+    83.1836
+  ],
+  "azamgarh": [
+    26.0683,
+    83.1836
+  ],
+  "uttar pradesh:baghpat": [
+    28.9452,
+    77.2207
+  ],
+  "baghpat": [
+    28.9452,
+    77.2207
+  ],
+  "uttar pradesh:bahraich": [
+    27.5768,
+    81.6025
+  ],
+  "bahraich": [
+    27.5768,
+    81.6025
+  ],
+  "uttar pradesh:ballia": [
+    25.7584,
+    84.148
+  ],
+  "ballia": [
+    25.7584,
+    84.148
+  ],
+  "uttar pradesh:balrampur": [
+    26.8767,
+    80.8012
+  ],
+  "uttar pradesh:banda": [
+    25.4776,
+    80.3349
+  ],
+  "banda": [
+    25.4776,
+    80.3349
+  ],
+  "uttar pradesh:barabanki": [
+    26.5967,
+    80.8612
+  ],
+  "barabanki": [
+    26.5967,
+    80.8612
+  ],
+  "uttar pradesh:bareilly": [
+    28.3544,
+    79.4163
+  ],
+  "bareilly": [
+    28.3544,
+    79.4163
+  ],
+  "uttar pradesh:basti": [
+    26.7968,
+    82.7399
+  ],
+  "basti": [
+    26.7968,
+    82.7399
+  ],
+  "uttar pradesh:bhadohi": [
+    25.3945,
+    82.5686
+  ],
+  "bhadohi": [
+    25.3945,
+    82.5686
+  ],
+  "uttar pradesh:bijnor": [
+    29.3732,
+    78.1356
+  ],
+  "bijnor": [
+    29.3732,
+    78.1356
+  ],
+  "uttar pradesh:budaun": [
+    28.0364,
+    79.123
+  ],
+  "budaun": [
+    28.0364,
+    79.123
+  ],
+  "uttar pradesh:bulandshahr": [
+    28.4097,
+    77.8501
+  ],
+  "bulandshahr": [
+    28.4097,
+    77.8501
+  ],
+  "uttar pradesh:chandauli": [
+    25.2604,
+    83.2677
+  ],
+  "chandauli": [
+    25.2604,
+    83.2677
+  ],
+  "uttar pradesh:chitrakoot": [
+    25.1783,
+    80.869
+  ],
+  "chitrakoot": [
+    25.1783,
+    80.869
+  ],
+  "uttar pradesh:deoria": [
+    26.5025,
+    83.7792
+  ],
+  "deoria": [
+    26.5025,
+    83.7792
+  ],
+  "uttar pradesh:etah": [
+    27.5737,
+    78.6523
+  ],
+  "etah": [
+    27.5737,
+    78.6523
+  ],
+  "uttar pradesh:etawah": [
+    26.7762,
+    79.0213
+  ],
+  "etawah": [
+    26.7762,
+    79.0213
+  ],
+  "uttar pradesh:farrukhabad": [
+    27.3913,
+    79.5793
+  ],
+  "farrukhabad": [
+    27.3913,
+    79.5793
+  ],
+  "uttar pradesh:fatehpur": [
+    27.1733,
+    81.2165
+  ],
+  "fatehpur": [
+    27.1733,
+    81.2165
+  ],
+  "uttar pradesh:firozabad": [
+    27.1521,
+    78.3947
+  ],
+  "firozabad": [
+    27.1521,
+    78.3947
+  ],
+  "uttar pradesh:gautam buddha nagar": [
+    28.3615,
+    77.507
+  ],
+  "gautam buddha nagar": [
+    28.3615,
+    77.507
+  ],
+  "uttar pradesh:ghaziabad": [
+    28.6654,
+    77.4391
+  ],
+  "ghaziabad": [
+    28.6654,
+    77.4391
+  ],
+  "uttar pradesh:ghazipur": [
+    25.5833,
+    83.5853
+  ],
+  "ghazipur": [
+    25.5833,
+    83.5853
+  ],
+  "uttar pradesh:gonda": [
+    27.1358,
+    81.9598
+  ],
+  "gonda": [
+    27.1358,
+    81.9598
+  ],
+  "uttar pradesh:gorakhpur": [
+    26.7543,
+    83.3755
+  ],
+  "gorakhpur": [
+    26.7543,
+    83.3755
+  ],
+  "uttar pradesh:hamirpur": [
+    25.9609,
+    80.1453
+  ],
+  "uttar pradesh:hapur": [
+    28.7298,
+    77.7807
+  ],
+  "hapur": [
+    28.7298,
+    77.7807
+  ],
+  "uttar pradesh:hardoi": [
+    27.3949,
+    80.1316
+  ],
+  "hardoi": [
+    27.3949,
+    80.1316
+  ],
+  "uttar pradesh:hathras": [
+    27.5955,
+    78.052
+  ],
+  "hathras": [
+    27.5955,
+    78.052
+  ],
+  "uttar pradesh:jalaun": [
+    26.1429,
+    79.3256
+  ],
+  "jalaun": [
+    26.1429,
+    79.3256
+  ],
+  "uttar pradesh:jaunpur": [
+    25.7451,
+    82.6824
+  ],
+  "jaunpur": [
+    25.7451,
+    82.6824
+  ],
+  "uttar pradesh:jhansi": [
+    25.4486,
+    78.5696
+  ],
+  "jhansi": [
+    25.4486,
+    78.5696
+  ],
+  "uttar pradesh:kannauj": [
+    27.0316,
+    79.9212
+  ],
+  "kannauj": [
+    27.0316,
+    79.9212
+  ],
+  "uttar pradesh:kanpur dehat": [
+    26.4395,
+    79.8595
+  ],
+  "kanpur dehat": [
+    26.4395,
+    79.8595
+  ],
+  "uttar pradesh:kanpur nagar": [
+    26.388,
+    80.2117
+  ],
+  "kanpur nagar": [
+    26.388,
+    80.2117
+  ],
+  "uttar pradesh:kasganj": [
+    27.813,
+    78.6502
+  ],
+  "kasganj": [
+    27.813,
+    78.6502
+  ],
+  "uttar pradesh:kaushambi": [
+    25.499,
+    81.417
+  ],
+  "kaushambi": [
+    25.499,
+    81.417
+  ],
+  "uttar pradesh:kheri": [
+    27.9054,
+    80.7988
+  ],
+  "kheri": [
+    27.9054,
+    80.7988
+  ],
+  "uttar pradesh:kushi nagar": [
+    26.7501,
+    83.9144
+  ],
+  "kushi nagar": [
+    26.7501,
+    83.9144
+  ],
+  "uttar pradesh:lalitpur": [
+    24.6913,
+    78.4138
+  ],
+  "lalitpur": [
+    24.6913,
+    78.4138
+  ],
+  "uttar pradesh:lucknow": [
+    26.8547,
+    80.9214
+  ],
+  "lucknow": [
+    26.8547,
+    80.9214
+  ],
+  "uttar pradesh:maharajganj": [
+    26.1097,
+    84.5063
+  ],
+  "maharajganj": [
+    26.1097,
+    84.5063
+  ],
+  "uttar pradesh:mahoba": [
+    25.2916,
+    79.8711
+  ],
+  "mahoba": [
+    25.2916,
+    79.8711
+  ],
+  "uttar pradesh:mainpuri": [
+    27.2281,
+    79.025
+  ],
+  "mainpuri": [
+    27.2281,
+    79.025
+  ],
+  "uttar pradesh:mathura": [
+    27.4919,
+    77.6741
+  ],
+  "mathura": [
+    27.4919,
+    77.6741
+  ],
+  "uttar pradesh:mau": [
+    26.6767,
+    80.9062
+  ],
+  "mau": [
+    26.6767,
+    80.9062
+  ],
+  "uttar pradesh:meerut": [
+    28.9986,
+    77.7046
+  ],
+  "meerut": [
+    28.9986,
+    77.7046
+  ],
+  "uttar pradesh:mirzapur": [
+    25.1343,
+    82.5671
+  ],
+  "mirzapur": [
+    25.1343,
+    82.5671
+  ],
+  "uttar pradesh:moradabad": [
+    28.8389,
+    78.7768
+  ],
+  "moradabad": [
+    28.8389,
+    78.7768
+  ],
+  "uttar pradesh:muzaffarnagar": [
+    29.4705,
+    77.7077
+  ],
+  "muzaffarnagar": [
+    29.4705,
+    77.7077
+  ],
+  "uttar pradesh:pilibhit": [
+    28.6312,
+    79.8044
+  ],
+  "pilibhit": [
+    28.6312,
+    79.8044
+  ],
+  "uttar pradesh:pratapgarh": [
+    26.8067,
+    81.0462
+  ],
+  "uttar pradesh:prayagraj": [
+    25.4361,
+    81.8472
+  ],
+  "prayagraj": [
+    25.4361,
+    81.8472
+  ],
+  "uttar pradesh:rae bareli": [
+    26.221,
+    81.2557
+  ],
+  "rae bareli": [
+    26.221,
+    81.2557
+  ],
+  "uttar pradesh:rampur": [
+    28.7782,
+    79.0256
+  ],
+  "rampur": [
+    28.7782,
+    79.0256
+  ],
+  "uttar pradesh:saharanpur": [
+    29.9657,
+    77.5461
+  ],
+  "saharanpur": [
+    29.9657,
+    77.5461
+  ],
+  "uttar pradesh:sambhal": [
+    28.5844,
+    78.5718
+  ],
+  "sambhal": [
+    28.5844,
+    78.5718
+  ],
+  "uttar pradesh:sant kabeer nagar": [
+    26.7882,
+    83.0228
+  ],
+  "sant kabeer nagar": [
+    26.7882,
+    83.0228
+  ],
+  "uttar pradesh:shahjahanpur": [
+    27.8557,
+    79.9181
+  ],
+  "shahjahanpur": [
+    27.8557,
+    79.9181
+  ],
+  "uttar pradesh:shamli": [
+    29.4448,
+    77.3171
+  ],
+  "shamli": [
+    29.4448,
+    77.3171
+  ],
+  "uttar pradesh:shravasti": [
+    27.7213,
+    81.8999
+  ],
+  "shravasti": [
+    27.7213,
+    81.8999
+  ],
+  "uttar pradesh:siddharth nagar": [
+    27.2734,
+    82.8633
+  ],
+  "siddharth nagar": [
+    27.2734,
+    82.8633
+  ],
+  "uttar pradesh:sitapur": [
+    27.5619,
+    80.6826
+  ],
+  "sitapur": [
+    27.5619,
+    80.6826
+  ],
+  "uttar pradesh:sonbhadra": [
+    24.422,
+    83.0623
+  ],
+  "sonbhadra": [
+    24.422,
+    83.0623
+  ],
+  "uttar pradesh:sultanpur": [
+    26.2582,
+    82.0681
+  ],
+  "sultanpur": [
+    26.2582,
+    82.0681
+  ],
+  "uttar pradesh:unnao": [
+    26.5471,
+    80.4878
+  ],
+  "unnao": [
+    26.5471,
+    80.4878
+  ],
+  "uttar pradesh:varanasi": [
+    25.3329,
+    82.9966
+  ],
+  "varanasi": [
+    25.3329,
+    82.9966
+  ],
+  "uttarakhand:almora": [
+    29.5968,
+    79.6517
+  ],
+  "almora": [
+    29.5968,
+    79.6517
+  ],
+  "uttarakhand:bageshwar": [
+    29.8357,
+    79.7716
+  ],
+  "bageshwar": [
+    29.8357,
+    79.7716
+  ],
+  "uttarakhand:chamoli": [
+    30.4901,
+    79.5761
+  ],
+  "chamoli": [
+    30.4901,
+    79.5761
+  ],
+  "uttarakhand:champawat": [
+    29.3359,
+    80.0907
+  ],
+  "champawat": [
+    29.3359,
+    80.0907
+  ],
+  "uttarakhand:dehradun": [
+    30.3097,
+    78.0489
+  ],
+  "dehradun": [
+    30.3097,
+    78.0489
+  ],
+  "uttarakhand:haridwar": [
+    29.9479,
+    78.1603
+  ],
+  "haridwar": [
+    29.9479,
+    78.1603
+  ],
+  "uttarakhand:nainital": [
+    29.3937,
+    79.4518
+  ],
+  "nainital": [
+    29.3937,
+    79.4518
+  ],
+  "uttarakhand:pauri garhwal": [
+    29.8772,
+    78.7664
+  ],
+  "pauri garhwal": [
+    29.8772,
+    78.7664
+  ],
+  "uttarakhand:pithoragarh": [
+    29.5852,
+    80.2163
+  ],
+  "pithoragarh": [
+    29.5852,
+    80.2163
+  ],
+  "uttarakhand:rudra prayag": [
+    30.2845,
+    78.9774
+  ],
+  "rudra prayag": [
+    30.2845,
+    78.9774
+  ],
+  "uttarakhand:tehri garhwal": [
+    30.4344,
+    78.5375
+  ],
+  "tehri garhwal": [
+    30.4344,
+    78.5375
+  ],
+  "uttarakhand:udam singh nagar": [
+    30.1968,
+    78.9343
+  ],
+  "udam singh nagar": [
+    30.1968,
+    78.9343
+  ],
+  "uttarakhand:uttar kashi": [
+    30.9686,
+    78.6075
+  ],
+  "uttar kashi": [
+    30.9686,
+    78.6075
+  ],
+  "west bengal:24 paraganas north": [
+    22.8118,
+    87.865
+  ],
+  "24 paraganas north": [
+    22.8118,
+    87.865
+  ],
+  "west bengal:24 paraganas south": [
+    22.7818,
+    87.855
+  ],
+  "24 paraganas south": [
+    22.7818,
+    87.855
+  ],
+  "west bengal:alipurduar": [
+    26.5164,
+    89.5331
+  ],
+  "alipurduar": [
+    26.5164,
+    89.5331
+  ],
+  "west bengal:bankura": [
+    23.2324,
+    87.0716
+  ],
+  "bankura": [
+    23.2324,
+    87.0716
+  ],
+  "west bengal:birbhum": [
+    23.9537,
+    87.6655
+  ],
+  "birbhum": [
+    23.9537,
+    87.6655
+  ],
+  "west bengal:coochbehar": [
+    22.9518,
+    87.67
+  ],
+  "coochbehar": [
+    22.9518,
+    87.67
+  ],
+  "west bengal:darjeeling": [
+    23.2268,
+    88.05
+  ],
+  "darjeeling": [
+    23.2268,
+    88.05
+  ],
+  "west bengal:dinajpur dakshin": [
+    22.9218,
+    87.63
+  ],
+  "dinajpur dakshin": [
+    22.9218,
+    87.63
+  ],
+  "west bengal:dinajpur uttar": [
+    22.8868,
+    87.94
+  ],
+  "dinajpur uttar": [
+    22.8868,
+    87.94
+  ],
+  "west bengal:hooghly": [
+    22.9088,
+    88.3967
+  ],
+  "hooghly": [
+    22.9088,
+    88.3967
+  ],
+  "west bengal:howrah": [
+    22.5963,
+    88.2561
+  ],
+  "howrah": [
+    22.5963,
+    88.2561
+  ],
+  "west bengal:jalpaiguri": [
+    26.5167,
+    88.7333
+  ],
+  "jalpaiguri": [
+    26.5167,
+    88.7333
+  ],
+  "west bengal:jhargram": [
+    22.4497,
+    86.997
+  ],
+  "jhargram": [
+    22.4497,
+    86.997
+  ],
+  "west bengal:kalimpong": [
+    27.067,
+    88.4701
+  ],
+  "kalimpong": [
+    27.067,
+    88.4701
+  ],
+  "west bengal:kolkata": [
+    22.5706,
+    88.3713
+  ],
+  "kolkata": [
+    22.5706,
+    88.3713
+  ],
+  "west bengal:maldah": [
+    25.0202,
+    88.1515
+  ],
+  "maldah": [
+    25.0202,
+    88.1515
+  ],
+  "west bengal:medinipur east": [
+    22.7518,
+    87.895
+  ],
+  "medinipur east": [
+    22.7518,
+    87.895
+  ],
+  "west bengal:medinipur west": [
+    22.9068,
+    87.62
+  ],
+  "medinipur west": [
+    22.9068,
+    87.62
+  ],
+  "west bengal:murshidabad": [
+    24.1761,
+    88.273
+  ],
+  "murshidabad": [
+    24.1761,
+    88.273
+  ],
+  "west bengal:nadia": [
+    23.4747,
+    88.5162
+  ],
+  "nadia": [
+    23.4747,
+    88.5162
+  ],
+  "west bengal:paschim bardhaman": [
+    23.6576,
+    87.1682
+  ],
+  "paschim bardhaman": [
+    23.6576,
+    87.1682
+  ],
+  "west bengal:purba bardhaman": [
+    23.3572,
+    87.9521
+  ],
+  "purba bardhaman": [
+    23.3572,
+    87.9521
+  ],
+  "west bengal:purulia": [
+    23.333,
+    86.367
+  ],
+  "purulia": [
+    23.333,
+    86.367
+  ]
+}

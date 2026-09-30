@@ -729,12 +729,17 @@ const BASE_30_DAY_SERIES: DailyForecastPoint[] = [
 ];
 
 export function buildForecastForBlock(
-  blockId: string,
+  blockOrId: string | Block,
   horizon: ForecastHorizon,
   scenario: DemoScenarioId = "scenario_b"
 ): Forecast {
-  const blocks = getBlocksForScenarioAndHorizon(scenario, horizon);
-  const block = blocks.find((b) => b.id === blockId) || blocks[0];
+  let block: Block;
+  if (typeof blockOrId === "object" && blockOrId !== null) {
+    block = blockOrId;
+  } else {
+    const blocks = getBlocksForScenarioAndHorizon(scenario, horizon);
+    block = blocks.find((b) => b.id === blockOrId) || blocks[0];
+  }
   const daysLimit =
     horizon === "7D" ? 7 : horizon === "14D" ? 14 : horizon === "21D" ? 21 : 30;
 
@@ -758,8 +763,8 @@ export function buildForecastForBlock(
       : "Highest Uncertainty (±46%)";
 
   // Block-specific & Scenario-specific curve shaping
-  const blockFactor =
-    MOCK_BLOCKS.find((b) => b.id === block.id)?.expectedRainfall! / 94;
+  const expectedRain = block.expectedRainfall || block.expectedRainfallMm || 75;
+  const blockFactor = expectedRain / 94;
 
   const dailySeries = BASE_30_DAY_SERIES.slice(0, daysLimit).map((point) => {
     let rawPred = point.predictedMm * blockFactor;

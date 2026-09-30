@@ -66,6 +66,8 @@ function saveWeatherSourceStatus(status: DataSourceStatusRow): void {
   }
 }
 
+import { resolveLocationCoordinates } from '@/data/lgd/districtCoordinates';
+
 /**
  * Scheduler-ready Weather Ingestion Service
  * 1. Fetches real weather observations from Open-Meteo for the block's coordinates
@@ -75,10 +77,20 @@ function saveWeatherSourceStatus(status: DataSourceStatusRow): void {
  */
 export async function syncWeatherData(
   blockId: string,
-  simulateOffline = false
+  simulateOffline = false,
+  coordinates?: [number, number]
 ): Promise<WeatherSyncResult> {
-  const block = MOCK_BLOCKS.find((b) => b.id === blockId) || MOCK_BLOCKS[0];
-  const [lat, lon] = block ? block.coordinates : [25.28, 81.94];
+  let lat = coordinates?.[0];
+  let lon = coordinates?.[1];
+
+  if (typeof lat !== 'number' || typeof lon !== 'number') {
+    const block = MOCK_BLOCKS.find((b) => b.id === blockId);
+    if (block) {
+      [lat, lon] = block.coordinates;
+    } else {
+      [lat, lon] = resolveLocationCoordinates(undefined, undefined, blockId);
+    }
+  }
   const nowIso = new Date().toISOString();
   const prevStatus = getStoredWeatherSourceStatus();
 

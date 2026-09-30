@@ -4,9 +4,10 @@ import {
   getBlocksForScenarioAndHorizon,
 } from "@/data/mockData";
 import { LocationRow, LocationDataCoverage } from "@/types/database";
-import { Block, DemoScenarioId, ForecastHorizon } from "@/types/monsoon";
+import { Block, DemoScenarioId, ForecastHorizon, RiskLevel } from "@/types/monsoon";
 import statesData from "@/data/lgd/states.json";
 import districtsData from "@/data/lgd/districts.json";
+import { resolveLocationCoordinates } from "@/data/lgd/districtCoordinates";
 
 export interface HierarchyValidationResult {
   valid: boolean;
@@ -286,6 +287,179 @@ export async function getBlocks(
     }));
   }
 
+function clamp(val: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, val));
+}
+
+function getRegionalSoilType(stateName: string): string {
+  const s = (stateName || "").toLowerCase();
+  if (s.includes("lakshadweep") || s.includes("andaman") || s.includes("goa") || s.includes("kerala")) {
+    return "Coastal Sandy Alluvium";
+  }
+  if (s.includes("maharashtra") || s.includes("madhya pradesh") || s.includes("gujarat") || s.includes("karnataka")) {
+    return "Medium to Deep Black Cotton Soil";
+  }
+  if (s.includes("uttar pradesh") || s.includes("bihar") || s.includes("punjab") || s.includes("haryana") || s.includes("west bengal")) {
+    return "Fertile Indo-Gangetic Alluvial Loam";
+  }
+  if (s.includes("rajasthan")) {
+    return "Desert Sandy Loam";
+  }
+  if (s.includes("odisha") || s.includes("andhra") || s.includes("tamil nadu") || s.includes("telangana") || s.includes("chhattisgarh") || s.includes("jharkhand")) {
+    return "Red & Laterite Loam";
+  }
+  return "Mountain Forest & Humus Loam";
+}
+
+function getRegionalOnsetWindow(lat: number): string {
+  if (lat < 13) return "1–5 June";
+  if (lat < 18) return "5–12 June";
+  if (lat < 23) return "12–18 June";
+  if (lat < 27) return "18–25 June";
+  return "25 June–5 July";
+}
+
+function buildLgdBlock(
+  b: any,
+  normState: string | undefined,
+  normDistrict: string | undefined,
+  horizon: ForecastHorizon,
+  scenario: DemoScenarioId
+): Block {
+  const code = typeof b.code === "number" ? b.code : typeof b.blockLgdCode === "number" ? b.blockLgdCode : 42;
+  const name = b.name || b.block_name || b.block || "Block";
+  const displayName = name.endsWith(" Block") ? name : `${name} Block`;
+  const stateName = b.stateName || b.state_name || normState || "";
+  const districtName = b.districtName || b.district_name || normDistrict || "";
+  const coords: [number, number] =
+    b.latitude && b.longitude
+      ? [b.latitude, b.longitude]
+      : resolveLocationCoordinates(stateName, districtName, name, code);
+
+  const horizonOffset =
+    horizon === "7D"
+      ? { onset: +3, falseOnset: -4, drySpell: -6, heavyRain: -3, rainMult: 0.58, conf: +6 }
+      : horizon === "14D"
+      ? { onset: 0, falseOnset: 0, drySpell: 0, heavyRain: 0, rainMult: 1.0, conf: 0 }
+      : horizon === "21D"
+      ? { onset: +2, falseOnset: -3, drySpell: -4, heavyRain: +5, rainMult: 1.55, conf: -4 }
+      : { onset: +5, falseOnset: -5, drySpell: -7, heavyRain: +8, rainMult: 2.25, conf: -8 };
+
+  const scenarioOffset =
+    scenario === "scenario_a"
+      ? { onset: +14, falseOnset: -32, drySpell: -28, heavyRain: +8, anom: +18, moisture: +18 }
+      : scenario === "scenario_b"
+      ? { onset: 0, falseOnset: 0, drySpell: 0, heavyRain: 0, anom: 0, moisture: 0 }
+      : scenario === "scenario_c"
+      ? { onset: -14, falseOnset: +12, drySpell: +18, heavyRain: -12, anom: -16, moisture: -12 }
+      : { onset: +10, falseOnset: -24, drySpell: -22, heavyRain: +36, anom: +28, moisture: +24 };
+
+  const seed = (Math.abs(code) % 997) + name.length;
+  const baseOnset = 64 + ((seed % 17) - 8);
+  const baseFalseOnset = 56 + (((seed * 3) % 19) - 9);
+  const baseDrySpell = 62 + (((seed * 7) % 21) - 10);
+  const baseHeavyRain = 24 + (((seed * 11) % 17) - 8);
+  const baseRainfall = 78 + (((seed * 13) % 27) - 13);
+  const baseMoisture = 34 + (((seed * 5) % 13) - 6);
+
+  const onsetProbability = clamp(baseOnset + horizonOffset.onset + scenarioOffset.onset, 20, 95);
+  const falseOnsetProbability = clamp(baseFalseOnset + horizonOffset.falseOnset + scenarioOffset.falseOnset, 10, 92);
+  const drySpellProbability = clamp(baseDrySpell + horizonOffset.drySpell + scenarioOffset.drySpell, 15, 94);
+  const heavyRainProbability = clamp(baseHeavyRain + horizonOffset.heavyRain + scenarioOffset.heavyRain, 8, 90);
+  const rainfallAnomaly = clamp(-16 + scenarioOffset.anom + (horizon === "30D" ? 3 : 0), -45, +45);
+  const expectedRainfall = Math.round(
+    baseRainfall *
+      horizonOffset.rainMult *
+      (scenario === "scenario_d" ? 1.35 : scenario === "scenario_c" ? 0.74 : scenario === "scenario_a" ? 1.16 : 1.0)
+  );
+  const confidence = clamp(80 + horizonOffset.conf, 60, 92);
+  const soilMoisture = clamp(baseMoisture + scenarioOffset.moisture, 16, 85);
+
+  const maxThreat = Math.max(falseOnsetProbability, drySpellProbability, heavyRainProbability);
+  const riskLevel: RiskLevel =
+    maxThreat >= 72 ? "Very High" : maxThreat >= 56 ? "High" : maxThreat >= 36 ? "Moderate" : "Low";
+
+  let mainIssue = `False onset risk (${falseOnsetProbability}%) & break-monsoon vulnerability (${drySpellProbability}%)`;
+  let recommendedAdvisory = "Delay rainfed sowing until sustained monsoon pulse; verify 72-hour soil moisture";
+
+  if (scenario === "scenario_a") {
+    mainIssue = `Favorable onset (${onsetProbability}%) with balanced soil moisture (${soilMoisture}%)`;
+    recommendedAdvisory = "Proceed with timely Kharif sowing and basal nutrient application";
+  } else if (scenario === "scenario_c") {
+    mainIssue = `Prolonged break-monsoon dry spell (${drySpellProbability}%) & ${rainfallAnomaly}% rainfall deficit`;
+    recommendedAdvisory = "Withhold rainfed sowing; prepare contingency micro-irrigation and drought mulching";
+  } else if (scenario === "scenario_d") {
+    mainIssue = `Elevated heavy rainfall & surface waterlogging risk (${heavyRainProbability}%)`;
+    recommendedAdvisory = "Open field drainage channels; postpone broadcast fertilizer application";
+  }
+
+  const expectedDrySpellDays =
+    scenario === "scenario_a" ? "2–4 days" : scenario === "scenario_c" ? "11–14 days" : scenario === "scenario_d" ? "1–3 days" : "7–10 days";
+
+  const soilType = b.soilType || b.soil_type || getRegionalSoilType(stateName);
+  const onsetWindow = getRegionalOnsetWindow(coords[0]);
+  const cleanName = name.replace(/ Block$/i, "");
+
+  const panchayats = [
+    {
+      id: `p-${b.id || code}-1`,
+      name: `${cleanName} North Panchayat`,
+      blockId: b.id || `lgd-block-${code}`,
+      farmersCount: 480 + (seed % 280),
+      soilMoistureIndex: soilMoisture,
+      dominantCrop: "Paddy",
+      onsetProbability,
+      drySpellRisk: drySpellProbability,
+    },
+    {
+      id: `p-${b.id || code}-2`,
+      name: `${cleanName} South Panchayat`,
+      blockId: b.id || `lgd-block-${code}`,
+      farmersCount: 410 + ((seed * 2) % 240),
+      soilMoistureIndex: Math.max(18, soilMoisture - 4),
+      dominantCrop: "Pulses",
+      onsetProbability: Math.min(95, onsetProbability + 2),
+      drySpellRisk: Math.min(95, drySpellProbability + 3),
+    },
+  ];
+
+  return {
+    id: b.id || `lgd-block-${code}`,
+    name: displayName,
+    district: districtName,
+    state: stateName,
+    dataCoverage: (b.dataCoverage || b.data_coverage || "LOCATION_ONLY") as LocationDataCoverage,
+    stateLgdCode: b.stateCode || b.state_lgd_code,
+    districtLgdCode: b.districtCode || b.district_lgd_code,
+    blockLgdCode: code,
+    coordinates: coords,
+    polygon: [],
+    panchayats,
+    farmersRegistered: 1150 + (seed % 950),
+    cultivatedAreaHa: 13500 + (seed % 7500),
+    soilType,
+    irrigationCoverage: clamp(38 + (seed % 34), 20, 80),
+    onsetProbability,
+    falseOnsetProbability,
+    falseOnsetRisk: falseOnsetProbability,
+    drySpellProbability,
+    drySpellRisk: drySpellProbability,
+    heavyRainProbability,
+    heavyRainfallRisk: heavyRainProbability,
+    rainfallAnomaly,
+    rainfallAnomalyPct: rainfallAnomaly,
+    expectedRainfall,
+    expectedRainfallMm: expectedRainfall,
+    confidence,
+    expectedDrySpellDays,
+    onsetWindow,
+    soilMoisture,
+    riskLevel,
+    mainIssue,
+    recommendedAdvisory,
+  };
+}
+
   // Non-Prayagraj District selected:
   if (normDistrict) {
     if (cachedBlocksByDistrict[cacheKey]) {
@@ -304,41 +478,9 @@ export async function getBlocks(
         const { data: dbLocs } = await locQuery;
 
         if (dbLocs && dbLocs.length > 0) {
-          const blocksList: Block[] = dbLocs.map((loc: any) => ({
-            id: loc.id,
-            name: loc.block_name || (loc.block.endsWith(" Block") ? loc.block : `${loc.block} Block`),
-            district: loc.district_name || loc.district,
-            state: loc.state_name || loc.state,
-            dataCoverage: (loc.data_coverage || "LOCATION_ONLY") as LocationDataCoverage,
-            stateLgdCode: loc.state_lgd_code,
-            districtLgdCode: loc.district_lgd_code,
-            blockLgdCode: loc.block_lgd_code,
-            coordinates: [loc.latitude || 23.0, loc.longitude || 80.0],
-            polygon: [],
-            panchayats: [],
-            farmersRegistered: 0,
-            cultivatedAreaHa: 0,
-            soilType: loc.soil_type || "Undetermined",
-            irrigationCoverage: 0,
-            onsetProbability: 0,
-            falseOnsetProbability: 0,
-            falseOnsetRisk: 0,
-            drySpellProbability: 0,
-            drySpellRisk: 0,
-            heavyRainProbability: 0,
-            heavyRainfallRisk: 0,
-            rainfallAnomaly: 0,
-            rainfallAnomalyPct: 0,
-            expectedRainfall: 0,
-            expectedRainfallMm: 0,
-            confidence: 0,
-            expectedDrySpellDays: "N/A",
-            onsetWindow: "N/A",
-            soilMoisture: 0,
-            riskLevel: "Low",
-            mainIssue: "AI forecast unavailable for this location",
-            recommendedAdvisory: "AI forecast unavailable for this location",
-          }));
+          const blocksList: Block[] = dbLocs.map((loc: any) =>
+            buildLgdBlock(loc, normState, normDistrict, horizon, scenario)
+          );
           cachedBlocksByDistrict[cacheKey] = blocksList;
           return blocksList;
         }
@@ -350,41 +492,9 @@ export async function getBlocks(
     // 2. Query official LGD blocks
     const rawLgdBlocks = await fetchLGDBlocksForDistrict(normState, normDistrict);
     if (rawLgdBlocks && rawLgdBlocks.length > 0) {
-      const blocksList: Block[] = rawLgdBlocks.map((b: any) => ({
-        id: b.id || `lgd-block-${b.code}`,
-        name: b.name.endsWith(" Block") ? b.name : `${b.name} Block`,
-        district: b.districtName || normDistrict,
-        state: b.stateName || normState || "",
-        dataCoverage: (b.dataCoverage || "LOCATION_ONLY") as LocationDataCoverage,
-        stateLgdCode: b.stateCode,
-        districtLgdCode: b.districtCode,
-        blockLgdCode: b.code,
-        coordinates: [b.latitude || 23.0, b.longitude || 80.0],
-        polygon: [],
-        panchayats: [],
-        farmersRegistered: 0,
-        cultivatedAreaHa: 0,
-        soilType: b.soilType || "Undetermined",
-        irrigationCoverage: 0,
-        onsetProbability: 0,
-        falseOnsetProbability: 0,
-        falseOnsetRisk: 0,
-        drySpellProbability: 0,
-        drySpellRisk: 0,
-        heavyRainProbability: 0,
-        heavyRainfallRisk: 0,
-        rainfallAnomaly: 0,
-        rainfallAnomalyPct: 0,
-        expectedRainfall: 0,
-        expectedRainfallMm: 0,
-        confidence: 0,
-        expectedDrySpellDays: "N/A",
-        onsetWindow: "N/A",
-        soilMoisture: 0,
-        riskLevel: "Low",
-        mainIssue: "AI forecast unavailable for this location",
-        recommendedAdvisory: "AI forecast unavailable for this location",
-      }));
+      const blocksList: Block[] = rawLgdBlocks.map((b: any) =>
+        buildLgdBlock(b, normState, normDistrict, horizon, scenario)
+      );
       cachedBlocksByDistrict[cacheKey] = blocksList;
       return blocksList;
     }

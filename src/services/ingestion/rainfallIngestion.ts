@@ -67,6 +67,8 @@ function saveRainfallSourceStatus(status: DataSourceStatusRow): void {
   }
 }
 
+import { resolveLocationCoordinates } from '@/data/lgd/districtCoordinates';
+
 /**
  * Scheduler-ready Rainfall Ingestion Service
  * Fetches NASA POWER / Open-Meteo daily rainfall observations (mm/day),
@@ -74,11 +76,26 @@ function saveRainfallSourceStatus(status: DataSourceStatusRow): void {
  */
 export async function syncRainfallData(
   blockId: string,
-  simulateOffline = false
+  simulateOffline = false,
+  coordinates?: [number, number],
+  expectedRainfallMm?: number
 ): Promise<RainfallSyncResult> {
-  const block = MOCK_BLOCKS.find((b) => b.id === blockId) || MOCK_BLOCKS[0];
-  const [lat, lon] = block ? block.coordinates : [25.28, 81.94];
-  const normalDailyMm = block ? Number((block.expectedRainfallMm / 14).toFixed(1)) : 8.5;
+  let lat = coordinates?.[0];
+  let lon = coordinates?.[1];
+
+  if (typeof lat !== 'number' || typeof lon !== 'number') {
+    const block = MOCK_BLOCKS.find((b) => b.id === blockId);
+    if (block) {
+      [lat, lon] = block.coordinates;
+    } else {
+      [lat, lon] = resolveLocationCoordinates(undefined, undefined, blockId);
+    }
+  }
+
+  const normalDailyMm =
+    typeof expectedRainfallMm === 'number' && expectedRainfallMm > 0
+      ? Number((expectedRainfallMm / 14).toFixed(1))
+      : 8.5;
   const nowIso = new Date().toISOString();
   const prevStatus = getStoredRainfallSourceStatus();
 

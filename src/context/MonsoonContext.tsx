@@ -481,11 +481,13 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
 
     async function syncFromSupabaseServices() {
       setIsLoadingBlocks(true);
-      const [blocksRes, forecastRes, climateRes, alertsRes] =
+      const blocksRes = await getBlocks(horizon, demoScenario, selectedDistrict, selectedState);
+      const targetBlock = blocksRes.find((b) => b.id === selectedBlockId) || blocksRes[0];
+
+      const [forecastRes, climateRes, alertsRes] =
         await Promise.all([
-          getBlocks(horizon, demoScenario, selectedDistrict, selectedState),
-          selectedBlockId
-            ? getForecast(selectedBlockId, horizon, demoScenario)
+          targetBlock
+            ? getForecast(targetBlock.id, horizon, demoScenario, targetBlock)
             : Promise.resolve({
                 ...EMPTY_FORECAST,
                 district: selectedDistrict,
@@ -640,12 +642,16 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
       }
 
       try {
+        const targetBlock = serviceBlocks.find((b) => b.id === selectedBlockId);
+        const blockCoords = targetBlock?.coordinates;
+        const expRain = targetBlock?.expectedRainfallMm;
+
         const [wRes, rRes, cRes] = await Promise.all([
           target === "all" || target === "weather"
-            ? syncWeatherData(selectedBlockId, simulateExternalOffline)
+            ? syncWeatherData(selectedBlockId, simulateExternalOffline, blockCoords)
             : Promise.resolve(null),
           target === "all" || target === "rainfall"
-            ? syncRainfallData(selectedBlockId, simulateExternalOffline)
+            ? syncRainfallData(selectedBlockId, simulateExternalOffline, blockCoords, expRain)
             : Promise.resolve(null),
           target === "all" || target === "climate"
             ? syncClimateIndices(simulateExternalOffline)
@@ -852,29 +858,15 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
         state: selectedState,
       };
     }
-    const isPrayagraj = selectedDistrict.toLowerCase() === "prayagraj";
-    if (!isPrayagraj && selectedBlock.dataCoverage !== "FULL") {
-      return {
-        ...EMPTY_FORECAST,
-        blockId: selectedBlock.id,
-        blockName: selectedBlock.name,
-        district: selectedDistrict,
-        state: selectedState,
-        mainIssue: "AI forecast unavailable for this location",
-        recommendedAdvisory: "AI forecast unavailable for this location",
-      };
-    }
     return serviceForecast &&
       serviceForecast.blockId === selectedBlock.id &&
       serviceForecast.horizon === horizon &&
       serviceForecast.scenario === demoScenario
       ? serviceForecast
-      : buildForecastForBlock(selectedBlock.id, horizon, demoScenario);
+      : buildForecastForBlock(selectedBlock, horizon, demoScenario);
   }, [
     hasNoBlocksForDistrict,
-    selectedBlock.id,
-    selectedBlock.name,
-    selectedBlock.dataCoverage,
+    selectedBlock,
     selectedDistrict,
     selectedState,
     serviceForecast,
@@ -928,41 +920,38 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
 
   const demoRain = selectedBlock.expectedRainfallMm
     ? Number((selectedBlock.expectedRainfallMm / 14).toFixed(1))
-    : 0;
+    : 4.5;
   const demoHumidity = Math.min(
     98,
-    Math.max(40, selectedBlock.soilMoisture + 18)
+    Math.max(40, (selectedBlock.soilMoisture || 32) + 18)
   );
-
-  const isPrayagraj = selectedDistrict.toLowerCase() === "prayagraj";
-  const isFullData = isPrayagraj || selectedBlock.dataCoverage === "FULL";
 
   const demoWeatherObservation: WeatherObservationRow = {
     id: `demo-wobs-${selectedBlock.id || "none"}`,
     location_id: selectedBlock.id || "",
     observation_date: new Date().toISOString().slice(0, 10),
-    precipitation_mm: hasNoBlocksForDistrict || !isFullData ? null : demoRain,
-    rainfall_mm: hasNoBlocksForDistrict || !isFullData ? null : demoRain,
-    temperature_c: hasNoBlocksForDistrict || !isFullData ? null : 33.4,
-    humidity: hasNoBlocksForDistrict || !isFullData ? null : demoHumidity,
-    humidity_pct: hasNoBlocksForDistrict || !isFullData ? null : demoHumidity,
-    pressure: hasNoBlocksForDistrict || !isFullData ? null : 1002.4,
-    pressure_hpa: hasNoBlocksForDistrict || !isFullData ? null : 1002.4,
-    wind_speed: hasNoBlocksForDistrict || !isFullData ? null : 14.2,
-    wind_speed_kmh: hasNoBlocksForDistrict || !isFullData ? null : 14.2,
+    precipitation_mm: hasNoBlocksForDistrict ? null : demoRain,
+    rainfall_mm: hasNoBlocksForDistrict ? null : demoRain,
+    temperature_c: hasNoBlocksForDistrict ? null : 31.8,
+    humidity: hasNoBlocksForDistrict ? null : demoHumidity,
+    humidity_pct: hasNoBlocksForDistrict ? null : demoHumidity,
+    pressure: hasNoBlocksForDistrict ? null : 1004.2,
+    pressure_hpa: hasNoBlocksForDistrict ? null : 1004.2,
+    wind_speed: hasNoBlocksForDistrict ? null : 12.8,
+    wind_speed_kmh: hasNoBlocksForDistrict ? null : 12.8,
     source:
-      hasNoBlocksForDistrict || !isFullData
-        ? "Weather data unavailable"
+      hasNoBlocksForDistrict
+        ? "No block data available"
         : "Simulated Block Telemetry (Demo Mode)",
-    quality_flag: hasNoBlocksForDistrict || !isFullData ? "missing" : "estimated",
+    quality_flag: hasNoBlocksForDistrict ? "missing" : "estimated",
     created_at: new Date().toISOString(),
   };
 
   const weatherObservation: WeatherObservationRow =
-    !demoMode && isFullData && ingestedWeather && ingestedWeather.location_id === selectedBlock.id
-      ? ingestedWeather
-      : !demoMode && isFullData && ingestedWeather && selectedBlock.id
-      ? { ...ingestedWeather, location_id: selectedBlock.id }
+    !demoMode && ingestedWeather
+      ? (ingestedWeather.location_id === selectedBlock.id
+          ? ingestedWeather
+          : { ...ingestedWeather, location_id: selectedBlock.id })
       : demoWeatherObservation;
 
   const demoRainfallObservation: RainfallObservationRow = {
@@ -970,22 +959,24 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
     location_id: selectedBlock.id || "",
     observation_date: new Date().toISOString().slice(0, 10),
     rainfall_mm:
-      hasNoBlocksForDistrict || !isFullData
+      hasNoBlocksForDistrict
         ? null
-        : Number((selectedBlock.expectedRainfallMm / 14).toFixed(1)),
-    normal_rainfall_mm: hasNoBlocksForDistrict || !isFullData ? null : 8.5,
-    anomaly_percent: hasNoBlocksForDistrict || !isFullData ? null : selectedBlock.rainfallAnomaly,
+        : Number(((selectedBlock.expectedRainfallMm || 75) / 14).toFixed(1)),
+    normal_rainfall_mm: hasNoBlocksForDistrict ? null : 8.5,
+    anomaly_percent: hasNoBlocksForDistrict ? null : selectedBlock.rainfallAnomaly,
     source:
-      hasNoBlocksForDistrict || !isFullData
-        ? "Weather data unavailable"
+      hasNoBlocksForDistrict
+        ? "No block data available"
         : "Simulated IMD Baseline (Demo Mode)",
-    quality_flag: hasNoBlocksForDistrict || !isFullData ? "missing" : "estimated",
+    quality_flag: hasNoBlocksForDistrict ? "missing" : "estimated",
     created_at: new Date().toISOString(),
   };
 
   const rainfallObservation: RainfallObservationRow =
-    !demoMode && isFullData && ingestedRainfall && selectedBlock.id
-      ? ingestedRainfall
+    !demoMode && ingestedRainfall
+      ? (ingestedRainfall.location_id === selectedBlock.id
+          ? ingestedRainfall
+          : { ...ingestedRainfall, location_id: selectedBlock.id })
       : demoRainfallObservation;
 
   const demoClimateObservations: ClimateIndexObservationRow[] =

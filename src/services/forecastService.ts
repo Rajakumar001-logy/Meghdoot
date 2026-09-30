@@ -4,7 +4,7 @@ import {
   getBlocksForScenarioAndHorizon,
 } from "@/data/mockData";
 import { ForecastPredictionRow } from "@/types/database";
-import { DemoScenarioId, Forecast, ForecastHorizon } from "@/types/monsoon";
+import { Block, DemoScenarioId, Forecast, ForecastHorizon } from "@/types/monsoon";
 import { getRainfallForecast } from "./rainfallService";
 
 export function horizonToDays(horizon: ForecastHorizon): 7 | 14 | 21 | 30 {
@@ -28,9 +28,10 @@ export function daysToHorizon(days: number): ForecastHorizon {
 export async function getForecast(
   locationId: string,
   horizon: ForecastHorizon = "14D",
-  scenario: DemoScenarioId = "scenario_b"
+  scenario: DemoScenarioId = "scenario_b",
+  blockContext?: Block
 ): Promise<Forecast> {
-  const baseForecast = buildForecastForBlock(locationId, horizon, scenario);
+  const baseForecast = buildForecastForBlock(blockContext || locationId, horizon, scenario);
   const horizonDays = horizonToDays(horizon);
   const client = getSupabaseClient();
 
