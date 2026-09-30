@@ -214,7 +214,7 @@ def test_03_english_message_template_generation():
     assert "14D" in fields["forecastHorizon"]
     assert len(fields["recommendedAction"]) > 10
     assert len(fields["importantCaution"]) > 10
-    assert "MonsoonPulse AI" in fields["sourceProvenance"]
+    assert "MEGHDOOT AI" in fields["sourceProvenance"]
 
 
 # 4. Hindi message template generation

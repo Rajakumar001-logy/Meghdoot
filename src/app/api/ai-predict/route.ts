@@ -147,7 +147,7 @@ export async function GET(request: NextRequest) {
         ready_for_ai_forecast: leakageOk && integrityOk,
         model_status: leakageOk && integrityOk ? "trained_and_evaluated" : "audit_failed",
         dataset_status: "loaded",
-        model_name: meta.model_name || "MonsoonPulse Ensemble",
+        model_name: meta.model_name || "MEGHDOOT AI Ensemble",
         model_version: meta.model_version || "MPAI-ENS-0.1",
         data_version: meta.dataset_version || "PRAYAGRAJ-ERA5-HIST-2019-2025-v1",
         training_period: meta.training_years || "2019–2022",
@@ -162,7 +162,7 @@ export async function GET(request: NextRequest) {
       ready_for_ai_forecast: false,
       model_status: "unavailable",
       dataset_status: "missing",
-      model_name: "MonsoonPulse Ensemble",
+      model_name: "MEGHDOOT AI Ensemble",
       model_version: "MPAI-ENS-0.1",
       message: "AI forecast unavailable — using simulated prototype.",
     });

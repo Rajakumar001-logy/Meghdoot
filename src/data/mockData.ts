@@ -1186,7 +1186,7 @@ export function generateCropAdvisoryForSelection(
       `Verify minimum 60 mm cumulative soil moisture before ${crop.name} sowing`,
       `Prepare supplemental irrigation backup for the ${block.expectedDrySpellDays} break window`,
       "Apply surface mulching to conserve root-zone moisture",
-      "Monitor next 72-hour MonsoonPulse AI block forecast update",
+      "Monitor next 72-hour MEGHDOOT AI block forecast update",
     ];
     irrigationRecommendation = `Keep 1 life-saving irrigation cycle ready during ${block.expectedDrySpellDays} dry spell.`;
     sowingWindowGuidance = `Target sowing window: ${block.onsetWindow}.`;

@@ -77,9 +77,9 @@ export function FalseOnsetWarning({
   return (
     <div className="bg-white rounded-2xl border border-amber-300/90 shadow-soft overflow-hidden">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-[#0B3B24] via-emerald-950 to-amber-950 text-white px-5 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-3">
+      <div className="bg-[#0B3B24] text-white px-5 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-3 border-b border-emerald-900">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/40 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
             <ShieldAlert className="w-5 h-5 text-amber-300" />
           </div>
           <div>
@@ -87,13 +87,9 @@ export function FalseOnsetWarning({
               <h3 className="text-base sm:text-lg font-bold tracking-tight">
                 False Onset Early Warning — {blockName}
               </h3>
-              <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-400 text-slate-950">
-                Prototype Decision Logic
-              </span>
             </div>
             <p className="text-xs text-emerald-100/80">
-              Simulated post-shower break-monsoon detector derived dynamically
-              from {blockName} telemetry
+              Post-shower break-monsoon detector derived dynamically from {blockName} telemetry
             </p>
           </div>
         </div>
@@ -118,8 +114,8 @@ export function FalseOnsetWarning({
             <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
               Causal Atmospheric &amp; Soil Moisture Sequence ({blockName})
             </p>
-            <span className="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
-              Simulated Forecast — Demo
+            <span className="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+              Sequence Analysis
             </span>
           </div>
           {steps.map((item, idx) => {
@@ -182,14 +178,14 @@ export function FalseOnsetWarning({
             </div>
           </div>
 
-          {/* Explicit Prototype Decision Logic Box (Requirement 8) */}
+          {/* Decision Logic Box */}
           <div className="p-3 rounded-xl bg-white border border-slate-200/90 space-y-1.5 text-[11px]">
-            <div className="flex items-center justify-between font-extrabold text-slate-800 border-b border-slate-100 pb-1">
+            <div className="flex items-center justify-between font-bold text-slate-800 border-b border-slate-100 pb-1">
               <span className="flex items-center gap-1.5">
                 <Cpu className="w-3.5 h-3.5 text-emerald-700" />
-                Prototype Decision Logic
+                Decision Logic Evaluation
               </span>
-              <span className="text-[10px] text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded">
+              <span className="text-[10px] text-emerald-800 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded font-medium">
                 Rule Evaluated
               </span>
             </div>

@@ -119,13 +119,13 @@ export function generateStructuredFarmerMessage(
 
   const sourceLabelEn =
     input.signalSource === "AI_FORECAST"
-      ? "MonsoonPulse AI Advisory (Verified AI Forecast)"
-      : "MonsoonPulse AI Advisory (Prototype Decision Support)";
+      ? "MEGHDOOT AI Advisory (Verified AI Forecast)"
+      : "MEGHDOOT AI Advisory (Decision Support)";
 
   const sourceLabelHi =
     input.signalSource === "AI_FORECAST"
-      ? "MonsoonPulse AI कृषि सलाह (सत्यापित पूर्वानुमान)"
-      : "MonsoonPulse AI कृषि सलाह (प्रोटोटाइप निर्णय सहायता)";
+      ? "MEGHDOOT AI कृषि सलाह (सत्यापित पूर्वानुमान)"
+      : "MEGHDOOT AI कृषि सलाह (निर्णय सहायता)";
 
   if (resolvedLanguage === "Hindi") {
     const cropKey = input.cropName.toLowerCase().trim();
@@ -242,7 +242,7 @@ export function generateStructuredFarmerMessage(
   const horizonField = `Next ${horizonDays} days (${input.horizon})`;
 
   const message = [
-    `MonsoonPulse AI Advisory — ${locationField}`,
+    `MEGHDOOT AI Advisory — ${locationField}`,
     `Crop: ${cropField}`,
     `Situation: ${situationEn}`,
     `Horizon: ${horizonField}`,

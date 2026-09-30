@@ -1,5 +1,5 @@
 /**
- * MonsoonPulse AI — Deterministic Crop-Specific AI Advisory & Decision Engine
+ * MEGHDOOT AI — Deterministic Crop-Specific AI Advisory & Decision Engine
  * (src/services/advisoryEngine.ts)
  *
  * Prompt 8 Requirements 1–29:

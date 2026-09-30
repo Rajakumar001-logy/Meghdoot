@@ -1162,7 +1162,7 @@ export function HyperlocalRiskMap({ compact = false }: { compact?: boolean }) {
             observationIsLive={false}
             forecastModeLabel={forecastModeLabel}
             modelName={
-              gisPayload?.provenance?.ai_model_name || "MonsoonPulse Ensemble"
+              gisPayload?.provenance?.ai_model_name || "MEGHDOOT AI Ensemble"
             }
             modelVersion={
               gisPayload?.provenance?.ai_model_version || "MPAI-ENS-0.1"

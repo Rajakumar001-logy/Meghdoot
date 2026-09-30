@@ -270,7 +270,7 @@ export async function getModelHealth(): Promise<ModelHealthStatus> {
       ready_for_ai_forecast: false,
       model_status: "unavailable",
       dataset_status: "missing",
-      model_name: "MonsoonPulse Ensemble",
+      model_name: "MEGHDOOT AI Ensemble",
       model_version: "MPAI-ENS-0.1",
       message: "AI forecast unavailable — using simulated prototype.",
     };
@@ -396,7 +396,7 @@ export async function getAIPrediction(
       drift_status: pred.drift_status || "NORMAL",
       target_prevalence: pred.target_prevalence,
       model_skill_notes: pred.model_skill_notes,
-      model_name: pred.model_name || "MonsoonPulse Ensemble",
+      model_name: pred.model_name || "MEGHDOOT AI Ensemble",
       model_version: pred.model_version || "MPAI-ENS-0.1",
       data_version: pred.data_version || "PRAYAGRAJ-ERA5-HIST-2019-2025-v1",
       training_period: pred.training_period || "2019–2022",

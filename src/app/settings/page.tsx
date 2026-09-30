@@ -204,7 +204,7 @@ export default function SettingsPage() {
             <p className="text-xs text-slate-500 mt-0.5">
               Pipeline:{" "}
               <code>
-                REAL EXTERNAL DATA → DATA INGESTION LAYER → VALIDATION / NORMALIZATION → SUPABASE → MONSOONPULSE AI UI
+                REAL EXTERNAL DATA → DATA INGESTION LAYER → VALIDATION / NORMALIZATION → SUPABASE → MEGHDOOT AI UI
               </code>
             </p>
           </div>

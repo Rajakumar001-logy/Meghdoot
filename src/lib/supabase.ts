@@ -38,7 +38,7 @@ export function getSupabaseClient(): SupabaseClient | null {
 export const supabase = getSupabaseClient();
 
 export const SUPABASE_SCHEMA_SQL = `-- ============================================================================
--- MonsoonPulse AI — Production PostgreSQL / Supabase Schema & Seed Script
+-- MEGHDOOT AI — Production PostgreSQL / Supabase Schema & Seed Script
 -- Tables: locations, climate_indices, forecast_predictions, rainfall_forecasts,
 --         crops, crop_advisories, alerts, farmer_messages
 -- ============================================================================

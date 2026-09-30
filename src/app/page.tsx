@@ -15,7 +15,6 @@ import {
   Layers,
 } from "lucide-react";
 import { HyperlocalRiskMap } from "@/components/map/HyperlocalRiskMap";
-import { useMonsoon } from "@/context/MonsoonContext";
 
 const FEATURE_CARDS = [
   {
@@ -53,8 +52,6 @@ const FEATURE_CARDS = [
 ];
 
 export default function LandingPage() {
-  const { demoMode, setDemoMode } = useMonsoon();
-
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col">
       {/* TOP NAVIGATION BAR */}
@@ -67,7 +64,7 @@ export default function LandingPage() {
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-extrabold text-lg tracking-tight text-[#0B3B24]">
-                  MonsoonPulse AI
+                  MEGHDOOT AI
                 </span>
                 <span className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
                   AI-Powered Hyperlocal Monsoon Intelligence
@@ -80,25 +77,6 @@ export default function LandingPage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-2 bg-amber-50 border border-amber-300 rounded-xl px-3 py-1">
-              <button
-                onClick={() => setDemoMode(!demoMode)}
-                className="text-xs font-bold text-amber-950 flex items-center gap-1.5"
-              >
-                <span
-                  className={`w-2.5 h-2.5 rounded-full ${
-                    demoMode ? "bg-emerald-600" : "bg-slate-400"
-                  }`}
-                />
-                Demo Mode
-              </button>
-              {demoMode && (
-                <span className="text-[10px] font-extrabold uppercase tracking-wider px-1.5 py-0.5 rounded bg-amber-400/30 text-amber-950">
-                  SIMULATED FORECAST — DEMO
-                </span>
-              )}
-            </div>
-
             <Link
               href="/forecast"
               className="hidden sm:inline-flex items-center px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-100 transition"
@@ -129,7 +107,7 @@ export default function LandingPage() {
 
               <div className="space-y-3">
                 <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-emerald-300">
-                  MONSOONPULSE AI
+                  MEGHDOOT AI
                 </p>
                 <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.1]">
                   “Predict the Monsoon.{" "}

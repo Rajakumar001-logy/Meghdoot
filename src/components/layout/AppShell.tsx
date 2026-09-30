@@ -154,7 +154,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-lg tracking-tight text-white">
-                  MonsoonPulse
+                  MEGHDOOT
                 </span>
                 <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
                   AI
@@ -289,7 +289,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 <div className="w-8 h-8 rounded-lg bg-emerald-400 flex items-center justify-center">
                   <CloudRain className="w-5 h-5 text-[#0B3B24]" />
                 </div>
-                <span className="font-bold text-base">MonsoonPulse AI</span>
+                <span className="font-bold text-base">MEGHDOOT AI</span>
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -401,19 +401,19 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 </select>
               </div>
 
-              {/* DEMO SCENARIO SELECTOR (Requirement 15) */}
-              <div className="flex items-center gap-1.5 bg-emerald-50/80 border border-emerald-300/80 rounded-xl px-2.5 py-1.5 text-xs">
-                <Sliders className="w-3.5 h-3.5 text-emerald-800 shrink-0" />
-                <span className="font-bold text-emerald-950 hidden sm:inline">
-                  Demo Scenario:
+              {/* SCENARIO SELECTOR */}
+              <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200/90 rounded-xl px-2.5 py-1.5 text-xs">
+                <Sliders className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                <span className="font-semibold text-slate-600 hidden sm:inline">
+                  Scenario:
                 </span>
                 <select
                   value={demoScenario}
                   onChange={(e) =>
                     setDemoScenario(e.target.value as DemoScenarioId)
                   }
-                  aria-label="Select Demo Scenario"
-                  className="bg-transparent font-extrabold text-emerald-950 focus:outline-none cursor-pointer"
+                  aria-label="Select Scenario"
+                  className="bg-transparent font-semibold text-slate-800 focus:outline-none cursor-pointer"
                 >
                   {demoScenarios.map((sc) => (
                     <option key={sc.id} value={sc.id}>
@@ -424,11 +424,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </div>
             </div>
 
-            {/* Right: Horizon Selector (7D | 14D | 21D | 30D) + Demo Mode Toggle */}
+            {/* Right: Horizon Selector + Mode Switch */}
             <div className="flex items-center gap-2.5 flex-wrap">
               {/* Loading state pill if active */}
               {loadingMessage && (
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-sky-50 border border-sky-200 text-sky-900 text-xs font-bold animate-pulse">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-sky-50 border border-sky-200 text-sky-900 text-xs font-medium animate-pulse">
                   <RefreshCw className="w-3.5 h-3.5 animate-spin text-sky-600" />
                   <span>{loadingMessage}</span>
                 </div>
@@ -443,7 +443,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   <button
                     key={h}
                     onClick={() => setHorizon(h)}
-                    className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
+                    className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                       horizon === h
                         ? "bg-[#0B3B24] text-white shadow-xs"
                         : "text-slate-600 hover:text-slate-900"
@@ -454,27 +454,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 ))}
               </div>
 
-              {/* CONTROLLED FORECAST ENGINE MODE SWITCH (Requirement 27: DEMO MODE | SIMULATED FORECAST | AI FORECAST) */}
+              {/* FORECAST ENGINE MODE */}
               <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200/90">
                 <button
-                  onClick={() => setForecastEngineMode("DEMO")}
-                  className={`px-2 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
-                    forecastEngineMode === "DEMO"
-                      ? "bg-amber-600 text-white shadow-2xs"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
-                >
-                  DEMO MODE
-                </button>
-                <button
                   onClick={() => setForecastEngineMode("SIMULATED")}
-                  className={`px-2 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
-                    forecastEngineMode === "SIMULATED"
-                      ? "bg-sky-700 text-white shadow-2xs"
+                  className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                    forecastEngineMode !== "AI_FORECAST"
+                      ? "bg-white text-slate-800 shadow-2xs border border-slate-200/80"
                       : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
-                  SIMULATED FORECAST
+                  Standard
                 </button>
                 <button
                   onClick={() => setForecastEngineMode("AI_FORECAST")}
@@ -482,43 +472,31 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   title={
                     modelHealth.ready_for_ai_forecast
                       ? `Activate Real Calibrated Ensemble (${modelHealth.model_version})`
-                      : "AI forecast unavailable — using simulated prototype."
+                      : "AI forecast unavailable for this location"
                   }
-                  className={`px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition-all cursor-pointer disabled:opacity-45 ${
+                  className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer disabled:opacity-40 ${
                     aiForecastActive
                       ? "bg-[#0B3B24] text-white shadow-2xs"
-                      : "text-emerald-900 hover:bg-emerald-50"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
-                  AI FORECAST
+                  AI Model
                 </button>
               </div>
 
-              {/* Active Provenance & Data Status Badge */}
+              {/* Active Status Indicator */}
               <div className="hidden xl:flex items-center gap-1.5">
                 {aiForecastActive ? (
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded-lg bg-[#0B3B24] text-emerald-100 border border-emerald-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    AI FORECAST • {modelHealth.model_version}
-                  </span>
-                ) : demoMode ? (
-                  <span className="text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-900 border border-amber-400/50">
-                    SIMULATED FORECAST — DEMO
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    AI Active ({modelHealth.model_version})
                   </span>
                 ) : liveDataActive ? (
-                  <span className="inline-flex items-center gap-1 text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded-lg bg-emerald-600 text-white border border-emerald-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
-                    LIVE DATA
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-lg bg-sky-50 text-sky-800 border border-sky-200">
+                    <span className="w-1.5 h-1.5 rounded-full bg-sky-500" />
+                    Live Data
                   </span>
-                ) : usingStoredObservationFallback ? (
-                  <span className="text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded-lg bg-sky-100 text-sky-900 border border-sky-300">
-                    STORED SUPABASE OBSERVATION
-                  </span>
-                ) : (
-                  <span className="text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-900 border border-amber-400/50">
-                    SIMULATED FORECAST — DEMO
-                  </span>
-                )}
+                ) : null}
               </div>
 
               {/* Unread Alerts Quick Pill */}

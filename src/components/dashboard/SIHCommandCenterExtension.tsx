@@ -296,7 +296,7 @@ export default function SIHCommandCenterExtension() {
               )}
             </div>
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight">
-              MonsoonPulse AI — &ldquo;Predict the Monsoon. Protect the
+              MEGHDOOT AI — &ldquo;Predict the Monsoon. Protect the
               Harvest.&rdquo;
             </h2>
             <p className="text-xs sm:text-sm text-emerald-100/90 leading-relaxed">
@@ -306,7 +306,7 @@ export default function SIHCommandCenterExtension() {
             </p>
           </div>
 
-          {/* Interactive Demo Controls & Role Switcher */}
+          {/* Role Switcher */}
           <div className="flex flex-wrap items-center gap-2">
             <div className="inline-flex rounded-xl bg-white/10 p-1 border border-white/15">
               <button
@@ -330,30 +330,6 @@ export default function SIHCommandCenterExtension() {
                 Farmer View (MY FARM)
               </button>
             </div>
-
-            <button
-              onClick={handleStartGuidedDemo}
-              className="px-3.5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-extrabold flex items-center gap-1.5 shadow-xs transition"
-            >
-              <Play className="w-3.5 h-3.5 fill-current" />
-              RUN DEMO
-            </button>
-
-            <button
-              onClick={handleResetDemo}
-              className="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-extrabold flex items-center gap-1.5 transition"
-            >
-              <RotateCcw className="w-3.5 h-3.5" />
-              RESET DEMO
-            </button>
-
-            <button
-              onClick={() => setShowDemoGuideScript(!showDemoGuideScript)}
-              className="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-emerald-200 border border-white/20 text-xs font-bold flex items-center gap-1 transition"
-            >
-              <HelpCircle className="w-3.5 h-3.5" />
-              DEMO GUIDE
-            </button>
           </div>
         </div>
 
@@ -411,77 +387,8 @@ export default function SIHCommandCenterExtension() {
           </div>
         </div>
 
-        {/* GUIDED 7-STEP END-TO-END DEMO PANEL (Section 24) */}
-        {guidedDemoActive && (
-          <div className="bg-white/95 text-slate-900 rounded-xl p-4 border border-amber-300 space-y-3">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-100 text-amber-950">
-                  Guided End-to-End SIH Demo Sequence (Step{" "}
-                  {guidedStepIndex + 1} of {GUIDED_DEMO_STEPS.length})
-                </span>
-                <h3 className="text-sm font-extrabold text-slate-900 mt-1">
-                  {currentStepObj.title}: {currentStepObj.subtitle}
-                </h3>
-                <p className="text-xs text-slate-600 mt-0.5">
-                  {currentStepObj.description}
-                </p>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <button
-                  disabled={guidedStepIndex === 0}
-                  onClick={() =>
-                    setGuidedStepIndex(Math.max(0, guidedStepIndex - 1))
-                  }
-                  className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold disabled:opacity-40 hover:bg-slate-100 flex items-center gap-1"
-                >
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                  BACK
-                </button>
-                <button
-                  disabled={guidedStepIndex === GUIDED_DEMO_STEPS.length - 1}
-                  onClick={() =>
-                    setGuidedStepIndex(
-                      Math.min(
-                        GUIDED_DEMO_STEPS.length - 1,
-                        guidedStepIndex + 1
-                      )
-                    )
-                  }
-                  className="px-3 py-1.5 rounded-lg bg-[#0B3B24] text-white text-xs font-extrabold disabled:opacity-40 hover:bg-emerald-900 flex items-center gap-1"
-                >
-                  NEXT
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-                <button
-                  onClick={() => setGuidedDemoActive(false)}
-                  className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-600 hover:bg-slate-100"
-                >
-                  SKIP
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
 
-        {/* COLLAPSIBLE DEMO SCRIPT PANEL (Section 25) */}
-        {showDemoGuideScript && (
-          <div className="bg-slate-900/90 text-emerald-100 rounded-xl p-4 border border-emerald-500/30 text-xs space-y-2">
-            <p className="font-extrabold uppercase tracking-wider text-amber-300 text-[11px]">
-              SIH 3–5 Minute Presentation Script (DEMO GUIDE)
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-              {SIH_DEMO_SCRIPT_ITEMS.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="p-2 rounded bg-white/5 border border-white/10 font-medium"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+
       </div>
 
       {/* 2. TOP-LEVEL COMMAND CENTER KPI CARDS (Section 4 — Live State Derived) */}

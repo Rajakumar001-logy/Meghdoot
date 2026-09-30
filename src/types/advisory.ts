@@ -1,5 +1,5 @@
 /**
- * MonsoonPulse AI — Crop-Specific AI Advisory & Agricultural Decision Engine Types
+ * MEGHDOOT AI — Crop-Specific AI Advisory & Agricultural Decision Engine Types
  * (src/types/advisory.ts)
  *
  * Prompt 8 Requirements 1–25:

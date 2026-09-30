@@ -1,5 +1,5 @@
 /**
- * MonsoonPulse AI — Configurable Crop Profiles, Thresholds & Deterministic Rules
+ * MEGHDOOT AI — Configurable Crop Profiles, Thresholds & Deterministic Rules
  * (src/config/advisoryRules.ts)
  *
  * Prompt 8 Requirements 1, 4, 5, 6, 7, 8, 9, 10, 11, 14, 16, 24, 27, 28:
@@ -20,10 +20,10 @@ import {
 } from "@/types/advisory";
 
 export const SCIENTIFIC_LIMITATION_DISCLAIMER_EN =
-  "MonsoonPulse AI provides experimental decision support based on model outputs and available observations. Agricultural recommendations should be validated against local agronomic conditions and official extension guidance before operational deployment.";
+  "MEGHDOOT AI provides experimental decision support based on model outputs and available observations. Agricultural recommendations should be validated against local agronomic conditions and official extension guidance before operational deployment.";
 
 export const SCIENTIFIC_LIMITATION_DISCLAIMER_HI =
-  "मानसूनपल्स एआई (MonsoonPulse AI) मॉडल के परिणामों और उपलब्ध प्रेक्षणों के आधार पर प्रयोगात्मक निर्णय-सहायता प्रदान करता है। किसी भी कृषि कार्य को अपनाने से पहले स्थानीय कृषि परिस्थितियों और आधिकारिक कृषि विस्तार मार्गदर्शन से पुष्टि अवश्य करें।";
+  "मेघदूत एआई (MEGHDOOT AI) मॉडल के परिणामों और उपलब्ध प्रेक्षणों के आधार पर प्रयोगात्मक निर्णय-सहायता प्रदान करता है। किसी भी कृषि कार्य को अपनाने से पहले स्थानीय कृषि परिस्थितियों और आधिकारिक कृषि विस्तार मार्गदर्शन से पुष्टि अवश्य करें।";
 
 export const PROTOTYPE_RULE_DISCLAIMER_EN =
   "These are prototype decision-support rules and are not official agricultural advisories.";

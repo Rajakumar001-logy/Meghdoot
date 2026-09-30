@@ -429,7 +429,7 @@ function buildInitialAlerts(): void {
     severity: "HIGH",
     title: "मानसून सलाह (Karchhana • धान (Paddy)) [EXPIRED]",
     message:
-      "🌾 मानसून कृषि सलाह — Karchhana ब्लॉक, Prayagraj\nफसल: धान (Paddy) (नर्सरी चरण)\nस्थिति: पिछला पूर्वानुमान चक्र समाप्त हो चुका है।\nअवधि: अगले 7 दिन (7D)\nसलाह: नवीनतम 14D सलाह देखें।\nसावधानी: पुरानी सलाह पर बुवाई निर्णय न लें।\nस्रोत: MonsoonPulse AI कृषि सलाह",
+      "🌾 मानसून कृषि सलाह — Karchhana ब्लॉक, Prayagraj\nफसल: धान (Paddy) (नर्सरी चरण)\nस्थिति: पिछला पूर्वानुमान चक्र समाप्त हो चुका है।\nअवधि: अगले 7 दिन (7D)\nसलाह: नवीनतम 14D सलाह देखें।\nसावधानी: पुरानी सलाह पर बुवाई निर्णय न लें।\nस्रोत: MEGHDOOT AI कृषि सलाह",
     language: "Hindi",
     channel: "WhatsApp",
     status: "EXPIRED",

@@ -111,15 +111,12 @@ export default function ForecastPage() {
       <div className="bg-white rounded-2xl border border-slate-200/90 shadow-soft p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 border border-amber-300 text-[10px] font-extrabold uppercase">
-              Prototype Simulation
-            </span>
             <span className="px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-900 text-[10px] font-extrabold uppercase">
               {currentScenarioMeta.shortLabel}
             </span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
-            Monsoon Forecast &amp; AI Prediction Engine
+            MEGHDOOT AI — Monsoon Forecast &amp; Prediction Engine
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
             Active Block: <strong>{selectedBlock.name}</strong> (
@@ -291,9 +288,6 @@ export default function ForecastPage() {
               <h2 className="text-lg sm:text-xl font-extrabold text-slate-900">
                 AI Prediction Engine Architecture
               </h2>
-              <span className="px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 border border-amber-300 text-[10px] font-extrabold uppercase">
-                Prototype Simulation
-              </span>
             </div>
             <p className="text-xs text-slate-500 mt-1">
               Conceptual multi-stage ML downscaling pipeline designed for
@@ -336,9 +330,6 @@ export default function ForecastPage() {
               <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
                 Ensemble Architecture Components
               </p>
-              <span className="text-[11px] font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-md">
-                Simulated Forecast — Demo
-              </span>
             </div>
 
             <div className="space-y-3.5">
@@ -361,9 +352,6 @@ export default function ForecastPage() {
                           </p>
                         </div>
                       </div>
-                      <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-white/80 border border-current/20">
-                        Prototype Simulation
-                      </span>
                     </div>
                     <p className="text-xs leading-relaxed opacity-90">
                       {m.description}

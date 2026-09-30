@@ -29,7 +29,7 @@ async function fetchWithTimeout(url: string, timeoutMs = 6500): Promise<Response
       signal: controller.signal,
       headers: {
         Accept: 'application/json, text/plain, */*',
-        'User-Agent': 'MonsoonPulseAI/1.0 (Hyper-Local Agricultural Advisory Prototype)',
+        'User-Agent': 'MeghdootAI/1.0 (Hyper-Local Agricultural Advisory Platform)',
       },
       cache: 'no-store',
     });

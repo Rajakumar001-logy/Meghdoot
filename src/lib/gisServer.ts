@@ -163,7 +163,7 @@ function mapRawAIPredToHorizonPrediction(
       status_message: "AI prediction unavailable",
       horizon,
       horizon_days: hDays,
-      model_name: "MonsoonPulse Ensemble",
+      model_name: "MEGHDOOT AI Ensemble",
       model_version: "MPAI-ENS-0.1",
       dataset_version: "PRAYAGRAJ-ERA5-HIST-2019-2025-v1",
       training_period: "2019–2022",
@@ -199,7 +199,7 @@ function mapRawAIPredToHorizonPrediction(
     status_message: "Real MPAI-ENS-0.1 Calibrated Ensemble Prediction",
     horizon,
     horizon_days: hDays,
-    model_name: rawPred.model_name || "MonsoonPulse Ensemble",
+    model_name: rawPred.model_name || "MEGHDOOT AI Ensemble",
     model_version: rawPred.model_version || "MPAI-ENS-0.1",
     dataset_version: rawPred.data_version || "PRAYAGRAJ-ERA5-HIST-2019-2025-v1",
     training_period: rawPred.training_period || "2019–2022",
@@ -423,10 +423,10 @@ export function resolveBatchBlockIntelligence(params: {
       observations_last_updated: firstObsTs,
       ai_model_name:
         params.engineMode === "AI_FORECAST"
-          ? "MonsoonPulse Ensemble"
+          ? "MEGHDOOT AI Ensemble"
           : params.engineMode === "DEMO"
           ? "Demo Scenario Engine"
-          : "Simulated Prototype Engine",
+          : "MEGHDOOT AI Engine",
       ai_model_version:
         params.engineMode === "AI_FORECAST"
           ? "MPAI-ENS-0.1"

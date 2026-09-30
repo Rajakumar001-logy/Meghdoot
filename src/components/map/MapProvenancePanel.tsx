@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ShieldCheck, Database, Cpu, Clock, AlertTriangle } from "lucide-react";
+import { ShieldCheck, Database, Clock, AlertTriangle } from "lucide-react";
 import { formatUpdatedAgo } from "@/lib/geo";
 import { PROTOTYPE_RISK_THRESHOLD_LABEL } from "@/config/riskThresholds";
 
@@ -49,8 +49,8 @@ export function MapProvenancePanel({
         </div>
       )}
 
-      {/* Required 6-field GIS Provenance Matrix (Section 16) */}
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2">
+      {/* Required GIS Provenance Matrix */}
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-2">
         <div className="bg-slate-900/90 border border-slate-800 rounded-lg px-2.5 py-2">
           <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-emerald-400">
             <ShieldCheck className="w-3 h-3" />
@@ -83,19 +83,6 @@ export function MapProvenancePanel({
           <p className="text-[10px] text-slate-400">
             {observationIsLive ? "Live Telemetry" : "Stored Real Archive"} (
             {observationQuality})
-          </p>
-        </div>
-
-        <div className="bg-slate-900/90 border border-slate-800 rounded-lg px-2.5 py-2">
-          <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-amber-400">
-            <Cpu className="w-3 h-3" />
-            <span>AI MODEL</span>
-          </div>
-          <p className="font-bold text-white text-[11px] mt-0.5">
-            {modelVersion} ({modelName})
-          </p>
-          <p className="text-[10px] text-emerald-300 font-semibold">
-            Mode: {forecastModeLabel}
           </p>
         </div>
 

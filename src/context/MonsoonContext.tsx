@@ -281,7 +281,7 @@ export function MonsoonProvider({ children }: { children: React.ReactNode }) {
     ready_for_ai_forecast: false,
     model_status: "checking",
     dataset_status: "checking",
-    model_name: "MonsoonPulse Ensemble",
+    model_name: "MEGHDOOT AI Ensemble",
     model_version: "MPAI-ENS-0.1",
   });
   const [modelMetrics, setModelMetrics] = useState<ModelMetricsPayload | null>(
